@@ -1,0 +1,26 @@
+[
+  {
+    "id": "eco_sustainable",
+    "keywords": ["sostenibilidad", "ecología", "verde", "natural", "eco"],
+    "sector": ["e-commerce", "retail", "alimentos"],
+    "primary": "#10B981",
+    "secondary": "#D97706",
+    "neutral": ["#F9FAFB", "#F3F4F6", "#E5E7EB", "#9CA3AF", "#1F2937"]
+  },
+  {
+    "id": "fintech_trust",
+    "keywords": ["confianza", "seguridad", "finanzas", "banco"],
+    "sector": ["fintech", "banca", "seguros"],
+    "primary": "#1E40AF",
+    "secondary": "#0E7490",
+    "neutral": ["#F3F4F6", "#E5E7EB", "#9CA3AF", "#4B5563", "#111827"]
+  },
+  {
+    "id": "tech_innovation",
+    "keywords": ["innovación", "tecnología", "futuro", "digital"],
+    "sector": ["software", "IA", "SaaS"],
+    "primary": "#7C3AED",
+    "secondary": "#EC4899",
+    "neutral": ["#000000", "#111827", "#1F2937", "#D1D5DB", "#F9FAFB"]
+  }
+]
