@@ -22,4 +22,4 @@ yarn-error.log*
 .idea/
 
 # Logs
-*.log
+*.log.DS_Store
