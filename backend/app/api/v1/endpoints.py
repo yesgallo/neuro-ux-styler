@@ -6,5 +6,4 @@ router = APIRouter()
 
 @router.post("/generate")
 def generate_kit(input: BrandInput):
-    result = generate_ux_kit(input.dict())
-    return result
+    return generate_ux_kit(input.dict())

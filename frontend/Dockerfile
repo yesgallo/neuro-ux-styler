@@ -1,14 +1,6 @@
-FROM node:18-alpine
-
+FROM node:18-slim
 WORKDIR /app
-
 COPY package*.json ./
-RUN npm ci --only=production
-
+RUN npm ci
 COPY . .
-
-RUN npm run build
-
-EXPOSE 3000
-
-CMD ["npm", "run", "preview"]
+CMD ["npm", "run", "dev"]
