@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuro UX Styler - AI-Powered UI Kit Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2DD4BF;
+            --primary-dark: #14B8A6;
+            --secondary: #0F172A;
+            --accent: #3B82F6;
+            --text: #1E293B;
+            --text-light: #64748B;
+            --bg: #F8FAFC;
+            --white: #FFFFFF;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #E2E8F0;
+        }
+
+        .tab {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+
+        .tab:hover {
+            color: var(--primary-dark);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid #E2E8F0;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: var(--shadow);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: var(--white);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .result {
+            display: none;
+        }
+
+        .result.show {
+            display: block;
+        }
+
+        .confidence-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .confidence-high {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+
+        .confidence-medium {
+            background: #FEF3C7;
+            color: #78350F;
+        }
+
+        .confidence-low {
+            background: #FEE2E2;
+            color: #991B1B;
+        }
+
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .color-item {
+            text-align: center;
+        }
+
+        .color-box {
+            width: 100%;
+            height: 80px;
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .color-box:hover {
+            transform: scale(1.05);
+        }
+
+        .color-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text);
+            text-transform: uppercase;
+        }
+
+        .color-value {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            font-family: monospace;
+        }
+
+        .typography-preview {
+            padding: 2rem;
+            background: #F1F5F9;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .component-item {
+            padding: 1.5rem;
+            background: #F1F5F9;
+            border-radius: 12px;
+        }
+
+        .component-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .component-value {
+            font-size: 1rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .feedback-section {
+            background: #F1F5F9;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .rating-stars {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 2rem;
+            margin: 1rem 0;
+        }
+
+        .star {
+            cursor: pointer;
+            color: #CBD5E1;
+            transition: color 0.2s;
+        }
+
+        .star.active,
+        .star:hover {
+            color: #FCD34D;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        .alert {
+            padding: 1rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+        }
+
+        .alert-success {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+
+        .alert-error {
+            background: #FEE2E2;
+            color: #991B1B;
+        }
+
+        .alert-info {
+            background: #DBEAFE;
+            color: #1E40AF;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">🧠</div>
+        <h1>NEURO UX STYLER</h1>
+        <p>AI-Powered UI Kit Generator</p>
+    </div>
+
+    <div class="container">
+        <div class="tabs">
+            <button class="tab active" data-tab="generate">Generar UI Kit</button>
+            <button class="tab" data-tab="stats">Estadísticas</button>
+        </div>
+
+        <!-- Tab: Generar UI Kit -->
+        <div id="generate" class="tab-content active">
+            <div class="card">
+                <h2 style="margin-bottom: 1.5rem;">Datos del Proyecto</h2>
+                <form id="generateForm">
+                    <div class="form-group">
+                        <label for="name">Nombre del Proyecto *</label>
+                        <input type="text" id="name" required placeholder="Ej: TechFlow">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mission">Misión *</label>
+                        <textarea id="mission" required placeholder="Describe la misión de tu proyecto..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="values">Valores (separados por comas) *</label>
+                        <input type="text" id="values" required placeholder="innovación, tecnología, excelencia">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sector">Sector *</label>
+                        <select id="sector" required>
+                            <option value="">Selecciona un sector</option>
+                            <option value="tecnología">Tecnología</option>
+                            <option value="salud">Salud</option>
+                            <option value="finanzas">Finanzas</option>
+                            <option value="educación">Educación</option>
+                            <option value="entretenimiento">Entretenimiento</option>
+                            <option value="moda">Moda</option>
+                            <option value="alimentos">Alimentos</option>
+                            <option value="medio ambiente">Medio Ambiente</option>
+                            <option value="fitness">Fitness</option>
+                            <option value="diseño">Diseño</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="audience">Público Objetivo *</label>
+                        <input type="text" id="audience" required placeholder="Ej: Empresas B2B, jóvenes millennials">
+                    </div>
+
+                    <button type="submit" class="btn" id="generateBtn">
+                        <span id="btnText">Generar UI Kit</span>
+                        <span id="btnLoading" class="loading" style="display: none;"></span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Resultados -->
+            <div id="result" class="result">
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                        <h2>Tu UI Kit Generado</h2>
+                        <span id="confidenceBadge" class="confidence-badge"></span>
+                    </div>
+
+                    <h3 style="margin-top: 2rem;">Paleta de Colores</h3>
+                    <div id="colorPalette" class="color-palette"></div>
+
+                    <h3 style="margin-top: 2rem;">Tipografía</h3>
+                    <div id="typography" class="typography-preview"></div>
+
+                    <h3 style="margin-top: 2rem;">Componentes</h3>
+                    <div id="components" class="components-grid"></div>
+
+                    <h3 style="margin-top: 2rem;">Tokens de Diseño</h3>
+                    <div id="tokens" class="components-grid"></div>
+                </div>
+
+                <!-- Feedback -->
+                <div class="card feedback-section">
+                    <h3>¿Qué te pareció este UI Kit?</h3>
+                    <div class="rating-stars" id="ratingStars">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="feedbackText">Comentarios (opcional)</label>
+                        <textarea id="feedbackText" placeholder="Cuéntanos qué mejorarías..."></textarea>
+                    </div>
+                    <button class="btn btn-secondary" id="submitFeedback">Enviar Feedback</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab: Estadísticas -->
+        <div id="stats" class="tab-content">
+            <div class="card">
+                <h2 style="margin-bottom: 2rem;">Estadísticas del Sistema</h2>
+                <div class="stats-grid" id="statsGrid"></div>
+                <div id="retrainSection" style="margin-top: 2rem;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:5001/api';
+        let currentUIKit = null;
+        let selectedRating = 0;
+
+        // Manejo de tabs
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetTab = tab.dataset.tab;
+                
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                tab.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+                
+                if (targetTab === 'stats') {
+                    loadStats();
+                }
+            });
+        });
+
+        // Generar UI Kit
+        document.getElementById('generateForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const btn = document.getElementById('generateBtn');
+            const btnText = document.getElementById('btnText');
+            const btnLoading = document.getElementById('btnLoading');
+            
+            btn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline-block';
+            
+            const data = {
+                name: document.getElementById('name').value,
+                mission: document.getElementById('mission').value,
+                values: document.getElementById('values').value,
+                sector: document.getElementById('sector').value,
+                audience: document.getElementById('audience').value
+            };
+            
+            try {
+                const response = await fetch(`${API_URL}/generate`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    currentUIKit = result.ui_kit;
+                    displayUIKit(result.ui_kit);
+                    document.getElementById('result').classList.add('show');
+                    document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert('Error: ' + result.error);
+                }
+            } catch (error) {
+                alert('Error al conectar con el servidor: ' + error.message);
+            } finally {
+                btn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+            }
+        });
+
+        // Mostrar UI Kit
+        function displayUIKit(uiKit) {
+            // Confianza
+            const confidence = (uiKit.confidence * 100).toFixed(0);
+            const badge = document.getElementById('confidenceBadge');
+            badge.textContent = `${confidence}% confianza`;
+            badge.className = 'confidence-badge ' + 
+                (confidence >= 80 ? 'confidence-high' : 
+                 confidence >= 60 ? 'confidence-medium' : 'confidence-low');
+            
+            // Colores
+            const colorPalette = document.getElementById('colorPalette');
+            colorPalette.innerHTML = '';
+            Object.entries(uiKit.colors).forEach(([name, color]) => {
+                colorPalette.innerHTML += `
+                    <div class="color-item">
+                        <div class="color-box" style="background: ${color}" 
+                             onclick="copyToClipboard('${color}')" 
+                             title="Click para copiar"></div>
+                        <div class="color-label">${name}</div>
+                        <div class="color-value">${color}</div>
+                    </div>
+                `;
+            });
+            
+            // Tipografía
+            const typography = document.getElementById('typography');
+            typography.innerHTML = `
+                <div style="margin-bottom: 1rem;">
+                    <strong>Primaria:</strong> 
+                    <span style="font-family: '${uiKit.typography.primary}', sans-serif; font-size: 1.5rem;">
+                        ${uiKit.typography.primary}
+                    </span>
+                </div>
+                <div>
+                    <strong>Secundaria:</strong> 
+                    <span style="font-family: '${uiKit.typography.secondary}', sans-serif; font-size: 1.5rem;">
+                        ${uiKit.typography.secondary}
+                    </span>
+                </div>
+            `;
+            
+            // Componentes
+            const components = document.getElementById('components');
+            components.innerHTML = '';
+            Object.entries(uiKit.components).forEach(([key, value]) => {
+                components.innerHTML += `
+                    <div class="component-item">
+                        <div class="component-label">${key.replace(/([A-Z])/g, ' $1').trim()}</div>
+                        <div class="component-value">${value}</div>
+                    </div>
+                `;
+            });
+            
+            // Tokens
+            const tokens = document.getElementById('tokens');
+            tokens.innerHTML = '';
+            ['spacing', 'fontSize'].forEach(category => {
+                Object.entries(uiKit.tokens[category]).forEach(([key, value]) => {
+                    tokens.innerHTML += `
+                        <div class="component-item">
+                            <div class="component-label">${category} - ${key}</div>
+                            <div class="component-value">${value}</div>
+                        </div>
+                    `;
+                });
+            });
+        }
+
+        // Sistema de rating
+        document.querySelectorAll('.star').forEach(star => {
+            star.addEventListener('click', () => {
+                selectedRating = parseInt(star.dataset.rating);
+                document.querySelectorAll('.star').forEach((s, index) => {
+                    s.classList.toggle('active', index < selectedRating);
+                });
+            });
+        });
+
+        // Enviar feedback
+        document.getElementById('submitFeedback').addEventListener('click', async () => {
+            if (selectedRating === 0) {
+                alert('Por favor selecciona una calificación');
+                return;
+            }
+            
+            const feedback = {
+                input_data: currentUIKit.input_data,
+                rating: selectedRating / 5,
+                feedback: document.getElementById('feedbackText').value
+            };
+            
+            try {
+                const response = await fetch(`${API_URL}/feedback`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(feedback)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert('¡Gracias por tu feedback! Total: ' + result.total_feedback);
+                    selectedRating = 0;
+                    document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
+                    document.getElementById('feedbackText').value = '';
+                }
+            } catch (error) {
+                alert('Error al enviar feedback: ' + error.message);
+            }
+        });
+
+        // Cargar estadísticas
+        async function loadStats() {
+            try {
+                const response = await fetch(`${API_URL}/stats`);
+                const result = await response.json();
+                
+                if (result.success) {
+                    const stats = result.stats;
+                    const statsGrid = document.getElementById('statsGrid');
+                    statsGrid.innerHTML = `
+                        <div class="stat-card">
+                            <div class="stat-label">Datos de Entrenamiento</div>
+                            <div class="stat-value">${stats.training_samples}</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Feedbacks Recibidos</div>
+                            <div class="stat-value">${stats.feedback_samples}</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-label">Total de Datos</div>
+                            <div class="stat-value">${stats.total_samples}</div>
+                        </div>
+                    `;
+                    
+                    const retrainSection = document.getElementById('retrainSection');
+                    if (stats.ready_for_retrain) {
+                        retrainSection.innerHTML = `
+                            <div class="alert alert-success">
+                                ✅ Hay suficiente feedback para reentrenar el modelo
+                            </div>
+                            <button class="btn" onclick="retrainModel()">Reentrenar Modelo</button>
+                        `;
+                    } else {
+                        retrainSection.innerHTML = `
+                            <div class="alert alert-info">
+                                ℹ️ Se necesitan al menos 5 feedbacks para reentrenar (tienes ${stats.feedback_samples})
+                            </div>
+                        `;
+                    }
+                }
+            } catch (error) {
+                console.error('Error al cargar estadísticas:', error);
+            }
+        }
+
+        // Reentrenar modelo
+        async function retrainModel() {
+            if (!confirm('¿Deseas reentrenar el modelo con el nuevo feedback?')) return;
+            
+            try {
+                const response = await fetch(`${API_URL}/retrain`, {
+                    method: 'POST'
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert(`✅ Modelo reentrenado!\nPrecisión: ${(result.metrics.accuracy * 100).toFixed(1)}%`);
+                    loadStats();
+                } else {
+                    alert('Error: ' + result.message);
+                }
+            } catch (error) {
+                alert('Error al reentrenar: ' + error.message);
+            }
+        }
+
+        // Copiar al portapapeles
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text);
+            alert('Copiado: ' + text);
+        }
+
+        // Cargar stats inicial
+        loadStats();
+    </script>
+</body>
+</html>

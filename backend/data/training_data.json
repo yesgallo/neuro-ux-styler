@@ -1,0 +1,171 @@
+{
+  "training_data": [
+    {
+      "input": {
+        "name": "TechFlow",
+        "mission": "Innovación tecnológica que transforma negocios digitales",
+        "values": "innovación, tecnología, excelencia, modernidad",
+        "sector": "tecnología",
+        "audience": "empresas B2B"
+      },
+      "rating": 1.0,
+      "feedback": "excelente"
+    },
+    {
+      "input": {
+        "name": "EcoVerde",
+        "mission": "Productos sostenibles para un futuro verde y limpio",
+        "values": "sostenibilidad, naturaleza, responsabilidad, eco-friendly",
+        "sector": "medio ambiente",
+        "audience": "consumidores conscientes"
+      },
+      "rating": 1.0,
+      "feedback": "excelente"
+    },
+    {
+      "input": {
+        "name": "LuxeStyle",
+        "mission": "Moda de lujo exclusiva para clientes distinguidos",
+        "values": "exclusividad, elegancia, calidad premium, sofisticación",
+        "sector": "moda",
+        "audience": "clase alta"
+      },
+      "rating": 1.0,
+      "feedback": "excelente"
+    },
+    {
+      "input": {
+        "name": "MediCare Plus",
+        "mission": "Servicios de salud confiables y accesibles para todos",
+        "values": "salud, confianza, profesionalismo, empatía",
+        "sector": "salud",
+        "audience": "pacientes"
+      },
+      "rating": 1.0,
+      "feedback": "excelente"
+    },
+    {
+      "input": {
+        "name": "FinanceHub",
+        "mission": "Soluciones financieras seguras para el crecimiento empresarial",
+        "values": "seguridad, confianza, crecimiento, transparencia",
+        "sector": "finanzas",
+        "audience": "empresas"
+      },
+      "rating": 1.0,
+      "feedback": "excelente"
+    },
+    {
+      "input": {
+        "name": "EduLearn",
+        "mission": "Educación accesible y de calidad para transformar vidas",
+        "values": "educación, accesibilidad, innovación, crecimiento",
+        "sector": "educación",
+        "audience": "estudiantes"
+      },
+      "rating": 1.0,
+      "feedback": "excelente"
+    },
+    {
+      "input": {
+        "name": "PlayZone",
+        "mission": "Entretenimiento digital que conecta y divierte",
+        "values": "diversión, creatividad, comunidad, innovación",
+        "sector": "entretenimiento",
+        "audience": "jóvenes"
+      },
+      "rating": 1.0,
+      "feedback": "excelente"
+    },
+    {
+      "input": {
+        "name": "ArtStudio",
+        "mission": "Creamos experiencias visuales únicas y memorables",
+        "values": "creatividad, arte, originalidad, pasión",
+        "sector": "diseño",
+        "audience": "creadores"
+      },
+      "rating": 1.0,
+      "feedback": "excelente"
+    },
+    {
+      "input": {
+        "name": "FoodieGo",
+        "mission": "Comida saludable y deliciosa delivery rápido",
+        "values": "calidad, rapidez, frescura, salud",
+        "sector": "alimentos",
+        "audience": "urbanos ocupados"
+      },
+      "rating": 1.0,
+      "feedback": "excelente"
+    },
+    {
+      "input": {
+        "name": "FitLife",
+        "mission": "Tu compañero para un estilo de vida saludable y activo",
+        "values": "salud, motivación, comunidad, bienestar",
+        "sector": "fitness",
+        "audience": "deportistas"
+      },
+      "rating": 1.0,
+      "feedback": "excelente"
+    }
+  ],
+  "feedback_data": [
+    {
+      "input": {
+        "audience": "Empresas B2B",
+        "mission": "Innovación tecnológica para el futuro",
+        "name": "TechFlow",
+        "sector": "tecnología",
+        "values": "innovación, tecnología, excelencia"
+      },
+      "rating": 1,
+      "feedback": "Genial"
+    },
+    {
+      "input": {
+        "audience": "Familias urbanas conscientes",
+        "mission": "Alimentos orgánicos frescos para una vida sostenible",
+        "name": "GreenRoots",
+        "sector": "alimentos",
+        "values": "sostenibilidad, frescura, transparencia, salud"
+      },
+      "rating": 1,
+      "feedback": "Excelente!"
+    },
+    {
+      "input": {
+        "audience": "Startups y pymes",
+        "mission": "Transformar la gestión del talento con enfoque humano",
+        "name": "MindfulHR",
+        "sector": "educación",
+        "values": "empatía, innovación, inclusión, eficiencia "
+      },
+      "rating": 1,
+      "feedback": "Buenisimo!"
+    },
+    {
+      "input": {
+        "audience": "Instituciones académicas y farmacéuticas",
+        "mission": "Investigación científica aplicada al bienestar humano",
+        "name": "NovaLabs",
+        "sector": "salud",
+        "values": "curiosidad, rigor, impacto, ética "
+      },
+      "rating": 1,
+      "feedback": "Muy bueno"
+    },
+    {
+      "input": {
+        "audience": "Jóvenes urbanos",
+        "mission": "Movilidad eléctrica accesible para ciudades inteligentes",
+        "name": "UrbanRide",
+        "sector": "medio ambiente",
+        "values": "sostenibilidad, accesibilidad, innovación, comodidad"
+      },
+      "rating": 1,
+      "feedback": "Bien"
+    }
+  ]
+}
