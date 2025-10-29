@@ -9,7 +9,7 @@ class Trainer:
     def __init__(self):
         self.model = NeuroUXModel()
         self.processor = DataProcessor()
-        self.data_path = os.path.join(os.path.dirname(__file__), 'data', 'training_data.json')
+        self.data_path = 'data/combined_training_data.json'
         
     def load_training_data(self):
         """Carga los datos de entrenamiento"""
