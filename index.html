@@ -370,6 +370,71 @@
             color: #1E40AF;
         }
 
+        /* === NOTIFICACIONES === */
+        .toast {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            max-width: 360px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 500;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            transform: translateX(120%);
+            transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), opacity 0.3s;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            opacity: 0;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .toast.success {
+            background: #ECFDF5;
+            color: #065F46;
+            border: 1px solid #A7F3D0;
+        }
+
+        .toast.error {
+            background: #FEF2F2;
+            color: #991B1B;
+            border: 1px solid #FECACA;
+        }
+
+        .toast.info {
+            background: #EFF6FF;
+            color: #1D4ED8;
+            border: 1px solid #BFDBFE;
+        }
+
+        .toast .icon {
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .toast .close-toast {
+            margin-left: auto;
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: inherit;
+            cursor: pointer;
+            opacity: 0.7;
+            padding: 4px;
+            border-radius: 4px;
+        }
+
+        .toast .close-toast:hover {
+            opacity: 1;
+            background: rgba(0,0,0,0.05);
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -467,6 +532,16 @@
                 </form>
             </div>
 
+            <!-- Acciones después de generar -->
+            <div style="display: flex; gap: 1rem; margin: 2rem 0; flex-wrap: wrap;">
+                <button class="btn" id="newKitSameData">
+                    Generar nuevo kit con los mismos datos
+                </button>
+                <button class="btn btn-secondary" id="newKitNewData">
+                    Nuevo proyecto
+                </button>
+            </div>
+
             <!-- Resultados -->
             <div id="result" class="result">
                 <div class="card">
@@ -521,6 +596,38 @@
         const API_URL = 'http://localhost:5001/api';
         let currentUIKit = null;
         let selectedRating = 0;
+        let lastInputData = null; // Para regenerar con mismos datos
+
+      
+        function showToast(message, type = 'info') {
+            const existing = document.querySelector('.toast');
+            if (existing) existing.remove();
+
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = `
+                <span class="icon">${type === 'success' ? '✓' : type === 'error' ? '✕' : 'ℹ'}</span>
+                <span>${message}</span>
+                <button class="close-toast">&times;</button>
+            `;
+
+            document.body.appendChild(toast);
+            setTimeout(() => toast.classList.add('show'), 10);
+
+            toast.querySelector('.close-toast').addEventListener('click', () => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            });
+
+            setTimeout(() => {
+                if (toast.classList.contains('show')) {
+                    toast.classList.remove('show');
+                    setTimeout(() => {
+                        if (document.body.contains(toast)) toast.remove();
+                    }, 300);
+                }
+            }, 4000);
+        }
 
         // Manejo de tabs
         document.querySelectorAll('.tab').forEach(tab => {
@@ -559,6 +666,8 @@
                 audience: document.getElementById('audience').value
             };
             
+            lastInputData = data; // Guardar para reutilizar
+            
             try {
                 const response = await fetch(`${API_URL}/generate`, {
                     method: 'POST',
@@ -574,10 +683,10 @@
                     document.getElementById('result').classList.add('show');
                     document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
                 } else {
-                    alert('Error: ' + result.error);
+                    showToast(result.error, 'error');
                 }
             } catch (error) {
-                alert('Error al conectar con el servidor: ' + error.message);
+                showToast('Error al conectar con el servidor', 'error');
             } finally {
                 btn.disabled = false;
                 btnText.style.display = 'inline';
@@ -587,7 +696,6 @@
 
         // Mostrar UI Kit
         function displayUIKit(uiKit) {
-            // Confianza
             const confidence = (uiKit.confidence * 100).toFixed(0);
             const badge = document.getElementById('confidenceBadge');
             badge.textContent = `${confidence}% confianza`;
@@ -595,7 +703,6 @@
                 (confidence >= 80 ? 'confidence-high' : 
                  confidence >= 60 ? 'confidence-medium' : 'confidence-low');
             
-            // Colores
             const colorPalette = document.getElementById('colorPalette');
             colorPalette.innerHTML = '';
             Object.entries(uiKit.colors).forEach(([name, color]) => {
@@ -610,7 +717,6 @@
                 `;
             });
             
-            // Tipografía
             const typography = document.getElementById('typography');
             typography.innerHTML = `
                 <div style="margin-bottom: 1rem;">
@@ -627,7 +733,6 @@
                 </div>
             `;
             
-            // Componentes
             const components = document.getElementById('components');
             components.innerHTML = '';
             Object.entries(uiKit.components).forEach(([key, value]) => {
@@ -639,7 +744,6 @@
                 `;
             });
             
-            // Tokens
             const tokens = document.getElementById('tokens');
             tokens.innerHTML = '';
             ['spacing', 'fontSize'].forEach(category => {
@@ -667,7 +771,7 @@
         // Enviar feedback
         document.getElementById('submitFeedback').addEventListener('click', async () => {
             if (selectedRating === 0) {
-                alert('Por favor selecciona una calificación');
+                showToast('Por favor selecciona una calificación', 'error');
                 return;
             }
             
@@ -687,14 +791,67 @@
                 const result = await response.json();
                 
                 if (result.success) {
-                    alert('¡Gracias por tu feedback! Total: ' + result.total_feedback);
+                    showToast(`¡Gracias por tu feedback! Total guardados: ${result.total_feedback}. Pendientes para reentrenar: ${result.pending_feedback}`, 'success');
                     selectedRating = 0;
                     document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
                     document.getElementById('feedbackText').value = '';
+                    // Recargar estadísticas para actualizar la pestaña
+                    if (document.getElementById('stats').classList.contains('active')) {
+                        loadStats();
+                    }
+                } else {
+                    showToast(result.error || 'Error al enviar feedback', 'error');
                 }
             } catch (error) {
-                alert('Error al enviar feedback: ' + error.message);
+                showToast('Error al enviar feedback', 'error');
             }
+        });
+
+        // Botón: Regenerar con mismos datos
+        document.getElementById('newKitSameData').addEventListener('click', async () => {
+            if (!lastInputData) {
+                showToast('No hay datos para regenerar', 'error');
+                return;
+            }
+
+            const btn = document.getElementById('newKitSameData');
+            const originalText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<span>Generando...</span><span class="loading" style="display:inline-block;width:16px;height:16px;margin-left:8px;"></span>';
+
+            try {
+                const response = await fetch(`${API_URL}/generate`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(lastInputData)
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    currentUIKit = result.ui_kit;
+                    displayUIKit(result.ui_kit);
+                    showToast('Nuevo kit generado con los mismos datos', 'info');
+                } else {
+                    showToast(result.error || 'Error al regenerar', 'error');
+                }
+            } catch (error) {
+                showToast('Error al regenerar el kit', 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+            }
+        });
+
+        // Botón: Nuevo proyecto
+        document.getElementById('newKitNewData').addEventListener('click', () => {
+            document.getElementById('generateForm').reset();
+            document.getElementById('result').classList.remove('show');
+            lastInputData = null;
+            currentUIKit = null;
+            selectedRating = 0;
+            document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
+            document.getElementById('feedbackText').value = '';
+            document.querySelector('.tab[data-tab="generate"]').click();
         });
 
         // Cargar estadísticas
@@ -705,6 +862,8 @@
                 
                 if (result.success) {
                     const stats = result.stats;
+                    const totalFeedback = stats.feedback_samples + stats.pending_feedback;
+                    
                     const statsGrid = document.getElementById('statsGrid');
                     statsGrid.innerHTML = `
                         <div class="stat-card">
@@ -712,12 +871,12 @@
                             <div class="stat-value">${stats.training_samples}</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-label">Feedbacks Recibidos</div>
-                            <div class="stat-value">${stats.feedback_samples}</div>
+                            <div class="stat-label">Feedbacks Totales</div>
+                            <div class="stat-value">${totalFeedback}</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-label">Total de Datos</div>
-                            <div class="stat-value">${stats.total_samples}</div>
+                            <div class="stat-label">Feedbacks Pendientes</div>
+                            <div class="stat-value">${stats.pending_feedback}</div>
                         </div>
                     `;
                     
@@ -725,20 +884,21 @@
                     if (stats.ready_for_retrain) {
                         retrainSection.innerHTML = `
                             <div class="alert alert-success">
-                                ✅ Hay suficiente feedback para reentrenar el modelo
+                                ✅ Tienes ${stats.pending_feedback} feedbacks nuevos. ¡Listo para reentrenar!
                             </div>
                             <button class="btn" onclick="retrainModel()">Reentrenar Modelo</button>
                         `;
                     } else {
                         retrainSection.innerHTML = `
                             <div class="alert alert-info">
-                                ℹ️ Se necesitan al menos 5 feedbacks para reentrenar (tienes ${stats.feedback_samples})
+                                ℹ️ Necesitas 5 feedbacks nuevos para reentrenar. Tienes ${stats.pending_feedback}.
                             </div>
                         `;
                     }
                 }
             } catch (error) {
                 console.error('Error al cargar estadísticas:', error);
+                showToast('Error al cargar estadísticas', 'error');
             }
         }
 
@@ -754,20 +914,20 @@
                 const result = await response.json();
                 
                 if (result.success) {
-                    alert(`✅ Modelo reentrenado!\nPrecisión: ${(result.metrics.accuracy * 100).toFixed(1)}%`);
+                    showToast(`Modelo reentrenado exitosamente. Precisión: ${(result.metrics.accuracy * 100).toFixed(1)}%`, 'success');
                     loadStats();
                 } else {
-                    alert('Error: ' + result.message);
+                    showToast(result.message || 'Error al reentrenar', 'error');
                 }
             } catch (error) {
-                alert('Error al reentrenar: ' + error.message);
+                showToast('Error al reentrenar el modelo', 'error');
             }
         }
 
         // Copiar al portapapeles
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text);
-            alert('Copiado: ' + text);
+            showToast(`Copiado: ${text}`, 'info');
         }
 
         // Cargar stats inicial

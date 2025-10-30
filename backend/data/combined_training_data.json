@@ -1,6 +1,15 @@
 {
   "training_data": [
     {
+      "training_data": []
+    },
+    {
+      "feedback_data": []
+    },
+    {
+      "pending_feedback": []
+    },
+    {
       "input": {
         "name": "TechFlow",
         "mission": "Innovación tecnológica que transforma negocios digitales",
@@ -3575,6 +3584,107 @@
         "values": "salud, actividad fisica, bienestar, calidad de vida"
       },
       "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "audience": "Inversores digitales",
+        "mission": "Seguridad y transparencia en el mundo de las criptomonedas",
+        "name": "CryptoTrust ",
+        "sector": "finanzas",
+        "values": "seguridad, confianza, innovación, claridad"
+      },
+      "rating": 0.6,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "audience": "Emprendedores ",
+        "mission": "Estrategias digitales para emprendedores ",
+        "name": "Zas!",
+        "sector": "tecnología",
+        "values": "comunicación, tecnología, innovación, identidad digital, alcance"
+      },
+      "rating": 0.8,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "audience": "Distribuidores ecológicos",
+        "mission": "Agricultura regenerativa para un planeta más saludable",
+        "name": "TerraFarms",
+        "sector": "agro",
+        "values": "regeneración, sostenibilidad, comunidad, calidad"
+      },
+      "rating": 0.4,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "audience": "Millennials urbanos",
+        "mission": "Moda personalizada basada en preferencias únicas ",
+        "name": "StyleHive ",
+        "sector": "moda",
+        "values": "individualidad, estilo, sostenibilidad, tecnología "
+      },
+      "rating": 0.8,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "audience": "Podcasters y músicos",
+        "mission": "Experiencias auditivas inmersivas para creadores ",
+        "name": "SoundScape",
+        "sector": "entretenimiento",
+        "values": "creatividad, calidad, inmersión, innovación"
+      },
+      "rating": 0.8,
+      "feedback": ""
+    }
+  ],
+  "pending_feedback": [
+    {
+      "input": {
+        "audience": "Empresas medianas y grandes",
+        "mission": "Protección de datos para empresas en la era digital ",
+        "name": "DataShield",
+        "sector": "tecnología",
+        "values": "privacidad, seguridad, confianza, transparencia"
+      },
+      "rating": 0.6,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "audience": "Emprendedores y pequeñas empresas",
+        "mission": "Acceso simple y rápido a servicios legales digitales ",
+        "name": "LegalEase",
+        "sector": "legal",
+        "values": "accesibilidad, claridad, confianza, eficiencia"
+      },
+      "rating": 0.8,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "audience": "Equipos de desarrollo y DevOps",
+        "mission": "Infraestructura en la nube escalable para desarrolladores",
+        "name": "CloudForge",
+        "sector": "tecnología",
+        "values": "rendimiento, simplicidad, confiabilidad, innovación "
+      },
+      "rating": 0.6,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "audience": "Clientes",
+        "mission": "Banca ética con enfoque en comunidades locales",
+        "name": "HeritageBank",
+        "sector": "finanzas",
+        "values": "ética, comunidad, transparencia, estabilidad"
+      },
+      "rating": 0.8,
       "feedback": ""
     }
   ]

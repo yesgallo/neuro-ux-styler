@@ -30,36 +30,21 @@ def generate_ui_kit():
     try:
         data = request.json
         
-        # Validar datos requeridos
         required_fields = ['name', 'mission', 'values', 'sector', 'audience']
         for field in required_fields:
             if field not in data:
-                return jsonify({
-                    'error': f'Campo requerido: {field}'
-                }), 400
+                return jsonify({'error': f'Campo requerido: {field}'}), 400
         
-        # Procesar entrada
         features, keywords, sector, audience = processor.encode_input(data)
-        
-        # Predecir confianza
         prediction = model.predict(features)
-        
-        # Generar UI Kit
         ui_kit = processor.generate_ui_kit(prediction, keywords, sector, audience)
-        
-        # Agregar datos de entrada para feedback
         ui_kit['input_data'] = data
         
-        return jsonify({
-            'success': True,
-            'ui_kit': ui_kit
-        })
+        return jsonify({'success': True, 'ui_kit': ui_kit})
         
     except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
+        print("❌ Error en /generate:", str(e))
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 @app.route('/api/feedback', methods=['POST'])
 def submit_feedback():
@@ -76,16 +61,22 @@ def submit_feedback():
                 'error': 'Se requiere input_data y rating'
             }), 400
         
-        # Guardar feedback
-        count = trainer.add_feedback(input_data, rating, feedback)
+        # Guardar feedback (se añade a pending_feedback)
+        pending_count = trainer.add_feedback(input_data, rating, feedback)
+        
+        # Obtener conteos actualizados
+        training_data, feedback_data, pending_feedback = trainer.load_training_data()
+        total_historical = len(feedback_data) + len(pending_feedback)
         
         return jsonify({
             'success': True,
             'message': 'Feedback guardado correctamente',
-            'total_feedback': count
+            'pending_feedback': len(pending_feedback),      # para reentrenar
+            'total_feedback': total_historical              # total histórico
         })
         
     except Exception as e:
+        print("❌ Error en /feedback:", str(e))
         return jsonify({
             'success': False,
             'error': str(e)
@@ -95,7 +86,6 @@ def submit_feedback():
 def retrain_model():
     """Reentrena el modelo con nuevo feedback"""
     try:
-        # Verificar si hay suficiente feedback
         training_data, feedback_data = trainer.load_training_data()
         
         if len(feedback_data) < 5:
@@ -104,10 +94,10 @@ def retrain_model():
                 'message': f'Necesitas al menos 5 feedbacks. Tienes: {len(feedback_data)}'
             }), 400
         
-        # Reentrenar
+        # ✅ Reentrenar con el método corregido
         history, metrics = trainer.retrain_with_feedback()
         
-        # Recargar modelo
+        # ✅ Recargar el modelo en memoria
         model.load_model()
         
         return jsonify({
@@ -116,39 +106,35 @@ def retrain_model():
             'metrics': {
                 'accuracy': float(metrics['accuracy']),
                 'loss': float(metrics['loss']),
-                'auc': float(metrics['auc'])
+                'auc': float(metrics.get('auc', 0.0))
             },
             'feedback_count': len(feedback_data)
         })
         
     except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
+        print("❌ Error en /retrain:", str(e))  # ← Verás el error real en la terminal
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 @app.route('/api/stats', methods=['GET'])
 def get_stats():
     """Obtiene estadísticas del modelo"""
     try:
-        training_data, feedback_data = trainer.load_training_data()
+        training_data, feedback_data, pending_feedback = trainer.load_training_data()
         
         return jsonify({
             'success': True,
             'stats': {
                 'training_samples': len(training_data),
-                'feedback_samples': len(feedback_data),
-                'total_samples': len(training_data) + len(feedback_data),
+                'feedback_samples': len(feedback_data),      # feedbacks ya usados
+                'pending_feedback': len(pending_feedback),   # feedbacks nuevos
+                'total_samples': len(training_data) + len(feedback_data) + len(pending_feedback),
                 'model_loaded': model.model is not None,
-                'ready_for_retrain': len(feedback_data) >= 5
+                'ready_for_retrain': len(pending_feedback) >= 5  # Solo si hay 5 nuevos
             }
         })
-        
     except Exception as e:
-        return jsonify({
-            'success': False,
-            'error': str(e)
-        }), 500
+        print("❌ Error en /stats:", str(e))
+        return jsonify({'success': False, 'error': str(e)}), 500
 
 if __name__ == '__main__':
     print("🚀 Iniciando Neuro UX Styler API...")

@@ -12,118 +12,133 @@ class Trainer:
         self.data_path = 'data/combined_training_data.json'
         
     def load_training_data(self):
-        """Carga los datos de entrenamiento"""
+        """Carga todos los datos: training + feedback usados + feedback pendientes"""
         with open(self.data_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
-        return data['training_data'], data.get('feedback_data', [])
+        return (
+            data['training_data'],
+            data.get('feedback_data', []),
+            data.get('pending_feedback', [])
+        )
     
     def prepare_dataset(self):
-        """Prepara el dataset para entrenamiento"""
-        training_data, feedback_data = self.load_training_data()
-        
-        # Combinar datos iniciales y feedback
-        all_data = training_data + feedback_data
+        """Prepara el dataset combinando todos los datos disponibles"""
+        training_data, feedback_data, pending_feedback = self.load_training_data()
+        all_data = training_data + feedback_data + pending_feedback
         
         X = []
         y = []
         
         for item in all_data:
-            # Codificar entrada
             features, _, _, _ = self.processor.encode_input(item['input'])
             X.append(features[0])
-            
-            # Rating como etiqueta (normalizado a 0-1)
             rating = item.get('rating', 0.5)
             y.append(rating)
         
-        X = np.array(X)
-        y = np.array(y)
-        
-        return X, y
+        return np.array(X), np.array(y)
     
     def train_model(self, epochs=100, test_size=0.2):
-        """Entrena el modelo completo"""
+        """Entrena el modelo completo (usado solo al inicio)"""
         print("📊 Cargando y preparando datos...")
         X, y = self.prepare_dataset()
-        
         print(f"✅ Dataset cargado: {len(X)} muestras")
         
-        # Dividir en entrenamiento y validación
-        X_train, X_val, y_train, y_val = train_test_split(
-            X, y, test_size=test_size, random_state=42
-        )
+        X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=test_size, random_state=42)
+        print(f"🔄 Entrenamiento: {len(X_train)} | Validación: {len(X_val)}")
         
-        print(f"🔄 Entrenamiento: {len(X_train)} muestras")
-        print(f"🔄 Validación: {len(X_val)} muestras")
-        
-        # Entrenar
         print("\n🚀 Iniciando entrenamiento...")
         history = self.model.train(X_train, y_train, X_val, y_val, epochs=epochs)
-        
-        # Evaluar
-        print("\n📈 Evaluando modelo...")
         metrics = self.model.evaluate(X_val, y_val)
         
         print(f"\n✨ Resultados finales:")
         print(f"   - Loss: {metrics['loss']:.4f}")
         print(f"   - Accuracy: {metrics['accuracy']:.4f}")
-        print(f"   - AUC: {metrics['auc']:.4f}")
+        print(f"   - AUC: {metrics.get('auc', 0.0):.4f}")
+        
+        self.model.save_model()
+        return history, metrics
+    
+    def add_feedback(self, input_data, rating, feedback_text):
+      
+        with open(self.data_path, 'r', encoding='utf-8') as f:    # Agrega un nuevo feedback a la cola de pendientes
+            data = json.load(f)
+        
+        if 'pending_feedback' not in data:
+            data['pending_feedback'] = []
+        
+        data['pending_feedback'].append({
+            'input': input_data,
+            'rating': rating,
+            'feedback': feedback_text
+        })
+        
+        with open(self.data_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        
+        pending_count = len(data['pending_feedback'])
+        print(f"✅ Feedback agregado. Pendientes: {pending_count} registros")
+        return pending_count
+    
+    def retrain_with_feedback(self):
+        """Reentrena usando SOLO feedbacks PENDIENTES, luego los mueve a 'feedback_data'"""
+        # Cargar datos
+        with open(self.data_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        pending = data.get('pending_feedback', [])
+        if len(pending) < 5:
+            raise ValueError(f"No hay suficientes feedbacks pendientes. Tienes: {len(pending)}")
+        
+        # Combinar todos los datos para entrenar
+        all_data = data['training_data'] + data.get('feedback_data', []) + pending
+        
+        X = []
+        y = []
+        for item in all_data:
+            features, _, _, _ = self.processor.encode_input(item['input'])
+            X.append(features[0])
+            y.append(item.get('rating', 0.5))
+        
+        X = np.array(X)
+        y = np.array(y)
+        
+        if len(X) < 5:
+            raise ValueError("Insuficientes datos para reentrenar")
+        
+        print(f"📊 Reentrenando con {len(X)} muestras totales ({len(pending)} nuevos feedbacks)")
+        
+        # Dividir
+        X_train, X_val, y_train, y_val = train_test_split(
+            X, y, test_size=0.2, random_state=42
+        )
+        
+        # Entrenar
+        history = self.model.train(X_train, y_train, X_val, y_val, epochs=50)
+        metrics = self.model.evaluate(X_val, y_val)
         
         # Guardar modelo
         self.model.save_model()
         
-        return history, metrics
-    
-    def add_feedback(self, input_data, rating, feedback_text):
-        """Agrega feedback del usuario para reentrenamiento"""
-        with open(self.data_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        
-        # Agregar nuevo feedback
-        feedback_entry = {
-            'input': input_data,
-            'rating': rating,
-            'feedback': feedback_text
-        }
-        
+        # Mover feedbacks usados de 'pending' a 'feedback_data'
         if 'feedback_data' not in data:
             data['feedback_data'] = []
         
-        data['feedback_data'].append(feedback_entry)
+        data['feedback_data'].extend(pending)
+        data['pending_feedback'] = []  # ← Vaciar la cola
         
-        # Guardar
         with open(self.data_path, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
         
-        print(f"✅ Feedback agregado. Total: {len(data['feedback_data'])} registros")
-        
-        return len(data['feedback_data'])
-    
-    def retrain_with_feedback(self):
-        """Reentrena el modelo con nuevo feedback"""
-        feedback_data, _ = self.load_training_data()
-        
-        if len(feedback_data) < 5:
-            print("⚠️  Necesitas al menos 5 feedbacks para reentrenar")
-            return False
-        
-        print(f"🔄 Reentrenando con {len(feedback_data)} nuevos datos...")
-        return self.train_model(epochs=50)
+        print(f"✅ Reentrenamiento completado. {len(pending)} feedbacks procesados y archivados.")
+        return history, metrics
 
 if __name__ == "__main__":
     trainer = Trainer()
-    
     print("=" * 60)
-    print("🧠 NEURO UX STYLER - ENTRENAMIENTO")
+    print("🧠 NEURO UX STYLER - ENTRENAMIENTO INICIAL")
     print("=" * 60)
     
-    # Entrenar modelo inicial
     history, metrics = trainer.train_model(epochs=100)
     
-    print("\n✅ Entrenamiento completado!")
-    print(f"🎯 Confianza alcanzada: {metrics['accuracy']*100:.1f}%")
-    
-    if metrics['accuracy'] >= 0.9:
-        print("🎉 ¡Objetivo alcanzado! (>90% confianza)")
-    else:
-        print(f"📊 Necesitas más datos de feedback para alcanzar >90%")
+    print("\n✅ Entrenamiento inicial completado!")
+    print(f"🎯 Precisión: {metrics['accuracy']*100:.1f}%")
