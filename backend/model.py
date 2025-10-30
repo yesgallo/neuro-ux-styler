@@ -14,7 +14,7 @@ class NeuroUXModel:
     def __init__(self):
         self.model = None
         self.history = None
-        self.model_path = 'backend/data/models/neuro_ux_model.h5'
+        self.model_path = 'data/models/neuro_ux_model.h5'
         self.confidence_threshold = 0.7
         
     def build_model(self, input_dim=9):
