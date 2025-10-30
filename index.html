@@ -167,7 +167,7 @@
             gap: 0.5rem;
         }
 
-        .btn:hover {
+        .btn:hover:not(:disabled) {
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
         }
@@ -370,7 +370,6 @@
             color: #1E40AF;
         }
 
-        /* === NOTIFICACIONES === */
         .toast {
             position: fixed;
             top: 24px;
@@ -532,7 +531,6 @@
                 </form>
             </div>
 
-            <!-- Acciones después de generar -->
             <div style="display: flex; gap: 1rem; margin: 2rem 0; flex-wrap: wrap;">
                 <button class="btn" id="newKitSameData">
                     Generar nuevo kit con los mismos datos
@@ -542,7 +540,6 @@
                 </button>
             </div>
 
-            <!-- Resultados -->
             <div id="result" class="result">
                 <div class="card">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
@@ -563,7 +560,6 @@
                     <div id="tokens" class="components-grid"></div>
                 </div>
 
-                <!-- Feedback -->
                 <div class="card feedback-section">
                     <h3>¿Qué te pareció este UI Kit?</h3>
                     <div class="rating-stars" id="ratingStars">
@@ -582,7 +578,6 @@
             </div>
         </div>
 
-        <!-- Tab: Estadísticas -->
         <div id="stats" class="tab-content">
             <div class="card">
                 <h2 style="margin-bottom: 2rem;">Estadísticas del Sistema</h2>
@@ -596,9 +591,8 @@
         const API_URL = 'http://localhost:5001/api';
         let currentUIKit = null;
         let selectedRating = 0;
-        let lastInputData = null; // Para regenerar con mismos datos
+        let lastInputData = null;
 
-      
         function showToast(message, type = 'info') {
             const existing = document.querySelector('.toast');
             if (existing) existing.remove();
@@ -629,7 +623,6 @@
             }, 4000);
         }
 
-        // Manejo de tabs
         document.querySelectorAll('.tab').forEach(tab => {
             tab.addEventListener('click', () => {
                 const targetTab = tab.dataset.tab;
@@ -646,7 +639,6 @@
             });
         });
 
-        // Generar UI Kit
         document.getElementById('generateForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             
@@ -666,7 +658,7 @@
                 audience: document.getElementById('audience').value
             };
             
-            lastInputData = data; // Guardar para reutilizar
+            lastInputData = data;
             
             try {
                 const response = await fetch(`${API_URL}/generate`, {
@@ -686,6 +678,7 @@
                     showToast(result.error, 'error');
                 }
             } catch (error) {
+                console.error('Error:', error);
                 showToast('Error al conectar con el servidor', 'error');
             } finally {
                 btn.disabled = false;
@@ -694,7 +687,6 @@
             }
         });
 
-        // Mostrar UI Kit
         function displayUIKit(uiKit) {
             const confidence = (uiKit.confidence * 100).toFixed(0);
             const badge = document.getElementById('confidenceBadge');
@@ -758,7 +750,6 @@
             });
         }
 
-        // Sistema de rating
         document.querySelectorAll('.star').forEach(star => {
             star.addEventListener('click', () => {
                 selectedRating = parseInt(star.dataset.rating);
@@ -768,7 +759,6 @@
             });
         });
 
-        // Enviar feedback
         document.getElementById('submitFeedback').addEventListener('click', async () => {
             if (selectedRating === 0) {
                 showToast('Por favor selecciona una calificación', 'error');
@@ -795,7 +785,6 @@
                     selectedRating = 0;
                     document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
                     document.getElementById('feedbackText').value = '';
-                    // Recargar estadísticas para actualizar la pestaña
                     if (document.getElementById('stats').classList.contains('active')) {
                         loadStats();
                     }
@@ -803,11 +792,11 @@
                     showToast(result.error || 'Error al enviar feedback', 'error');
                 }
             } catch (error) {
+                console.error('Error:', error);
                 showToast('Error al enviar feedback', 'error');
             }
         });
 
-        // Botón: Regenerar con mismos datos
         document.getElementById('newKitSameData').addEventListener('click', async () => {
             if (!lastInputData) {
                 showToast('No hay datos para regenerar', 'error');
@@ -817,7 +806,7 @@
             const btn = document.getElementById('newKitSameData');
             const originalText = btn.innerHTML;
             btn.disabled = true;
-            btn.innerHTML = '<span>Generando...</span><span class="loading" style="display:inline-block;width:16px;height:16px;margin-left:8px;"></span>';
+            btn.innerHTML = '<span>Generando...</span><span class="loading" style="width:16px;height:16px;margin-left:8px;"></span>';
 
             try {
                 const response = await fetch(`${API_URL}/generate`, {
@@ -835,6 +824,7 @@
                     showToast(result.error || 'Error al regenerar', 'error');
                 }
             } catch (error) {
+                console.error('Error:', error);
                 showToast('Error al regenerar el kit', 'error');
             } finally {
                 btn.disabled = false;
@@ -842,7 +832,6 @@
             }
         });
 
-        // Botón: Nuevo proyecto
         document.getElementById('newKitNewData').addEventListener('click', () => {
             document.getElementById('generateForm').reset();
             document.getElementById('result').classList.remove('show');
@@ -854,7 +843,6 @@
             document.querySelector('.tab[data-tab="generate"]').click();
         });
 
-        // Cargar estadísticas
         async function loadStats() {
             try {
                 const response = await fetch(`${API_URL}/stats`);
@@ -902,35 +890,48 @@
             }
         }
 
-        // Reentrenar modelo
         async function retrainModel() {
-            if (!confirm('¿Deseas reentrenar el modelo con el nuevo feedback?')) return;
+            // Elimina la confirmación nativa (feo) o usa un toast
+            const btn = document.querySelector('#retrainSection .btn');
+            if (!btn) return;
+            
+            const originalText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '⏳ Reentrenando...';
             
             try {
                 const response = await fetch(`${API_URL}/retrain`, {
-                    method: 'POST'
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
                 });
-                
                 const result = await response.json();
                 
                 if (result.success) {
-                    showToast(`Modelo reentrenado exitosamente. Precisión: ${(result.metrics.accuracy * 100).toFixed(1)}%`, 'success');
+                    showToast(`✅ Modelo reentrenado exitosamente!\n\nPrecisión: ${(result.metrics.accuracy * 100).toFixed(1)}%\nLoss: ${result.metrics.loss.toFixed(4)}\nAUC: ${result.metrics.auc.toFixed(4)}`, 'success');
                     loadStats();
                 } else {
-                    showToast(result.message || 'Error al reentrenar', 'error');
+                    showToast(result.message || result.error || 'Error al reentrenar', 'error');
                 }
             } catch (error) {
+                console.error('Error al reentrenar:', error);
                 showToast('Error al reentrenar el modelo', 'error');
+            } finally {
+                if (btn) {
+                    btn.disabled = false;
+                    btn.innerHTML = originalText;
+                }
             }
         }
 
-        // Copiar al portapapeles
         function copyToClipboard(text) {
-            navigator.clipboard.writeText(text);
-            showToast(`Copiado: ${text}`, 'info');
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(`Copiado: ${text}`, 'info');
+            }).catch(err => {
+                console.error('Error al copiar:', err);
+                showToast('Error al copiar al portapapeles', 'error');
+            });
         }
 
-        // Cargar stats inicial
         loadStats();
     </script>
 </body>

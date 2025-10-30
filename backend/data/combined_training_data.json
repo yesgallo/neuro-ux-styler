@@ -1,15 +1,6 @@
 {
   "training_data": [
     {
-      "training_data": []
-    },
-    {
-      "feedback_data": []
-    },
-    {
-      "pending_feedback": []
-    },
-    {
       "input": {
         "name": "TechFlow",
         "mission": "Innovación tecnológica que transforma negocios digitales",
@@ -3640,9 +3631,7 @@
       },
       "rating": 0.8,
       "feedback": ""
-    }
-  ],
-  "pending_feedback": [
+    },
     {
       "input": {
         "audience": "Empresas medianas y grandes",
@@ -3685,6 +3674,63 @@
         "values": "ética, comunidad, transparencia, estabilidad"
       },
       "rating": 0.8,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "audience": "Niños de 6 a 12 años y escuelas",
+        "mission": "Juegos educativos que desarrollan pensamiento lógico",
+        "name": "PlayLogic",
+        "sector": "educación",
+        "values": "aprendizaje, diversión, lógica, creatividad"
+      },
+      "rating": 0.8,
+      "feedback": "Me gusta"
+    },
+    {
+      "input": {
+        "audience": "Niños de 6 a 12 años y escuelas",
+        "mission": "Juegos educativos que desarrollan pensamiento lógico",
+        "name": "PlayLogic",
+        "sector": "educación",
+        "values": "aprendizaje, diversión, lógica, creatividad"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "audience": "Niños de 6 a 12 años y escuelas",
+        "mission": "Juegos educativos que desarrollan pensamiento lógico",
+        "name": "PlayLogic",
+        "sector": "educación",
+        "values": "aprendizaje, diversión, lógica, creatividad"
+      },
+      "rating": 0.8,
+      "feedback": "Muy bueno"
+    },
+    {
+      "input": {
+        "audience": "Empresas y gobiernos comprometidos con el medio ambiente",
+        "mission": "Impulsar la transición hacia energías limpias y accesibles.",
+        "name": "GreenPulse",
+        "sector": "energía",
+        "values": "sostenibilidad, compromiso, innovación, eficiencia"
+      },
+      "rating": 1,
+      "feedback": "Bárbaro"
+    }
+  ],
+  "pending_feedback": [
+    {
+      "input": {
+        "audience": "Empresas y analistas que gestionan grandes volúmenes de información",
+        "mission": "Simplificar el análisis de datos para la toma de decisiones inteligentes.",
+        "name": "DataBridge",
+        "sector": "tecnología",
+        "values": "precisión, transparencia, eficiencia, colaboración"
+      },
+      "rating": 1,
       "feedback": ""
     }
   ]

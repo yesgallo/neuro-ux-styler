@@ -4,6 +4,7 @@ from model import NeuroUXModel
 from data_processor import DataProcessor
 from training import Trainer
 import os
+import traceback
 
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
@@ -44,6 +45,7 @@ def generate_ui_kit():
         
     except Exception as e:
         print("❌ Error en /generate:", str(e))
+        traceback.print_exc()
         return jsonify({'success': False, 'error': str(e)}), 500
 
 @app.route('/api/feedback', methods=['POST'])
@@ -71,34 +73,62 @@ def submit_feedback():
         return jsonify({
             'success': True,
             'message': 'Feedback guardado correctamente',
-            'pending_feedback': len(pending_feedback),      # para reentrenar
-            'total_feedback': total_historical              # total histórico
+            'pending_feedback': len(pending_feedback),
+            'total_feedback': total_historical
         })
         
     except Exception as e:
         print("❌ Error en /feedback:", str(e))
+        traceback.print_exc()
         return jsonify({
             'success': False,
             'error': str(e)
         }), 500
 
+
 @app.route('/api/retrain', methods=['POST'])
 def retrain_model():
-    """Reentrena el modelo con nuevo feedback"""
+    """Reentrena el modelo con feedbacks pendientes"""
     try:
-        training_data, feedback_data = trainer.load_training_data()
+        print("\n🔄 Solicitud de reentrenamiento recibida...")
         
-        if len(feedback_data) < 5:
+        # Cargar datos actuales
+        training_data, feedback_data, pending_feedback = trainer.load_training_data()
+        pending_count = len(pending_feedback)
+        
+        print(f"📊 Estado actual:")
+        print(f"   - Training data: {len(training_data)}")
+        print(f"   - Feedback usado: {len(feedback_data)}")
+        print(f"   - Feedback pendiente: {pending_count}")
+        
+        if pending_count < 5:
+            message = f'Necesitas al menos 5 feedbacks nuevos. Tienes: {pending_count}'
+            print(f"⚠️ {message}")
             return jsonify({
                 'success': False,
-                'message': f'Necesitas al menos 5 feedbacks. Tienes: {len(feedback_data)}'
+                'message': message,
+                'pending_count': pending_count
             }), 400
         
-        # ✅ Reentrenar con el método corregido
+        # Guardar total histórico ANTES del reentrenamiento
+        total_before = len(feedback_data) + pending_count
+        
+        print(f"🚀 Iniciando reentrenamiento con {pending_count} feedbacks...")
+        
+        # Reentrenar (esto moverá pending → feedback_data y vaciará pending)
         history, metrics = trainer.retrain_with_feedback()
         
-        # ✅ Recargar el modelo en memoria
+        # Recargar modelo en memoria
+        print("📥 Recargando modelo actualizado...")
         model.load_model()
+        
+        # Cargar estado NUEVO
+        _, _, new_pending = trainer.load_training_data()
+        
+        print(f"✅ Reentrenamiento completado exitosamente")
+        print(f"   - Accuracy: {metrics['accuracy']:.4f}")
+        print(f"   - Loss: {metrics['loss']:.4f}")
+        print(f"   - AUC: {metrics.get('auc', 0.0):.4f}")
         
         return jsonify({
             'success': True,
@@ -108,12 +138,33 @@ def retrain_model():
                 'loss': float(metrics['loss']),
                 'auc': float(metrics.get('auc', 0.0))
             },
-            'feedback_count': len(feedback_data)
+            'pending_feedback': len(new_pending),  # Siempre 0 tras reentrenar
+            'total_feedback': total_before         # Total antes del reentrenamiento
         })
         
+    except ValueError as ve:
+        print(f"⚠️ Error de validación: {str(ve)}")
+        return jsonify({
+            'success': False,
+            'error': str(ve)
+        }), 400
+        
+    except FileNotFoundError as fe:
+        print(f"❌ Archivo no encontrado: {str(fe)}")
+        return jsonify({
+            'success': False,
+            'error': 'No se encontró el archivo de datos de entrenamiento'
+        }), 404
+        
     except Exception as e:
-        print("❌ Error en /retrain:", str(e))  # ← Verás el error real en la terminal
-        return jsonify({'success': False, 'error': str(e)}), 500
+        error_trace = traceback.format_exc()
+        print("❌ Error en /retrain:")
+        print(error_trace)
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'details': error_trace
+        }), 500
 
 @app.route('/api/stats', methods=['GET'])
 def get_stats():
@@ -134,6 +185,7 @@ def get_stats():
         })
     except Exception as e:
         print("❌ Error en /stats:", str(e))
+        traceback.print_exc()
         return jsonify({'success': False, 'error': str(e)}), 500
 
 if __name__ == '__main__':

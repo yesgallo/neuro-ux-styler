@@ -12,12 +12,13 @@ except Exception:
 
 class NeuroUXModel:
     def __init__(self):
+        model_dir = os.path.join(os.path.dirname(__file__), 'data', 'models')
+        os.makedirs(model_dir, exist_ok=True)
+        self.model_path = os.path.join(model_dir, 'neuro_ux_model.h5')
         self.model = None
-        self.history = None
-        self.model_path = 'data/models/neuro_ux_model.h5'
-        self.confidence_threshold = 0.7
+        self.build_model()
         
-    def build_model(self, input_dim=9):
+    def build_model(self, input_dim=14):
         """Construye la arquitectura de la red neuronal"""
         model = keras.Sequential([
             # Capa de entrada
@@ -97,9 +98,7 @@ class NeuroUXModel:
         return prediction
     
     def save_model(self):
-        """Guarda el modelo entrenado"""
         if self.model is not None:
-            os.makedirs(os.path.dirname(self.model_path), exist_ok=True)
             self.model.save(self.model_path)
             print(f"Modelo guardado en {self.model_path}")
     
