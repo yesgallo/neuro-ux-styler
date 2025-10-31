@@ -3831,5 +3831,17 @@
       "feedback": "Esperaba paleta con rojo, naranja, amarillo y/o marron"
     }
   ],
-  "pending_feedback": []
+  "pending_feedback": [
+    {
+      "input": {
+        "name": "TerraFarms",
+        "mission": "Agricultura regenerativa para un planeta más saludable",
+        "values": "regeneración, sostenibilidad, comunidad, calidad ",
+        "sector": "agro",
+        "audience": "Distribuidores ecológicos"
+      },
+      "rating": 0.2,
+      "feedback": "Malo"
+    }
+  ]
 }
