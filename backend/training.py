@@ -29,11 +29,13 @@ class Trainer:
         X = []
         y = []
         
-        for item in all_data:  # ✅ CORREGIDO: agregado 'data' y ':'
+        for item in all_data:
             features, _, _, _ = self.processor.encode_input(item['input'])
             X.append(features[0])
+            
+            # ✅ Convertir rating a clase binaria
             rating = item.get('rating', 0.5)
-            y.append(rating)
+            y.append(1 if rating >= 0.7 else 0)
         
         return np.array(X), np.array(y)
     
@@ -63,7 +65,7 @@ class Trainer:
         with open(self.data_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
-        if 'pending_feedback' not in data:  # ✅ CORREGIDO: agregado 'data:'
+        if 'pending_feedback' not in data:
             data['pending_feedback'] = []
         
         data['pending_feedback'].append({
@@ -105,7 +107,9 @@ class Trainer:
                     continue
                 features, _, _, _ = self.processor.encode_input(item['input'])
                 X.append(features[0])
-                y.append(item.get('rating', 0.5))
+                # ✅ CORREGIDO: usar clase binaria, no rating
+                rating = item.get('rating', 0.5)
+                y.append(1 if rating >= 0.7 else 0)
             
             X = np.array(X)
             y = np.array(y)
@@ -123,7 +127,7 @@ class Trainer:
             self.model.save_model()
             
             # Mover feedbacks usados de 'pending' a 'feedback_data'
-            if 'feedback_data' not in data:  # ✅ CORREGIDO: agregado 'data:'
+            if 'feedback_data' not in data:
                 data['feedback_data'] = []
             
             data['feedback_data'].extend(pending)

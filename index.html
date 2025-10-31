@@ -759,19 +759,27 @@
             });
         });
 
+        // ✅ CORREGIDO: Sintaxis correcta del fetch
         document.getElementById('submitFeedback').addEventListener('click', async () => {
             if (selectedRating === 0) {
                 showToast('Por favor selecciona una calificación', 'error');
                 return;
             }
             
+            // ✅ CORREGIDO: Usar lastInputData en lugar de currentUIKit.input_data
+            if (!lastInputData) {
+                showToast('No hay datos para enviar feedback', 'error');
+                return;
+            }
+            
             const feedback = {
-                input_data: currentUIKit.input_data,
+                input_data: lastInputData,
                 rating: selectedRating / 5,
                 feedback: document.getElementById('feedbackText').value
             };
             
             try {
+                // ✅ CORREGIDO: Paréntesis después del backtick de cierre
                 const response = await fetch(`${API_URL}/feedback`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -891,7 +899,6 @@
         }
 
         async function retrainModel() {
-            // Elimina la confirmación nativa (feo) o usa un toast
             const btn = document.querySelector('#retrainSection .btn');
             if (!btn) return;
             

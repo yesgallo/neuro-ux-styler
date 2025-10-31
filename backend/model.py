@@ -2,13 +2,35 @@ import numpy as np
 import os
 import json
 
-try:
-    import tensorflow as tf
-    keras = tf.keras
-    from tensorflow.keras import layers, models, callbacks, optimizers
-except Exception:
-    from tensorflow import keras
-    from tensorflow.keras import layers, models, callbacks, optimizers
+import importlib
+import importlib.util
+
+# Initialize to safe defaults
+tf = None
+keras = None
+layers = models = callbacks = optimizers = None
+
+
+if importlib.util.find_spec("tensorflow") is not None:
+    tf = importlib.import_module("tensorflow")
+    keras = getattr(tf, "keras", None)
+    if keras is not None:
+        layers = getattr(keras, "layers", None)
+        models = getattr(keras, "models", None)
+        callbacks = getattr(keras, "callbacks", None)
+        optimizers = getattr(keras, "optimizers", None)
+elif importlib.util.find_spec("keras") is not None:
+    keras = importlib.import_module("keras")
+    layers = getattr(keras, "layers", None)
+    models = getattr(keras, "models", None)
+    callbacks = getattr(keras, "callbacks", None)
+    optimizers = getattr(keras, "optimizers", None)
+else:
+    # If neither tensorflow.keras nor standalone keras are available,
+    # leave names as None to allow static analysis and graceful degradation.
+    tf = None
+    keras = None
+    layers = models = callbacks = optimizers = None
 
 class NeuroUXModel:
     def __init__(self):
@@ -16,61 +38,54 @@ class NeuroUXModel:
         os.makedirs(model_dir, exist_ok=True)
         self.model_path = os.path.join(model_dir, 'neuro_ux_model.h5')
         self.model = None
+        self.history = None
         self.build_model()
         
-    def build_model(self, input_dim=14):
-        """Construye la arquitectura de la red neuronal"""
-        model = keras.Sequential([
-            # Capa de entrada
-            layers.Input(shape=(input_dim,)),
-            
-            # Primera capa oculta con normalización
-            layers.Dense(128, activation='relu'),
-            layers.BatchNormalization(),
-            layers.Dropout(0.3),
-            
-            # Segunda capa oculta
-            layers.Dense(64, activation='relu'),
-            layers.BatchNormalization(),
-            layers.Dropout(0.2),
-            
-            # Tercera capa oculta
-            layers.Dense(32, activation='relu'),
-            layers.Dropout(0.1),
-            
-            # Capa de salida (confianza de la predicción)
-            layers.Dense(1, activation='sigmoid')
+    def build_model(self):
+        from tensorflow.keras.models import Sequential
+        from tensorflow.keras.layers import Dense, Dropout
+        from tensorflow.keras.metrics import AUC
+
+        model = Sequential([
+            Dense(64, activation='relu', input_shape=(14,)),
+            Dropout(0.3),
+            Dense(32, activation='relu'),
+            Dropout(0.3),
+            Dense(16, activation='relu'),
+            Dense(1, activation='sigmoid')  # Probabilidad de que sea "bueno"
         ])
         
-        # Compilar el modelo
         model.compile(
-            optimizer=keras.optimizers.Adam(learning_rate=0.001),
-            loss='binary_crossentropy',
-            metrics=['accuracy', 'AUC']
+            optimizer='adam',
+            loss='binary_crossentropy',  # clasificación binaria
+            metrics=['accuracy', AUC(name='auc')]
         )
         
+        # ✅ CORREGIDO: Asignar el modelo a self.model
         self.model = model
         return model
     
     def train(self, X_train, y_train, X_val, y_val, epochs=100):
         """Entrena el modelo"""
         if self.model is None:
-            self.build_model(input_dim=X_train.shape[1])
+            self.build_model()
         
         # Callbacks para mejorar el entrenamiento
-        callbacks = [
-            keras.callbacks.EarlyStopping(
+        from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau, ModelCheckpoint
+        
+        callbacks_list = [
+            EarlyStopping(
                 monitor='val_loss',
                 patience=15,
                 restore_best_weights=True
             ),
-            keras.callbacks.ReduceLROnPlateau(
+            ReduceLROnPlateau(
                 monitor='val_loss',
                 factor=0.5,
                 patience=5,
                 min_lr=0.00001
             ),
-            keras.callbacks.ModelCheckpoint(
+            ModelCheckpoint(
                 self.model_path,
                 monitor='val_accuracy',
                 save_best_only=True
@@ -83,7 +98,7 @@ class NeuroUXModel:
             validation_data=(X_val, y_val),
             epochs=epochs,
             batch_size=32,
-            callbacks=callbacks,
+            callbacks=callbacks_list,
             verbose=1
         )
         
@@ -104,8 +119,10 @@ class NeuroUXModel:
     
     def load_model(self):
         """Carga un modelo previamente entrenado"""
+        from tensorflow.keras.models import load_model
+        
         if os.path.exists(self.model_path):
-            self.model = keras.models.load_model(self.model_path)
+            self.model = load_model(self.model_path)
             print(f"Modelo cargado desde {self.model_path}")
             return True
         else:

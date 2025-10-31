@@ -3719,9 +3719,7 @@
       },
       "rating": 1,
       "feedback": "Bárbaro"
-    }
-  ],
-  "pending_feedback": [
+    },
     {
       "input": {
         "audience": "Empresas y analistas que gestionan grandes volúmenes de información",
@@ -3732,6 +3730,106 @@
       },
       "rating": 1,
       "feedback": ""
+    },
+    {
+      "input": {
+        "name": "EduMind",
+        "mission": "Democratizar el aprendizaje online con contenidos de calidad.",
+        "values": "conocimiento, accesibilidad, crecimiento, colaboración",
+        "sector": "educación",
+        "audience": "Estudiantes y profesionales que buscan capacitarse"
+      },
+      "rating": 0.2,
+      "feedback": "No es lo esperado"
+    },
+    {
+      "input": {
+        "name": "UrbanNomad",
+        "mission": "Redefinir la experiencia de vivir y trabajar viajando.",
+        "values": "libertad, adaptabilidad, comunidad, autenticidad",
+        "sector": "turismo",
+        "audience": "Nómadas digitales y freelancers"
+      },
+      "rating": 1,
+      "feedback": "Me encanto"
+    },
+    {
+      "input": {
+        "name": "FitBalance",
+        "mission": "Promover el bienestar físico y mental con rutinas personalizadas.",
+        "values": "salud, constancia, equilibrio, motivación",
+        "sector": "bienestar",
+        "audience": "Personas que buscan mejorar su estilo de vida"
+      },
+      "rating": 0.2,
+      "feedback": "Me esperaba colores verdes "
+    },
+    {
+      "input": {
+        "name": "AgriTech Solutions",
+        "mission": "Optimizar la producción agrícola mediante tecnología de datos.",
+        "values": "innovación, sustentabilidad, precisión, compromiso",
+        "sector": "agro",
+        "audience": "Productores y empresas del sector agrícola"
+      },
+      "rating": 0.2,
+      "feedback": "Me esperaba colores marrones y naranjas"
+    },
+    {
+      "input": {
+        "name": "ArtConnect",
+        "mission": "Conectar artistas emergentes con compradores y galerías globales.",
+        "values": "creatividad, inclusión, visibilidad, autenticidad",
+        "sector": "arte",
+        "audience": "Artistas y coleccionistas de arte contemporáneo"
+      },
+      "rating": 1,
+      "feedback": "Muy linda"
+    },
+    {
+      "input": {
+        "name": "TerraFarms",
+        "mission": "Agricultura regenerativa para un planeta más saludable",
+        "values": "regeneración, sostenibilidad, comunidad, calidad",
+        "sector": "agro",
+        "audience": "Distribuidores ecológicos"
+      },
+      "rating": 0.2,
+      "feedback": "Malo"
+    },
+    {
+      "input": {
+        "name": "SafeRoute",
+        "mission": "Hacer más seguros y eficientes los traslados urbanos.",
+        "values": "seguridad, tecnología, confianza, servicio",
+        "sector": "movilidad",
+        "audience": "Usuarios de transporte y autoridades municipales"
+      },
+      "rating": 1,
+      "feedback": "Me gusta"
+    },
+    {
+      "input": {
+        "name": "MindfulTech",
+        "mission": "Crear tecnología que fomente la atención plena y el bienestar.",
+        "values": "conciencia, equilibrio, empatía, innovación",
+        "sector": "tecnología",
+        "audience": "Profesionales y empresas que buscan reducir el estrés digital"
+      },
+      "rating": 1,
+      "feedback": "Esta bueno"
+    },
+    {
+      "input": {
+        "name": "LocalTaste",
+        "mission": "Promover la gastronomía regional a través de experiencias únicas.",
+        "values": "autenticidad, sabor, comunidad, tradición",
+        "sector": "alimentos",
+        "audience": "Viajeros y amantes de la comida local"
+      },
+      "rating": 0.2,
+      "feedback": "Esperaba paleta con rojo, naranja, amarillo y/o marron"
     }
-  ]
+  ],
+  "pending_feedback": []
 }
