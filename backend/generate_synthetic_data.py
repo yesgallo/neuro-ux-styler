@@ -2,7 +2,7 @@ import json
 import random
 import os
 
-# === BANCOS DE PALABRAS MEJORADOS ===
+# === DATOS DE ENTRADA PARA LA GENERACIÓN SINTÉTICA ===
 
 NAMES = [
     "Nexus", "Verve", "Aura", "Pulse", "Lume", "Strive", "Bloom", "Forge", "Echo", "Zenith",
@@ -39,8 +39,6 @@ VALUES_AND_STYLES = [
     "educación", "accesibilidad", "diversión", "creatividad", "comunidad", "originalidad",
     "pasión", "rapidez", "frescura", "motivación", "bienestar", "ética", "equidad", "rigor",
     "impacto", "autenticidad", "individualidad", "privacidad", "pureza", "eficacia", "estabilidad",
-    
-    # ESTILOS DE DISEÑO EXPLÍCITOS (¡clave para tu modelo!)
     "oscuro", "true crime", "archivo policial", "evidencia board", "tipografía serif",
     "texturas de papel envejecido", "minimalista", "neón cyberpunk", "retro años 80",
     "lujoso dorado", "grunge", "futurista", "handwritten", "monocromático", "alto contraste",
@@ -75,7 +73,7 @@ def generate_synthetic_entry():
     adjective = random.choice(ADJECTIVES)
     value1, value2 = random.sample(VALUES_AND_STYLES, 2)
     
-    # Generar nombre (más temático si es true crime/misterio)
+    # Generar nombre
     if sector in ["true crime", "misterio", "forense", "judicial"]:
         name = random.choice([
             "CaseFile", "ShadowLine", "Verdict", "Clue", "Evidence", "Redacted", 

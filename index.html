@@ -593,7 +593,6 @@
                     <div id="tokens" class="components-grid"></div>
                 </div>
 
-                <!-- ✅ NUEVA SECCIÓN DE EXPORTACIÓN -->
                 <div class="card export-section">
                     <h3 style="margin-bottom: 1rem;">📥 Exportar UI Kit</h3>
                     <p style="color: var(--text-light); margin-bottom: 1.5rem;">
@@ -1089,7 +1088,6 @@ body {
                 }
             };
             
-            // Agregar tamaños de fuente
             Object.entries(currentUIKit.tokens.fontSize).forEach(([key, value]) => {
                 tokens.typography.fontSize[key] = {
                     "$value": value,
@@ -1097,7 +1095,6 @@ body {
                 };
             });
             
-            // Agregar espaciados
             Object.entries(currentUIKit.tokens.spacing).forEach(([key, value]) => {
                 tokens.spacing[key] = {
                     "$value": value,
@@ -1131,10 +1128,6 @@ body {
                 .replace(/[^\w\-]+/g, '')
                 .replace(/\-\-+/g, '-');
         }
-
-        // ========================================
-        // RESTO DEL CÓDIGO EXISTENTE
-        // ========================================
 
         document.querySelectorAll('.tab').forEach(tab => {
             tab.addEventListener('click', () => {
@@ -1373,7 +1366,7 @@ body {
                     const statsGrid = document.getElementById('statsGrid');
                     statsGrid.innerHTML = `
                         <div class="stat-card">
-                            <div class="stat-label">Datos de Entrenamiento</div>
+                            <div class="stat-label">Total de Datos de Entrenamiento</div>
                             <div class="stat-value">${stats.training_samples}</div>
                         </div>
                         <div class="stat-card">

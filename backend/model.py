@@ -5,7 +5,6 @@ import json
 import importlib
 import importlib.util
 
-# Initialize to safe defaults
 tf = None
 keras = None
 layers = models = callbacks = optimizers = None
@@ -26,8 +25,6 @@ elif importlib.util.find_spec("keras") is not None:
     callbacks = getattr(keras, "callbacks", None)
     optimizers = getattr(keras, "optimizers", None)
 else:
-    # If neither tensorflow.keras nor standalone keras are available,
-    # leave names as None to allow static analysis and graceful degradation.
     tf = None
     keras = None
     layers = models = callbacks = optimizers = None
@@ -57,11 +54,10 @@ class NeuroUXModel:
         
         model.compile(
             optimizer='adam',
-            loss='binary_crossentropy',  # clasificación binaria
+            loss='binary_crossentropy', 
             metrics=['accuracy', AUC(name='auc')]
         )
         
-        # ✅ CORREGIDO: Asignar el modelo a self.model
         self.model = model
         return model
     
@@ -113,26 +109,43 @@ class NeuroUXModel:
         return prediction
     
     def save_model(self):
+        """Guarda el modelo en la ruta configurada"""
         if self.model is not None:
             self.model.save(self.model_path)
-            print(f"Modelo guardado en {self.model_path}")
+            print(f"✅ Modelo guardado en {self.model_path}")
+        else:
+            print("⚠️ No hay modelo para guardar")
     
-    def load_model(self):
-        """Carga un modelo previamente entrenado"""
+    def load_model(self, path=None):
+        """
+        Carga el modelo desde disco.
+        Si no se especifica path, usa self.model_path
+        """
         from tensorflow.keras.models import load_model
         
-        if os.path.exists(self.model_path):
-            self.model = load_model(self.model_path)
-            print(f"Modelo cargado desde {self.model_path}")
-            return True
+        # ✅ CORREGIDO: Usar self.model_path si no se especifica path
+        load_path = path if path is not None else self.model_path
+        
+        if os.path.exists(load_path):
+            try:
+                self.model = load_model(load_path)
+                print(f"✅ Modelo cargado desde {load_path}")
+                return True
+            except Exception as e:
+                print(f"❌ Error cargando modelo desde {load_path}: {e}")
+                print("🔄 Construyendo modelo nuevo...")
+                self.build_model()
+                return False
         else:
-            print("No se encontró modelo guardado. Construyendo nuevo modelo...")
+            print(f"⚠️ No se encontró modelo en {load_path}")
+            print("🔄 Construyendo modelo nuevo...")
             self.build_model()
             return False
     
     def evaluate(self, X_test, y_test):
         """Evalúa el modelo"""
         if self.model is None:
+            print("⚠️ No hay modelo cargado, intentando cargar...")
             self.load_model()
         
         results = self.model.evaluate(X_test, y_test, verbose=0)

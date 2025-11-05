@@ -38,9 +38,9 @@ def generate_ui_kit():
         
         features, keywords, sector, audience = processor.encode_input(data)
         prediction = model.predict(features)  # Valor entre 0.0 y 1.0
-        confidence = float(prediction[0][0])  # ← Ya es la confianza
+        confidence = float(prediction[0][0])  # Ya es la confianza
         ui_kit = processor.generate_ui_kit(prediction, keywords, sector, audience)
-        ui_kit['confidence'] = confidence  # ← Guarda la probabilidad directamente
+        ui_kit['confidence'] = confidence  # Guarda la probabilidad directamente
         
         return jsonify({'success': True, 'ui_kit': ui_kit})
         
