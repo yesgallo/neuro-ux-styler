@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neuro UX Styler - AI-Powered UI Kit Generator</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -167,7 +169,7 @@
             gap: 0.5rem;
         }
 
-        .btn:hover {
+        .btn:hover:not(:disabled) {
             transform: translateY(-2px);
             box-shadow: var(--shadow-lg);
         }
@@ -180,6 +182,17 @@
 
         .btn-secondary {
             background: var(--secondary);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover:not(:disabled) {
+            background: var(--primary);
+            color: var(--white);
         }
 
         .loading {
@@ -370,6 +383,84 @@
             color: #1E40AF;
         }
 
+        .toast {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            max-width: 360px;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 500;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            transform: translateX(120%);
+            transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), opacity 0.3s;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            opacity: 0;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .toast.success {
+            background: #ECFDF5;
+            color: #065F46;
+            border: 1px solid #A7F3D0;
+        }
+
+        .toast.error {
+            background: #FEF2F2;
+            color: #991B1B;
+            border: 1px solid #FECACA;
+        }
+
+        .toast.info {
+            background: #EFF6FF;
+            color: #1D4ED8;
+            border: 1px solid #BFDBFE;
+        }
+
+        .toast .icon {
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .toast .close-toast {
+            margin-left: auto;
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: inherit;
+            cursor: pointer;
+            opacity: 0.7;
+            padding: 4px;
+            border-radius: 4px;
+        }
+
+        .toast .close-toast:hover {
+            opacity: 1;
+            background: rgba(0,0,0,0.05);
+        }
+
+        .export-section {
+            background: linear-gradient(135deg, #F0FDF4 0%, #DBEAFE 100%);
+            border: 2px dashed var(--primary);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+        }
+
+        .export-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -377,6 +468,14 @@
             
             .stats-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .export-buttons {
+                flex-direction: column;
+            }
+
+            .export-buttons .btn {
+                width: 100%;
             }
         }
     </style>
@@ -394,7 +493,6 @@
             <button class="tab" data-tab="stats">Estadísticas</button>
         </div>
 
-        <!-- Tab: Generar UI Kit -->
         <div id="generate" class="tab-content active">
             <div class="card">
                 <h2 style="margin-bottom: 1.5rem;">Datos del Proyecto</h2>
@@ -428,6 +526,30 @@
                             <option value="medio ambiente">Medio Ambiente</option>
                             <option value="fitness">Fitness</option>
                             <option value="diseño">Diseño</option>
+                            <option value="recursos humanos">Recursos Humanos</option>
+                            <option value="ciencia">Ciencia</option>
+                            <option value="movilidad">Movilidad</option>
+                            <option value="transporte">Transporte</option>
+                            <option value="automotriz">Automotriz</option>
+                            <option value="arte">Arte</option>
+                            <option value="música">Música</option>
+                            <option value="pyme">PYME</option>
+                            <option value="cosmética">Cosmética</option>
+                            <option value="agro">Agro</option>
+                            <option value="legal">Legal</option>
+                            <option value="judicial">Judicial</option>
+                            <option value="construcción">Construcción</option>
+                            <option value="ciberseguridad">Ciberseguridad</option>
+                            <option value="bienestar">Bienestar</option>
+                            <option value="energía">Energía</option>
+                            <option value="gobierno">Gobierno</option>
+                            <option value="turismo">Turismo</option>
+                            <option value="ia">IA</option>
+                            <option value="deportes">Deportes</option>
+                            <option value="logística">Logística</option>
+                            <option value="producción audiovisual">Producción Audiovisual</option>
+                            <option value="medios de comunicación">Medios de Comunicación</option>
+                            <option value="otros">Otros</option>
                         </select>
                     </div>
 
@@ -443,10 +565,18 @@
                 </form>
             </div>
 
-            <!-- Resultados -->
+            <div style="display: flex; gap: 1rem; margin: 2rem 0; flex-wrap: wrap;">
+                <button class="btn" id="newKitSameData">
+                    Generar nuevo kit con los mismos datos
+                </button>
+                <button class="btn btn-secondary" id="newKitNewData">
+                    Nuevo proyecto
+                </button>
+            </div>
+
             <div id="result" class="result">
                 <div class="card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
                         <h2>Tu UI Kit Generado</h2>
                         <span id="confidenceBadge" class="confidence-badge"></span>
                     </div>
@@ -464,7 +594,27 @@
                     <div id="tokens" class="components-grid"></div>
                 </div>
 
-                <!-- Feedback -->
+                <div class="card export-section">
+                    <h3 style="margin-bottom: 1rem;">📥 Exportar UI Kit</h3>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem;">
+                        Descarga tu UI Kit en diferentes formatos para usar en tus proyectos
+                    </p>
+                    <div class="export-buttons">
+                        <button class="btn" onclick="exportToCSS()">
+                            📄 Exportar CSS Variables
+                        </button>
+                        <button class="btn" onclick="exportToJSON()">
+                            📋 Exportar JSON
+                        </button>
+                        <button class="btn" onclick="exportToSCSS()">
+                            🎨 Exportar SCSS
+                        </button>
+                        <button class="btn btn-outline" onclick="exportDesignTokens()">
+                            🔧 Design Tokens
+                        </button>
+                    </div>
+                </div>
+
                 <div class="card feedback-section">
                     <h3>¿Qué te pareció este UI Kit?</h3>
                     <div class="rating-stars" id="ratingStars">
@@ -483,7 +633,6 @@
             </div>
         </div>
 
-        <!-- Tab: Estadísticas -->
         <div id="stats" class="tab-content">
             <div class="card">
                 <h2 style="margin-bottom: 2rem;">Estadísticas del Sistema</h2>
@@ -494,11 +643,493 @@
     </div>
 
     <script>
-        const API_URL = 'http://localhost:5001/api';
+        const API_URL = 'http://localhost:5001';
         let currentUIKit = null;
         let selectedRating = 0;
+        let lastInputData = null;
 
-        // Manejo de tabs
+        function showToast(message, type = 'info') {
+            const existing = document.querySelector('.toast');
+            if (existing) existing.remove();
+
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = `
+                <span class="icon">${type === 'success' ? '✓' : type === 'error' ? '✕' : 'ℹ'}</span>
+                <span>${message}</span>
+                <button class="close-toast">&times;</button>
+            `;
+
+            document.body.appendChild(toast);
+            setTimeout(() => toast.classList.add('show'), 10);
+
+            toast.querySelector('.close-toast').addEventListener('click', () => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            });
+
+            setTimeout(() => {
+                if (toast.classList.contains('show')) {
+                    toast.classList.remove('show');
+                    setTimeout(() => {
+                        if (document.body.contains(toast)) toast.remove();
+                    }, 300);
+                }
+            }, 4000);
+        }
+
+        // ========================================
+        // FUNCIONES DE EXPORTACIÓN
+        // ========================================
+
+        function exportToCSS() {
+            if (!currentUIKit) {
+                showToast('No hay UI Kit para exportar', 'error');
+                return;
+            }
+
+            const projectName = lastInputData?.name || 'UI Kit';
+            const date = new Date().toLocaleDateString();
+            
+            const css = `/* ========================================
+   ${projectName} - UI Kit
+   Generated by Neuro UX Styler
+   Date: ${date}
+   Confidence: ${(currentUIKit.confidence * 100).toFixed(1)}%
+   ======================================== */
+
+:root {
+  /* Colores */
+  --color-primary: ${currentUIKit.colors.primary};
+  --color-secondary: ${currentUIKit.colors.secondary};
+  --color-accent: ${currentUIKit.colors.accent};
+  --color-background: ${currentUIKit.colors.background};
+  --color-text: ${currentUIKit.colors.text};
+  
+  /* Tipografía */
+  --font-primary: '${currentUIKit.typography.primary}', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-secondary: '${currentUIKit.typography.secondary}', serif;
+  
+  /* Espaciado */
+  --spacing-xs: ${currentUIKit.tokens.spacing.xs};
+  --spacing-sm: ${currentUIKit.tokens.spacing.sm};
+  --spacing-md: ${currentUIKit.tokens.spacing.md};
+  --spacing-lg: ${currentUIKit.tokens.spacing.lg};
+  --spacing-xl: ${currentUIKit.tokens.spacing.xl};
+  
+  /* Tamaños de fuente */
+  --font-size-xs: ${currentUIKit.tokens.fontSize.xs};
+  --font-size-sm: ${currentUIKit.tokens.fontSize.sm};
+  --font-size-md: ${currentUIKit.tokens.fontSize.md};
+  --font-size-lg: ${currentUIKit.tokens.fontSize.lg};
+  --font-size-xl: ${currentUIKit.tokens.fontSize.xl};
+  
+  /* Componentes */
+  --button-radius: ${currentUIKit.components.buttonRadius};
+  --card-radius: ${currentUIKit.components.cardRadius};
+  --input-radius: ${currentUIKit.components.inputRadius};
+  --shadow: ${currentUIKit.components.shadow};
+}
+
+/* ========================================
+   Estilos Base
+   ======================================== */
+
+body {
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  background: var(--color-background);
+  line-height: 1.6;
+}
+
+/* ========================================
+   Componentes
+   ======================================== */
+
+/* Botones */
+.btn {
+  background: var(--color-primary);
+  color: white;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--button-radius);
+  border: none;
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background: var(--color-secondary);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: var(--card-radius);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow);
+}
+
+/* Inputs */
+.input,
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  padding: var(--spacing-md);
+  border-radius: var(--input-radius);
+  border: 2px solid var(--color-secondary);
+  font-size: var(--font-size-md);
+  font-family: var(--font-primary);
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.input:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.1);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: var(--font-size-xl); }
+h2 { font-size: var(--font-size-lg); }
+h3 { font-size: var(--font-size-md); }
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+`;
+
+            downloadFile(css, `${slugify(projectName)}-styles.css`, 'text/css');
+            showToast('CSS exportado correctamente', 'success');
+        }
+
+        function exportToSCSS() {
+            if (!currentUIKit) {
+                showToast('No hay UI Kit para exportar', 'error');
+                return;
+            }
+
+            const projectName = lastInputData?.name || 'UI Kit';
+            const date = new Date().toLocaleDateString();
+            
+            const scss = `// ========================================
+// ${projectName} - UI Kit
+// Generated by Neuro UX Styler
+// Date: ${date}
+// Confidence: ${(currentUIKit.confidence * 100).toFixed(1)}%
+// ========================================
+
+// Colores
+$color-primary: ${currentUIKit.colors.primary};
+$color-secondary: ${currentUIKit.colors.secondary};
+$color-accent: ${currentUIKit.colors.accent};
+$color-background: ${currentUIKit.colors.background};
+$color-text: ${currentUIKit.colors.text};
+
+// Tipografía
+$font-primary: '${currentUIKit.typography.primary}', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-secondary: '${currentUIKit.typography.secondary}', serif;
+
+// Espaciado
+$spacing-xs: ${currentUIKit.tokens.spacing.xs};
+$spacing-sm: ${currentUIKit.tokens.spacing.sm};
+$spacing-md: ${currentUIKit.tokens.spacing.md};
+$spacing-lg: ${currentUIKit.tokens.spacing.lg};
+$spacing-xl: ${currentUIKit.tokens.spacing.xl};
+
+// Tamaños de fuente
+$font-size-xs: ${currentUIKit.tokens.fontSize.xs};
+$font-size-sm: ${currentUIKit.tokens.fontSize.sm};
+$font-size-md: ${currentUIKit.tokens.fontSize.md};
+$font-size-lg: ${currentUIKit.tokens.fontSize.lg};
+$font-size-xl: ${currentUIKit.tokens.fontSize.xl};
+
+// Componentes
+$button-radius: ${currentUIKit.components.buttonRadius};
+$card-radius: ${currentUIKit.components.cardRadius};
+$input-radius: ${currentUIKit.components.inputRadius};
+$shadow: ${currentUIKit.components.shadow};
+
+// Mapas SCSS (útil para iteraciones)
+$colors: (
+  'primary': $color-primary,
+  'secondary': $color-secondary,
+  'accent': $color-accent,
+  'background': $color-background,
+  'text': $color-text
+);
+
+$spacing: (
+  'xs': $spacing-xs,
+  'sm': $spacing-sm,
+  'md': $spacing-md,
+  'lg': $spacing-lg,
+  'xl': $spacing-xl
+);
+
+$font-sizes: (
+  'xs': $font-size-xs,
+  'sm': $font-size-sm,
+  'md': $font-size-md,
+  'lg': $font-size-lg,
+  'xl': $font-size-xl
+);
+
+// Mixins útiles
+@mixin button-base {
+  padding: $spacing-md $spacing-lg;
+  border-radius: $button-radius;
+  border: none;
+  font-size: $font-size-md;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: $shadow;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@mixin card {
+  background: white;
+  border-radius: $card-radius;
+  padding: $spacing-lg;
+  box-shadow: $shadow;
+}
+
+// Estilos base
+body {
+  font-family: $font-primary;
+  color: $color-text;
+  background: $color-background;
+  line-height: 1.6;
+}
+
+// Componentes
+.btn {
+  @include button-base;
+  background: $color-primary;
+  color: white;
+  
+  &.btn-secondary {
+    background: $color-secondary;
+  }
+  
+  &.btn-outline {
+    background: transparent;
+    border: 2px solid $color-primary;
+    color: $color-primary;
+  }
+}
+
+.card {
+  @include card;
+}
+
+.input {
+  padding: $spacing-md;
+  border-radius: $input-radius;
+  border: 2px solid $color-secondary;
+  font-size: $font-size-md;
+  font-family: $font-primary;
+  width: 100%;
+  transition: all 0.3s ease;
+  
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.1);
+  }
+}
+`;
+
+            downloadFile(scss, `${slugify(projectName)}-styles.scss`, 'text/scss');
+            showToast('SCSS exportado correctamente', 'success');
+        }
+
+        function exportToJSON() {
+            if (!currentUIKit) {
+                showToast('No hay UI Kit para exportar', 'error');
+                return;
+            }
+
+            const projectName = lastInputData?.name || 'UI Kit';
+            
+            const jsonData = {
+                metadata: {
+                    name: projectName,
+                    description: lastInputData?.mission || '',
+                    sector: lastInputData?.sector || '',
+                    audience: lastInputData?.audience || '',
+                    generatedBy: 'Neuro UX Styler',
+                    date: new Date().toISOString(),
+                    confidence: currentUIKit.confidence
+                },
+                colors: currentUIKit.colors,
+                typography: currentUIKit.typography,
+                tokens: currentUIKit.tokens,
+                components: currentUIKit.components
+            };
+            
+            const json = JSON.stringify(jsonData, null, 2);
+            downloadFile(json, `${slugify(projectName)}-uikit.json`, 'application/json');
+            showToast('JSON exportado correctamente', 'success');
+        }
+
+        function exportDesignTokens() {
+            if (!currentUIKit) {
+                showToast('No hay UI Kit para exportar', 'error');
+                return;
+            }
+
+            const projectName = lastInputData?.name || 'UI Kit';
+            
+            // Formato compatible con Style Dictionary y Figma Tokens
+            const tokens = {
+                "$schema": "https://schemas.opendesignsystem.org/2.0.0/design-tokens.schema.json",
+                "$metadata": {
+                    "name": projectName,
+                    "generator": "Neuro UX Styler",
+                    "generatedAt": new Date().toISOString(),
+                    "confidence": currentUIKit.confidence
+                },
+                "color": {
+                    "primary": {
+                        "$value": currentUIKit.colors.primary,
+                        "$type": "color",
+                        "$description": "Color primario del UI Kit"
+                    },
+                    "secondary": {
+                        "$value": currentUIKit.colors.secondary,
+                        "$type": "color",
+                        "$description": "Color secundario"
+                    },
+                    "accent": {
+                        "$value": currentUIKit.colors.accent,
+                        "$type": "color",
+                        "$description": "Color de acento"
+                    },
+                    "background": {
+                        "$value": currentUIKit.colors.background,
+                        "$type": "color",
+                        "$description": "Color de fondo"
+                    },
+                    "text": {
+                        "$value": currentUIKit.colors.text,
+                        "$type": "color",
+                        "$description": "Color de texto principal"
+                    }
+                },
+                "typography": {
+                    "fontFamily": {
+                        "primary": {
+                            "$value": currentUIKit.typography.primary,
+                            "$type": "fontFamily"
+                        },
+                        "secondary": {
+                            "$value": currentUIKit.typography.secondary,
+                            "$type": "fontFamily"
+                        }
+                    },
+                    "fontSize": {}
+                },
+                "spacing": {},
+                "borderRadius": {
+                    "button": {
+                        "$value": currentUIKit.components.buttonRadius,
+                        "$type": "dimension"
+                    },
+                    "card": {
+                        "$value": currentUIKit.components.cardRadius,
+                        "$type": "dimension"
+                    },
+                    "input": {
+                        "$value": currentUIKit.components.inputRadius,
+                        "$type": "dimension"
+                    }
+                },
+                "shadow": {
+                    "default": {
+                        "$value": currentUIKit.components.shadow,
+                        "$type": "shadow"
+                    }
+                }
+            };
+            
+            Object.entries(currentUIKit.tokens.fontSize).forEach(([key, value]) => {
+                tokens.typography.fontSize[key] = {
+                    "$value": value,
+                    "$type": "dimension"
+                };
+            });
+            
+            Object.entries(currentUIKit.tokens.spacing).forEach(([key, value]) => {
+                tokens.spacing[key] = {
+                    "$value": value,
+                    "$type": "dimension"
+                };
+            });
+            
+            const json = JSON.stringify(tokens, null, 2);
+            downloadFile(json, `${slugify(projectName)}-design-tokens.json`, 'application/json');
+            showToast('Design Tokens exportados correctamente', 'success');
+        }
+
+        function downloadFile(content, filename, mimeType) {
+            const blob = new Blob([content], { type: mimeType });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function slugify(text) {
+            return text
+                .toString()
+                .toLowerCase()
+                .trim()
+                .replace(/\s+/g, '-')
+                .replace(/[^\w\-]+/g, '')
+                .replace(/\-\-+/g, '-');
+        }
+
         document.querySelectorAll('.tab').forEach(tab => {
             tab.addEventListener('click', () => {
                 const targetTab = tab.dataset.tab;
@@ -515,7 +1146,6 @@
             });
         });
 
-        // Generar UI Kit
         document.getElementById('generateForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             
@@ -535,6 +1165,8 @@
                 audience: document.getElementById('audience').value
             };
             
+            lastInputData = data;
+            
             try {
                 const response = await fetch(`${API_URL}/generate`, {
                     method: 'POST',
@@ -546,14 +1178,15 @@
                 
                 if (result.success) {
                     currentUIKit = result.ui_kit;
-                    displayUIKit(result.ui_kit);
+                    displayUIKit(result.ui_kit); // ✅ CORREGIDO: Esta función ahora funciona
                     document.getElementById('result').classList.add('show');
                     document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
                 } else {
-                    alert('Error: ' + result.error);
+                    showToast(result.error, 'error');
                 }
             } catch (error) {
-                alert('Error al conectar con el servidor: ' + error.message);
+                console.error('Error:', error);
+                showToast('Error al conectar con el servidor', 'error');
             } finally {
                 btn.disabled = false;
                 btnText.style.display = 'inline';
@@ -561,94 +1194,122 @@
             }
         });
 
-        // Mostrar UI Kit
-        function displayUIKit(uiKit) {
-            // Confianza
-            const confidence = (uiKit.confidence * 100).toFixed(0);
-            const badge = document.getElementById('confidenceBadge');
-            badge.textContent = `${confidence}% confianza`;
-            badge.className = 'confidence-badge ' + 
-                (confidence >= 80 ? 'confidence-high' : 
-                 confidence >= 60 ? 'confidence-medium' : 'confidence-low');
+        // =====================================================================
+        // ✅ CORREGIDO: Función displayUIKit completamente reescrita
+        // =====================================================================
+        function displayUIKit(data) {
+            console.log('📦 Datos recibidos para mostrar:', data);
             
-            // Colores
+            if (!data || !data.colors || !data.typography || !data.components || !data.tokens) {
+                console.error('❌ Error: Faltan propiedades en los datos del UI Kit:', data);
+                showToast('Error: El formato de respuesta del servidor es incorrecto', 'error');
+                return;
+            }
+            
+            const confidence = data.confidence;
+            const confidenceScore = (confidence * 100).toFixed(1);
+            
+            // 1. Badge de Confianza
+            const badge = document.getElementById('confidenceBadge');
+            badge.textContent = `Confianza: ${confidenceScore}%`;
+            badge.className = 'confidence-badge'; // Reset class
+            
+            if (confidence >= 0.8) {
+                badge.classList.add('confidence-high');
+            } else if (confidence >= 0.5) {
+                badge.classList.add('confidence-medium');
+            } else {
+                badge.classList.add('confidence-low');
+            }
+            
+            // 2. Paleta de Colores
             const colorPalette = document.getElementById('colorPalette');
             colorPalette.innerHTML = '';
-            Object.entries(uiKit.colors).forEach(([name, color]) => {
+            Object.entries(data.colors).forEach(([name, color]) => {
                 colorPalette.innerHTML += `
                     <div class="color-item">
-                        <div class="color-box" style="background: ${color}" 
-                             onclick="copyToClipboard('${color}')" 
-                             title="Click para copiar"></div>
+                        <div class="color-box" style="background-color: ${color};" onclick="copyToClipboard('${color}')"></div>
                         <div class="color-label">${name}</div>
                         <div class="color-value">${color}</div>
                     </div>
                 `;
             });
-            
-            // Tipografía
+
+            // 3. Tipografía
             const typography = document.getElementById('typography');
             typography.innerHTML = `
-                <div style="margin-bottom: 1rem;">
-                    <strong>Primaria:</strong> 
-                    <span style="font-family: '${uiKit.typography.primary}', sans-serif; font-size: 1.5rem;">
-                        ${uiKit.typography.primary}
-                    </span>
+                <div style="font-family: '${data.typography.primary}', sans-serif;">
+                    <h1 style="font-family: '${data.typography.primary}', sans-serif;">Fuente Primaria (Heading): ${data.typography.primary}</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
-                <div>
-                    <strong>Secundaria:</strong> 
-                    <span style="font-family: '${uiKit.typography.secondary}', sans-serif; font-size: 1.5rem;">
-                        ${uiKit.typography.secondary}
-                    </span>
+                <hr style="margin: 1.5rem 0;">
+                <div style="font-family: '${data.typography.secondary}', serif;">
+                    <h3 style="font-family: '${data.typography.secondary}', serif;">Fuente Secundaria (Body): ${data.typography.secondary}</h3>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
             `;
             
-            // Componentes
+            // 4. Componentes
             const components = document.getElementById('components');
             components.innerHTML = '';
-            Object.entries(uiKit.components).forEach(([key, value]) => {
+            Object.entries(data.components).forEach(([key, value]) => {
                 components.innerHTML += `
                     <div class="component-item">
-                        <div class="component-label">${key.replace(/([A-Z])/g, ' $1').trim()}</div>
+                        <div class="component-label">${key}</div>
                         <div class="component-value">${value}</div>
                     </div>
                 `;
             });
             
-            // Tokens
+            // 5. Tokens de Diseño
             const tokens = document.getElementById('tokens');
             tokens.innerHTML = '';
-            ['spacing', 'fontSize'].forEach(category => {
-                Object.entries(uiKit.tokens[category]).forEach(([key, value]) => {
-                    tokens.innerHTML += `
-                        <div class="component-item">
-                            <div class="component-label">${category} - ${key}</div>
-                            <div class="component-value">${value}</div>
-                        </div>
-                    `;
-                });
+            Object.entries(data.tokens.spacing).forEach(([key, value]) => {
+                tokens.innerHTML += `
+                    <div class="component-item">
+                        <div class="component-label">spacing-${key}</div>
+                        <div class="component-value">${value}</div>
+                    </div>
+                `;
             });
+            Object.entries(data.tokens.fontSize).forEach(([key, value]) => {
+                tokens.innerHTML += `
+                    <div class="component-item">
+                        <div class="component-label">fontSize-${key}</div>
+                        <div class="component-value">${value}</div>
+                    </div>
+                `;
+            });
+
+            // Resetear feedback
+            selectedRating = 0;
+            document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
+            document.getElementById('feedbackText').value = '';
         }
 
-        // Sistema de rating
-        document.querySelectorAll('.star').forEach(star => {
-            star.addEventListener('click', () => {
-                selectedRating = parseInt(star.dataset.rating);
-                document.querySelectorAll('.star').forEach((s, index) => {
-                    s.classList.toggle('active', index < selectedRating);
+        // ✅ AÑADIDO: Listener para las estrellas de rating
+        document.getElementById('ratingStars').addEventListener('click', (e) => {
+            if (e.target.classList.contains('star')) {
+                selectedRating = parseInt(e.target.dataset.rating, 10);
+                document.querySelectorAll('.star').forEach(star => {
+                    star.classList.toggle('active', parseInt(star.dataset.rating, 10) <= selectedRating);
                 });
-            });
+            }
         });
 
-        // Enviar feedback
         document.getElementById('submitFeedback').addEventListener('click', async () => {
             if (selectedRating === 0) {
-                alert('Por favor selecciona una calificación');
+                showToast('Por favor selecciona una calificación', 'error');
+                return;
+            }
+            
+            if (!lastInputData) {
+                showToast('No hay datos para enviar feedback', 'error');
                 return;
             }
             
             const feedback = {
-                input_data: currentUIKit.input_data,
+                input_data: lastInputData,
                 rating: selectedRating / 5,
                 feedback: document.getElementById('feedbackText').value
             };
@@ -663,17 +1324,68 @@
                 const result = await response.json();
                 
                 if (result.success) {
-                    alert('¡Gracias por tu feedback! Total: ' + result.total_feedback);
+                    showToast(`¡Gracias por tu feedback! Total guardados: ${result.total_feedback}. Pendientes para reentrenar: ${result.pending_feedback}`, 'success');
                     selectedRating = 0;
                     document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
                     document.getElementById('feedbackText').value = '';
+                    if (document.getElementById('stats').classList.contains('active')) {
+                        loadStats();
+                    }
+                } else {
+                    showToast(result.error || 'Error al enviar feedback', 'error');
                 }
             } catch (error) {
-                alert('Error al enviar feedback: ' + error.message);
+                console.error('Error:', error);
+                showToast('Error al enviar feedback', 'error');
             }
         });
 
-        // Cargar estadísticas
+        document.getElementById('newKitSameData').addEventListener('click', async () => {
+            if (!lastInputData) {
+                showToast('No hay datos para regenerar', 'error');
+                return;
+            }
+
+            const btn = document.getElementById('newKitSameData');
+            const originalText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '<span>Generando...</span><span class="loading" style="width:16px;height:16px;margin-left:8px;"></span>';
+
+            try {
+                const response = await fetch(`${API_URL}/generate`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(lastInputData)
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    currentUIKit = result.ui_kit;
+                    displayUIKit(result.ui_kit);
+                    showToast('Nuevo kit generado con los mismos datos', 'info');
+                } else {
+                    showToast(result.error || 'Error al regenerar', 'error');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showToast('Error al regenerar el kit', 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+            }
+        });
+
+        document.getElementById('newKitNewData').addEventListener('click', () => {
+            document.getElementById('generateForm').reset();
+            document.getElementById('result').classList.remove('show');
+            lastInputData = null;
+            currentUIKit = null;
+            selectedRating = 0;
+            document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
+            document.getElementById('feedbackText').value = '';
+            document.querySelector('.tab[data-tab="generate"]').click();
+        });
+
         async function loadStats() {
             try {
                 const response = await fetch(`${API_URL}/stats`);
@@ -681,19 +1393,21 @@
                 
                 if (result.success) {
                     const stats = result.stats;
+                    const totalFeedback = stats.feedback_samples + stats.pending_feedback;
+                    
                     const statsGrid = document.getElementById('statsGrid');
                     statsGrid.innerHTML = `
                         <div class="stat-card">
-                            <div class="stat-label">Datos de Entrenamiento</div>
+                            <div class="stat-label">Total de Datos de Entrenamiento</div>
                             <div class="stat-value">${stats.training_samples}</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-label">Feedbacks Recibidos</div>
-                            <div class="stat-value">${stats.feedback_samples}</div>
+                            <div class="stat-label">Feedbacks Totales</div>
+                            <div class="stat-value">${totalFeedback}</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-label">Total de Datos</div>
-                            <div class="stat-value">${stats.total_samples}</div>
+                            <div class="stat-label">Feedbacks Pendientes</div>
+                            <div class="stat-value">${stats.pending_feedback}</div>
                         </div>
                     `;
                     
@@ -701,53 +1415,67 @@
                     if (stats.ready_for_retrain) {
                         retrainSection.innerHTML = `
                             <div class="alert alert-success">
-                                ✅ Hay suficiente feedback para reentrenar el modelo
+                                ✅ Tienes ${stats.pending_feedback} feedbacks nuevos. ¡Listo para reentrenar!
                             </div>
                             <button class="btn" onclick="retrainModel()">Reentrenar Modelo</button>
                         `;
                     } else {
                         retrainSection.innerHTML = `
                             <div class="alert alert-info">
-                                ℹ️ Se necesitan al menos 5 feedbacks para reentrenar (tienes ${stats.feedback_samples})
+                                ℹ️ Necesitas 5 feedbacks nuevos para reentrenar. Tienes ${stats.pending_feedback}.
                             </div>
                         `;
                     }
                 }
             } catch (error) {
                 console.error('Error al cargar estadísticas:', error);
+                showToast('Error al cargar estadísticas', 'error');
             }
         }
 
-        // Reentrenar modelo
         async function retrainModel() {
-            if (!confirm('¿Deseas reentrenar el modelo con el nuevo feedback?')) return;
+            const btn = document.querySelector('#retrainSection .btn');
+            if (!btn) return;
+            
+            const originalText = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = '⏳ Reentrenando...';
             
             try {
                 const response = await fetch(`${API_URL}/retrain`, {
-                    method: 'POST'
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
                 });
-                
                 const result = await response.json();
                 
                 if (result.success) {
-                    alert(`✅ Modelo reentrenado!\nPrecisión: ${(result.metrics.accuracy * 100).toFixed(1)}%`);
+                    showToast(`✅ Modelo reentrenado exitosamente!\n\nPrecisión: ${(result.metrics.accuracy * 100).toFixed(1)}%\nLoss: ${result.metrics.loss.toFixed(4)}\nAUC: ${result.metrics.auc.toFixed(4)}`, 'success');
                     loadStats();
                 } else {
-                    alert('Error: ' + result.message);
+                    showToast(result.message || result.error || 'Error al reentrenar', 'error');
                 }
             } catch (error) {
-                alert('Error al reentrenar: ' + error.message);
+                console.error('Error al reentrenar:', error);
+                showToast('Error al reentrenar el modelo', 'error');
+            } finally {
+                if (btn) {
+                    btn.disabled = false;
+                    btn.innerHTML = originalText;
+                }
             }
         }
 
-        // Copiar al portapapeles
         function copyToClipboard(text) {
-            navigator.clipboard.writeText(text);
-            alert('Copiado: ' + text);
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(`Copiado: ${text}`, 'info');
+            }).catch(err => {
+                console.error('Error al copiar:', err);
+                showToast('Error al copiar al portapapeles', 'error');
+            });
         }
 
-        // Cargar stats inicial
         loadStats();
     </script>
-</body>
+    
+    </body>
 </html>

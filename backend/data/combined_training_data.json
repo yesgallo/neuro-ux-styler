@@ -1,0 +1,6652 @@
+{
+  "training_data": [
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "absolute",
+        "spacing": "cramped",
+        "contrast": "none"
+      },
+      "rating": 0.2519785179008804,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "table",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.15834537263420623,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "inline",
+        "spacing": "excessive",
+        "contrast": "low"
+      },
+      "rating": 0.2641373713778178,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.8612578837288938,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "absolute",
+        "spacing": "wide",
+        "contrast": "none"
+      },
+      "rating": 0.39666449467757725,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "card-based",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.8378387887884359,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7781548169687661,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "card-based",
+        "spacing": "wide",
+        "contrast": "high"
+      },
+      "rating": 0.9456378014893329,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "table",
+        "spacing": "medium",
+        "contrast": "low"
+      },
+      "rating": 0.32792986670027824,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "card-based",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.9825849889416434,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "card-based",
+        "spacing": "none",
+        "contrast": "accessible"
+      },
+      "rating": 0.6315587738476388,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "absolute",
+        "spacing": "none",
+        "contrast": "inverted"
+      },
+      "rating": 0.37524863903234507,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "cramped",
+        "contrast": "high"
+      },
+      "rating": 0.5523899024744348,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "absolute",
+        "spacing": "excessive",
+        "contrast": "none"
+      },
+      "rating": 0.37607395342057615,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "grid",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.9326418938813386,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "card-based",
+        "spacing": "medium",
+        "contrast": "medium-high"
+      },
+      "rating": 0.8769441977148269,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "frame",
+        "spacing": "excessive",
+        "contrast": "inverted"
+      },
+      "rating": 0.3108473295191043,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "accessible"
+      },
+      "rating": 0.823798701252708,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "inline",
+        "spacing": "cramped",
+        "contrast": "none"
+      },
+      "rating": 0.14861291833474344,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "card-based",
+        "spacing": "medium",
+        "contrast": "accessible"
+      },
+      "rating": 0.9244121964057547,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "inline",
+        "spacing": "cramped",
+        "contrast": "none"
+      },
+      "rating": 0.321567389493853,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "flex",
+        "spacing": "cramped",
+        "contrast": "accessible"
+      },
+      "rating": 0.586838019825214,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "grid",
+        "spacing": "comfortable",
+        "contrast": "accessible"
+      },
+      "rating": 0.7566594395385338,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "grid",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.7583779575236463,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "card-based",
+        "spacing": "cramped",
+        "contrast": "medium-high"
+      },
+      "rating": 0.5566796691838312,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "grid",
+        "spacing": "comfortable",
+        "contrast": "medium-high"
+      },
+      "rating": 0.9604028752558396,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "masonry",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.84615728345697,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "card-based",
+        "spacing": "medium",
+        "contrast": "accessible"
+      },
+      "rating": 0.8845179146588448,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "accessible"
+      },
+      "rating": 0.865286506547905,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "table",
+        "spacing": "excessive",
+        "contrast": "none"
+      },
+      "rating": 0.17893410841835994,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "absolute",
+        "spacing": "wide",
+        "contrast": "none"
+      },
+      "rating": 0.4500468178856752,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "frame",
+        "spacing": "none",
+        "contrast": "inverted"
+      },
+      "rating": 0.15979199796534235,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "comfortable",
+        "contrast": "high"
+      },
+      "rating": 0.8575249240387076,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "absolute",
+        "spacing": "medium",
+        "contrast": "inverted"
+      },
+      "rating": 0.4538939953761261,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "card-based",
+        "spacing": "medium",
+        "contrast": "accessible"
+      },
+      "rating": 0.8065708656313259,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "cramped",
+        "contrast": "medium-high"
+      },
+      "rating": 0.680313773960974,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "absolute",
+        "spacing": "comfortable",
+        "contrast": "low"
+      },
+      "rating": 0.46202131908116545,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "grid",
+        "spacing": "medium",
+        "contrast": "medium-high"
+      },
+      "rating": 0.9836911659480722,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "absolute",
+        "spacing": "comfortable",
+        "contrast": "low"
+      },
+      "rating": 0.30301590457056854,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "masonry",
+        "spacing": "cramped",
+        "contrast": "high"
+      },
+      "rating": 0.5791640419803066,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "wide",
+        "contrast": "medium-high"
+      },
+      "rating": 0.9807977961073979,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "frame",
+        "spacing": "none",
+        "contrast": "low"
+      },
+      "rating": 0.12450096444941071,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "grid",
+        "spacing": "excessive",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6667821459212135,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "masonry",
+        "spacing": "medium",
+        "contrast": "accessible"
+      },
+      "rating": 0.985339257031255,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "absolute",
+        "spacing": "excessive",
+        "contrast": "none"
+      },
+      "rating": 0.34593989624755805,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "inline",
+        "spacing": "comfortable",
+        "contrast": "inverted"
+      },
+      "rating": 0.45406160608285645,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "flex",
+        "spacing": "wide",
+        "contrast": "medium-high"
+      },
+      "rating": 0.9771943162615695,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "flex",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.7775548091984967,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "card-based",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.7715251210097567,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "flex",
+        "spacing": "none",
+        "contrast": "medium-high"
+      },
+      "rating": 0.5402320221926042,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "frame",
+        "spacing": "none",
+        "contrast": "low"
+      },
+      "rating": 0.16850107255235158,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "masonry",
+        "spacing": "excessive",
+        "contrast": "accessible"
+      },
+      "rating": 0.6077702665710439,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "high"
+      },
+      "rating": 0.8394425556000112,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "flex",
+        "spacing": "cramped",
+        "contrast": "high"
+      },
+      "rating": 0.6189165701890016,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "grid",
+        "spacing": "cramped",
+        "contrast": "high"
+      },
+      "rating": 0.6958150245860055,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.9630882957080312,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "frame",
+        "spacing": "none",
+        "contrast": "none"
+      },
+      "rating": 0.36924433264235157,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "frame",
+        "spacing": "none",
+        "contrast": "low"
+      },
+      "rating": 0.2502791863798163,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.9860804297060508,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "none",
+        "contrast": "high"
+      },
+      "rating": 0.5570044552126547,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "none",
+        "contrast": "accessible"
+      },
+      "rating": 0.7045081438183731,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "grid",
+        "spacing": "cramped",
+        "contrast": "accessible"
+      },
+      "rating": 0.5147408529224525,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "absolute",
+        "spacing": "cramped",
+        "contrast": "none"
+      },
+      "rating": 0.3008913008943074,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "card-based",
+        "spacing": "cramped",
+        "contrast": "accessible"
+      },
+      "rating": 0.5228552348939404,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "accessible"
+      },
+      "rating": 0.794998175213151,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "frame",
+        "spacing": "excessive",
+        "contrast": "inverted"
+      },
+      "rating": 0.24123161298494727,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "absolute",
+        "spacing": "excessive",
+        "contrast": "inverted"
+      },
+      "rating": 0.2916322472919508,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "frame",
+        "spacing": "excessive",
+        "contrast": "inverted"
+      },
+      "rating": 0.3035688742062784,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "high"
+      },
+      "rating": 0.9084199572155174,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "table",
+        "spacing": "cramped",
+        "contrast": "low"
+      },
+      "rating": 0.3755915530851963,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "frame",
+        "spacing": "none",
+        "contrast": "low"
+      },
+      "rating": 0.1222708858297303,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "flex",
+        "spacing": "excessive",
+        "contrast": "medium-high"
+      },
+      "rating": 0.5769268141310163,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "flex",
+        "spacing": "wide",
+        "contrast": "medium-high"
+      },
+      "rating": 0.8022526455783758,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "comfortable",
+        "contrast": "high"
+      },
+      "rating": 0.9213891025627683,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "frame",
+        "spacing": "excessive",
+        "contrast": "inverted"
+      },
+      "rating": 0.26201252007496845,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "grid",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.8287293929145039,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "grid",
+        "spacing": "cramped",
+        "contrast": "high"
+      },
+      "rating": 0.639818521167913,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "table",
+        "spacing": "excessive",
+        "contrast": "low"
+      },
+      "rating": 0.29767801531020766,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "card-based",
+        "spacing": "wide",
+        "contrast": "high"
+      },
+      "rating": 0.8590968905525408,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "frame",
+        "spacing": "none",
+        "contrast": "none"
+      },
+      "rating": 0.36852053977199795,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "table",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.225753001002948,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "accessible"
+      },
+      "rating": 0.7926740266894259,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "absolute",
+        "spacing": "none",
+        "contrast": "low"
+      },
+      "rating": 0.33751045235901594,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "table",
+        "spacing": "medium",
+        "contrast": "none"
+      },
+      "rating": 0.4697241573233601,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "masonry",
+        "spacing": "cramped",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7424234131194412,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.8282380799111995,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "frame",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.14118203588671333,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "inline",
+        "spacing": "wide",
+        "contrast": "inverted"
+      },
+      "rating": 0.33587868599412707,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "absolute",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.27968346046119086,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "flex",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.7750447778424505,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "grid",
+        "spacing": "medium",
+        "contrast": "accessible"
+      },
+      "rating": 0.9705719495345497,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "card-based",
+        "spacing": "excessive",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6422425828438728,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "masonry",
+        "spacing": "cramped",
+        "contrast": "accessible"
+      },
+      "rating": 0.542324848517713,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "absolute",
+        "spacing": "excessive",
+        "contrast": "none"
+      },
+      "rating": 0.18686405331682412,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "flex",
+        "spacing": "cramped",
+        "contrast": "high"
+      },
+      "rating": 0.5225920336149118,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "absolute",
+        "spacing": "none",
+        "contrast": "low"
+      },
+      "rating": 0.327138426084098,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "absolute",
+        "spacing": "none",
+        "contrast": "low"
+      },
+      "rating": 0.19034463952436442,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "comfortable",
+        "contrast": "accessible"
+      },
+      "rating": 0.9318381874470636,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.7979178332683635,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "absolute",
+        "spacing": "wide",
+        "contrast": "low"
+      },
+      "rating": 0.46636853669337136,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "masonry",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.7923776421162052,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "grid",
+        "spacing": "comfortable",
+        "contrast": "high"
+      },
+      "rating": 0.9209171433582537,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "absolute",
+        "spacing": "excessive",
+        "contrast": "low"
+      },
+      "rating": 0.19294376971194474,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "frame",
+        "spacing": "comfortable",
+        "contrast": "none"
+      },
+      "rating": 0.3087880785125073,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "table",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.2773233250730043,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "flex",
+        "spacing": "comfortable",
+        "contrast": "medium-high"
+      },
+      "rating": 0.9574560565565864,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "absolute",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.28482367126667024,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "card-based",
+        "spacing": "wide",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7687461096002646,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "table",
+        "spacing": "medium",
+        "contrast": "inverted"
+      },
+      "rating": 0.3487625430979824,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "card-based",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.7998067558044455,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "table",
+        "spacing": "comfortable",
+        "contrast": "low"
+      },
+      "rating": 0.4572248562757509,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "absolute",
+        "spacing": "medium",
+        "contrast": "none"
+      },
+      "rating": 0.3689961824029312,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "accessible"
+      },
+      "rating": 0.951027321891621,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "inline",
+        "spacing": "excessive",
+        "contrast": "low"
+      },
+      "rating": 0.272304452425722,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "wide",
+        "contrast": "medium-high"
+      },
+      "rating": 0.8304107094048447,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "medium",
+        "contrast": "accessible"
+      },
+      "rating": 0.8713302390599666,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "table",
+        "spacing": "none",
+        "contrast": "none"
+      },
+      "rating": 0.3606532544218881,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "inline",
+        "spacing": "wide",
+        "contrast": "inverted"
+      },
+      "rating": 0.4512491552779849,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "grid",
+        "spacing": "none",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6021651113004868,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "accessible"
+      },
+      "rating": 0.9826604625768115,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "frame",
+        "spacing": "none",
+        "contrast": "none"
+      },
+      "rating": 0.193915039724689,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "card-based",
+        "spacing": "comfortable",
+        "contrast": "high"
+      },
+      "rating": 0.9552549706021747,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "absolute",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.21541852090877098,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "table",
+        "spacing": "excessive",
+        "contrast": "inverted"
+      },
+      "rating": 0.19546350315581384,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "table",
+        "spacing": "comfortable",
+        "contrast": "inverted"
+      },
+      "rating": 0.4561368701472688,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "masonry",
+        "spacing": "excessive",
+        "contrast": "medium-high"
+      },
+      "rating": 0.5910846620181505,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "masonry",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.7958238985511403,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "grid",
+        "spacing": "wide",
+        "contrast": "medium-high"
+      },
+      "rating": 0.8232697081046312,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "inline",
+        "spacing": "none",
+        "contrast": "inverted"
+      },
+      "rating": 0.18773217405188233,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "frame",
+        "spacing": "none",
+        "contrast": "low"
+      },
+      "rating": 0.3386222721163269,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "table",
+        "spacing": "wide",
+        "contrast": "inverted"
+      },
+      "rating": 0.4972780286175421,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "grid",
+        "spacing": "comfortable",
+        "contrast": "accessible"
+      },
+      "rating": 0.8204926766112304,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "grid",
+        "spacing": "comfortable",
+        "contrast": "accessible"
+      },
+      "rating": 0.9137608173325835,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "card-based",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.7758637754175604,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "grid",
+        "spacing": "none",
+        "contrast": "medium-high"
+      },
+      "rating": 0.5551850519466635,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "table",
+        "spacing": "none",
+        "contrast": "low"
+      },
+      "rating": 0.18995713033667463,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "grid",
+        "spacing": "excessive",
+        "contrast": "accessible"
+      },
+      "rating": 0.7284871225484741,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "absolute",
+        "spacing": "excessive",
+        "contrast": "low"
+      },
+      "rating": 0.25980118514108874,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "grid",
+        "spacing": "cramped",
+        "contrast": "accessible"
+      },
+      "rating": 0.6969572523696861,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "high"
+      },
+      "rating": 0.9295112497793603,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "grid",
+        "spacing": "none",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6042941014609916,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "inline",
+        "spacing": "medium",
+        "contrast": "inverted"
+      },
+      "rating": 0.3759349646972209,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "absolute",
+        "spacing": "medium",
+        "contrast": "low"
+      },
+      "rating": 0.399159766818933,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "table",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.2942664105085065,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "frame",
+        "spacing": "comfortable",
+        "contrast": "none"
+      },
+      "rating": 0.3331222023773202,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "frame",
+        "spacing": "wide",
+        "contrast": "low"
+      },
+      "rating": 0.3223260656769336,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "flex",
+        "spacing": "cramped",
+        "contrast": "high"
+      },
+      "rating": 0.6089138695430512,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "frame",
+        "spacing": "excessive",
+        "contrast": "none"
+      },
+      "rating": 0.15106317209150957,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "frame",
+        "spacing": "comfortable",
+        "contrast": "low"
+      },
+      "rating": 0.49161293217592383,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "table",
+        "spacing": "excessive",
+        "contrast": "none"
+      },
+      "rating": 0.36597649834733825,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "table",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.30630483798781316,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "wide",
+        "contrast": "medium-high"
+      },
+      "rating": 0.8243954460635186,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "table",
+        "spacing": "medium",
+        "contrast": "low"
+      },
+      "rating": 0.46329331670970414,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "accessible"
+      },
+      "rating": 0.982031156169854,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "frame",
+        "spacing": "none",
+        "contrast": "none"
+      },
+      "rating": 0.30877595855837536,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "grid",
+        "spacing": "wide",
+        "contrast": "medium-high"
+      },
+      "rating": 0.9003432189829443,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "table",
+        "spacing": "none",
+        "contrast": "inverted"
+      },
+      "rating": 0.28809328212961904,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "table",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.35427599230349704,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "absolute",
+        "spacing": "excessive",
+        "contrast": "none"
+      },
+      "rating": 0.2882127828054791,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "table",
+        "spacing": "excessive",
+        "contrast": "low"
+      },
+      "rating": 0.23459213730762174,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "card-based",
+        "spacing": "comfortable",
+        "contrast": "high"
+      },
+      "rating": 0.9986329103350278,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "frame",
+        "spacing": "wide",
+        "contrast": "none"
+      },
+      "rating": 0.48765569625221805,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "masonry",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.9611425606379427,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "absolute",
+        "spacing": "comfortable",
+        "contrast": "none"
+      },
+      "rating": 0.44813624023667287,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "accessible"
+      },
+      "rating": 0.8944747397614595,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "cramped",
+        "contrast": "medium-high"
+      },
+      "rating": 0.5983259990007836,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "none",
+        "contrast": "high"
+      },
+      "rating": 0.6458126180616864,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "table",
+        "spacing": "cramped",
+        "contrast": "low"
+      },
+      "rating": 0.12955324593288922,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "flex",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.7601730814811841,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "inline",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.2977337129031209,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "medium",
+        "contrast": "accessible"
+      },
+      "rating": 0.9941957472773136,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "table",
+        "spacing": "medium",
+        "contrast": "none"
+      },
+      "rating": 0.42116429658333704,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "flex",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.7780268685520969,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "card-based",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.7942854804967749,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "table",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.10199047823233386,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "flex",
+        "spacing": "medium",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7827731380602133,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "medium",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7506088426823183,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "grid",
+        "spacing": "comfortable",
+        "contrast": "accessible"
+      },
+      "rating": 0.9245392475947869,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "absolute",
+        "spacing": "cramped",
+        "contrast": "low"
+      },
+      "rating": 0.28986774269631266,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "wide",
+        "contrast": "high"
+      },
+      "rating": 0.9188322110925546,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "frame",
+        "spacing": "excessive",
+        "contrast": "low"
+      },
+      "rating": 0.12533159408354205,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "frame",
+        "spacing": "none",
+        "contrast": "low"
+      },
+      "rating": 0.3902418507166221,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "inline",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.26428423107506366,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "inline",
+        "spacing": "cramped",
+        "contrast": "low"
+      },
+      "rating": 0.3384120206037481,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "flex",
+        "spacing": "comfortable",
+        "contrast": "medium-high"
+      },
+      "rating": 0.9223878116035347,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "card-based",
+        "spacing": "wide",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7637868994831308,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "grid",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.8491834643990753,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "masonry",
+        "spacing": "cramped",
+        "contrast": "medium-high"
+      },
+      "rating": 0.561603226957158,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "card-based",
+        "spacing": "excessive",
+        "contrast": "medium-high"
+      },
+      "rating": 0.5740573106658078,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "grid",
+        "spacing": "wide",
+        "contrast": "medium-high"
+      },
+      "rating": 0.9091300211854775,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "frame",
+        "spacing": "medium",
+        "contrast": "low"
+      },
+      "rating": 0.3940396184540396,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "flex",
+        "spacing": "medium",
+        "contrast": "accessible"
+      },
+      "rating": 0.9914196353175886,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "table",
+        "spacing": "medium",
+        "contrast": "inverted"
+      },
+      "rating": 0.4301530159344811,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "inline",
+        "spacing": "none",
+        "contrast": "inverted"
+      },
+      "rating": 0.22119677584764,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "absolute",
+        "spacing": "comfortable",
+        "contrast": "inverted"
+      },
+      "rating": 0.3684168986783196,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "inline",
+        "spacing": "wide",
+        "contrast": "none"
+      },
+      "rating": 0.39636137909178637,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "flex",
+        "spacing": "medium",
+        "contrast": "accessible"
+      },
+      "rating": 0.992382598621518,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "excessive",
+        "contrast": "accessible"
+      },
+      "rating": 0.5764856252565477,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "masonry",
+        "spacing": "cramped",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6830643007656447,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "inline",
+        "spacing": "none",
+        "contrast": "low"
+      },
+      "rating": 0.28578540311169354,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "inline",
+        "spacing": "cramped",
+        "contrast": "none"
+      },
+      "rating": 0.2605220347607067,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "absolute",
+        "spacing": "medium",
+        "contrast": "low"
+      },
+      "rating": 0.4723278661142945,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "absolute",
+        "spacing": "comfortable",
+        "contrast": "low"
+      },
+      "rating": 0.46550962999732537,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "card-based",
+        "spacing": "wide",
+        "contrast": "high"
+      },
+      "rating": 0.8437015745978871,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "masonry",
+        "spacing": "excessive",
+        "contrast": "accessible"
+      },
+      "rating": 0.5089578210386668,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "grid",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.927017306644146,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "table",
+        "spacing": "cramped",
+        "contrast": "none"
+      },
+      "rating": 0.3742737143533774,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "flex",
+        "spacing": "comfortable",
+        "contrast": "high"
+      },
+      "rating": 0.9269065282955122,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "flex",
+        "spacing": "medium",
+        "contrast": "accessible"
+      },
+      "rating": 0.7695990189241344,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "absolute",
+        "spacing": "none",
+        "contrast": "low"
+      },
+      "rating": 0.16949634772172156,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "card-based",
+        "spacing": "wide",
+        "contrast": "high"
+      },
+      "rating": 0.9706174907924673,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "card-based",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.9136197072493244,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "flex",
+        "spacing": "medium",
+        "contrast": "medium-high"
+      },
+      "rating": 0.8576445482530297,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "masonry",
+        "spacing": "none",
+        "contrast": "medium-high"
+      },
+      "rating": 0.5991264443423774,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "flex",
+        "spacing": "wide",
+        "contrast": "high"
+      },
+      "rating": 0.7984068512558711,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "table",
+        "spacing": "excessive",
+        "contrast": "none"
+      },
+      "rating": 0.2939953759665741,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "flex",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.9696451871399444,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "grid",
+        "spacing": "comfortable",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7955434548788847,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "inline",
+        "spacing": "excessive",
+        "contrast": "low"
+      },
+      "rating": 0.29956478942210035,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "table",
+        "spacing": "none",
+        "contrast": "none"
+      },
+      "rating": 0.2268314112507095,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "flex",
+        "spacing": "comfortable",
+        "contrast": "accessible"
+      },
+      "rating": 0.9654538889188358,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "card-based",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.9700650003187883,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "frame",
+        "spacing": "excessive",
+        "contrast": "none"
+      },
+      "rating": 0.3735281092215563,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "masonry",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.7761482745640276,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "masonry",
+        "spacing": "wide",
+        "contrast": "high"
+      },
+      "rating": 0.9548669434503051,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "table",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.17453052183821532,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "flex",
+        "spacing": "cramped",
+        "contrast": "medium-high"
+      },
+      "rating": 0.5530934093809551,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "table",
+        "spacing": "none",
+        "contrast": "none"
+      },
+      "rating": 0.33881317993151805,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "absolute",
+        "spacing": "cramped",
+        "contrast": "none"
+      },
+      "rating": 0.10344257329227999,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "frame",
+        "spacing": "excessive",
+        "contrast": "none"
+      },
+      "rating": 0.33447991745815847,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "high"
+      },
+      "rating": 0.8642513357599846,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "inline",
+        "spacing": "wide",
+        "contrast": "none"
+      },
+      "rating": 0.4558511108448286,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "absolute",
+        "spacing": "excessive",
+        "contrast": "low"
+      },
+      "rating": 0.3120473295792442,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "flex",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.8519676816951873,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "medium",
+        "contrast": "medium-high"
+      },
+      "rating": 0.944493214184649,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "high"
+      },
+      "rating": 0.8898746942999114,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "card-based",
+        "spacing": "wide",
+        "contrast": "high"
+      },
+      "rating": 0.7949218799314705,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.9173616513575645,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "absolute",
+        "spacing": "none",
+        "contrast": "inverted"
+      },
+      "rating": 0.20286671685039187,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "absolute",
+        "spacing": "excessive",
+        "contrast": "low"
+      },
+      "rating": 0.10552687499759918,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "table",
+        "spacing": "wide",
+        "contrast": "none"
+      },
+      "rating": 0.42320041377810325,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "masonry",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.7941825624220542,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "table",
+        "spacing": "comfortable",
+        "contrast": "none"
+      },
+      "rating": 0.41141127532896565,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "card-based",
+        "spacing": "excessive",
+        "contrast": "accessible"
+      },
+      "rating": 0.5433846539053577,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "inline",
+        "spacing": "excessive",
+        "contrast": "none"
+      },
+      "rating": 0.25046033973620985,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "masonry",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.9203477599970931,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "medium",
+        "contrast": "accessible"
+      },
+      "rating": 0.9031315883172562,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "medium-high"
+      },
+      "rating": 0.99834599908037,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "wide",
+        "contrast": "high"
+      },
+      "rating": 0.8989862793672994,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "inline",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.381958344927817,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "inline",
+        "spacing": "comfortable",
+        "contrast": "low"
+      },
+      "rating": 0.46484167733205645,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "masonry",
+        "spacing": "none",
+        "contrast": "accessible"
+      },
+      "rating": 0.7296300473971209,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "flex",
+        "spacing": "comfortable",
+        "contrast": "accessible"
+      },
+      "rating": 0.9396833001321975,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "table",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.22783017655746948,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "absolute",
+        "spacing": "wide",
+        "contrast": "low"
+      },
+      "rating": 0.35760322740005557,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "table",
+        "spacing": "comfortable",
+        "contrast": "low"
+      },
+      "rating": 0.49104611534924164,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "absolute",
+        "spacing": "wide",
+        "contrast": "low"
+      },
+      "rating": 0.4670270856274713,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "frame",
+        "spacing": "excessive",
+        "contrast": "inverted"
+      },
+      "rating": 0.14671386610447482,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "inline",
+        "spacing": "comfortable",
+        "contrast": "none"
+      },
+      "rating": 0.4920113621671333,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "cramped",
+        "contrast": "accessible"
+      },
+      "rating": 0.6083916672052155,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "none",
+        "contrast": "high"
+      },
+      "rating": 0.630788972180909,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "grid",
+        "spacing": "cramped",
+        "contrast": "medium-high"
+      },
+      "rating": 0.709950480175487,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "frame",
+        "spacing": "excessive",
+        "contrast": "none"
+      },
+      "rating": 0.12194210435860263,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "masonry",
+        "spacing": "excessive",
+        "contrast": "high"
+      },
+      "rating": 0.7182971683160535,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "absolute",
+        "spacing": "cramped",
+        "contrast": "none"
+      },
+      "rating": 0.15135656690385602,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "excessive",
+        "contrast": "medium-high"
+      },
+      "rating": 0.5890778817381059,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "masonry",
+        "spacing": "wide",
+        "contrast": "high"
+      },
+      "rating": 0.9013220297323223,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "table",
+        "spacing": "comfortable",
+        "contrast": "low"
+      },
+      "rating": 0.42115728005427866,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "card-based",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.9137974390281753,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "wide",
+        "contrast": "medium-high"
+      },
+      "rating": 0.9408340403001794,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "flex",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.8213163727617486,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "medium",
+        "contrast": "accessible"
+      },
+      "rating": 0.8411789330925076,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "card-based",
+        "spacing": "comfortable",
+        "contrast": "high"
+      },
+      "rating": 0.9888893085228203,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "masonry",
+        "spacing": "excessive",
+        "contrast": "accessible"
+      },
+      "rating": 0.6151120440215891,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "medium",
+        "contrast": "accessible"
+      },
+      "rating": 0.7791127596800366,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "table",
+        "spacing": "cramped",
+        "contrast": "low"
+      },
+      "rating": 0.3529667258347158,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "card-based",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.8553036807313852,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "wide",
+        "contrast": "accessible"
+      },
+      "rating": 0.954624048092723,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "high"
+      },
+      "rating": 0.8368382214712414,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "medium-high"
+      },
+      "rating": 0.8492628677827819,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "grid",
+        "spacing": "medium",
+        "contrast": "accessible"
+      },
+      "rating": 0.9550010163501933,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "high"
+      },
+      "rating": 0.8246065834257889,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#ECF0F1",
+          "#E74C3C"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "masonry",
+        "spacing": "cramped",
+        "contrast": "medium-high"
+      },
+      "rating": 0.5574496367167239,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "frame",
+        "spacing": "none",
+        "contrast": "inverted"
+      },
+      "rating": 0.18061600621742774,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "flex",
+        "spacing": "excessive",
+        "contrast": "high"
+      },
+      "rating": 0.5744357550274151,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Roboto",
+          "Open Sans"
+        ],
+        "layout": "card-based",
+        "spacing": "comfortable",
+        "contrast": "accessible"
+      },
+      "rating": 0.9391344105757529,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1ABC9C",
+          "#FFFFFF",
+          "#34495E"
+        ],
+        "fonts": [
+          "Inter",
+          "Source Sans Pro"
+        ],
+        "layout": "flex",
+        "spacing": "wide",
+        "contrast": "medium-high"
+      },
+      "rating": 0.776952099178958,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "masonry",
+        "spacing": "comfortable",
+        "contrast": "medium-high"
+      },
+      "rating": 0.9450011215867867,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "card-based",
+        "spacing": "comfortable",
+        "contrast": "high"
+      },
+      "rating": 0.9327387562962028,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#F39C12",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Work Sans",
+          "IBM Plex Sans"
+        ],
+        "layout": "flex",
+        "spacing": "medium",
+        "contrast": "accessible"
+      },
+      "rating": 0.7517727331869042,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF00FF",
+          "#FFFF00",
+          "#00FFFF"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "frame",
+        "spacing": "excessive",
+        "contrast": "none"
+      },
+      "rating": 0.36132883119640136,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "absolute",
+        "spacing": "cramped",
+        "contrast": "inverted"
+      },
+      "rating": 0.21807546929106578,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#FFFFFF",
+          "#3498DB"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "masonry",
+        "spacing": "wide",
+        "contrast": "high"
+      },
+      "rating": 0.8460987212239856,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#8B4513",
+          "#556B2F",
+          "#2F4F4F"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "absolute",
+        "spacing": "comfortable",
+        "contrast": "none"
+      },
+      "rating": 0.4859425274980021,
+      "category": "mixed-bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Poppins",
+          "Nunito"
+        ],
+        "layout": "card-based",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.95910855128288,
+      "category": "good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Curlz MT",
+          "Jokerman"
+        ],
+        "layout": "inline",
+        "spacing": "excessive",
+        "contrast": "none"
+      },
+      "rating": 0.2921779532791807,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#000000",
+          "#111111",
+          "#222222"
+        ],
+        "fonts": [
+          "Comic Sans MS",
+          "Papyrus"
+        ],
+        "layout": "absolute",
+        "spacing": "none",
+        "contrast": "inverted"
+      },
+      "rating": 0.12764660605204894,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FFC0CB",
+          "#FFB6C1",
+          "#FFE4E1"
+        ],
+        "fonts": [
+          "Impact",
+          "Courier New"
+        ],
+        "layout": "frame",
+        "spacing": "excessive",
+        "contrast": "inverted"
+      },
+      "rating": 0.3449859895047682,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "fonts": [
+          "Brush Script",
+          "Lucida Handwriting"
+        ],
+        "layout": "inline",
+        "spacing": "excessive",
+        "contrast": "none"
+      },
+      "rating": 0.2734219754808218,
+      "category": "bad"
+    },
+    {
+      "input": {
+        "palette": [
+          "#9B59B6",
+          "#FFFFFF",
+          "#2C3E50"
+        ],
+        "fonts": [
+          "Montserrat",
+          "Lato"
+        ],
+        "layout": "masonry",
+        "spacing": "cramped",
+        "contrast": "high"
+      },
+      "rating": 0.6183682101642134,
+      "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#004d40",
+          "#00796b",
+          "#ffffff"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "sidebar",
+        "spacing": "compact",
+        "contrast": "medium-high"
+      },
+      "rating": 0.8156294693093423,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#34495E",
+          "#ECF0F1"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "grid",
+        "spacing": "medium",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7318787571001514,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1565C0",
+          "#1976D2",
+          "#E3F2FD"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "grid",
+        "spacing": "compact",
+        "contrast": "medium"
+      },
+      "rating": 0.7055558098248123,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#34495E",
+          "#ECF0F1"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "sidebar",
+        "spacing": "medium",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6860718061958475,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1565C0",
+          "#1976D2",
+          "#E3F2FD"
+        ],
+        "fonts": [
+          "Georgia",
+          "Helvetica"
+        ],
+        "layout": "grid",
+        "spacing": "standard",
+        "contrast": "high"
+      },
+      "rating": 0.694584126762489,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#003366",
+          "#336699",
+          "#FFFFFF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "sidebar",
+        "spacing": "medium",
+        "contrast": "medium-high"
+      },
+      "rating": 0.8363522020893865,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1a1a2e",
+          "#16213e",
+          "#0f3460"
+        ],
+        "fonts": [
+          "Garamond",
+          "Calibri"
+        ],
+        "layout": "grid",
+        "spacing": "compact",
+        "contrast": "medium"
+      },
+      "rating": 0.7199848317965674,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#004d40",
+          "#00796b",
+          "#ffffff"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "sidebar",
+        "spacing": "standard",
+        "contrast": "high"
+      },
+      "rating": 0.8097035964887797,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#003366",
+          "#336699",
+          "#FFFFFF"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "grid",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.7216355297607658,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#004d40",
+          "#00796b",
+          "#ffffff"
+        ],
+        "fonts": [
+          "Georgia",
+          "Helvetica"
+        ],
+        "layout": "sidebar",
+        "spacing": "compact",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6598183930875134,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#004d40",
+          "#00796b",
+          "#ffffff"
+        ],
+        "fonts": [
+          "Georgia",
+          "Helvetica"
+        ],
+        "layout": "flex",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.6848665955241822,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1a1a2e",
+          "#16213e",
+          "#0f3460"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "grid",
+        "spacing": "standard",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6713477822003158,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#004d40",
+          "#00796b",
+          "#ffffff"
+        ],
+        "fonts": [
+          "Garamond",
+          "Calibri"
+        ],
+        "layout": "flex",
+        "spacing": "compact",
+        "contrast": "medium-high"
+      },
+      "rating": 0.8140234803851922,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#003366",
+          "#336699",
+          "#FFFFFF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "sidebar",
+        "spacing": "medium",
+        "contrast": "medium"
+      },
+      "rating": 0.8287574586343054,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#34495E",
+          "#ECF0F1"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "grid",
+        "spacing": "compact",
+        "contrast": "medium"
+      },
+      "rating": 0.6657617290165136,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#34495E",
+          "#ECF0F1"
+        ],
+        "fonts": [
+          "Georgia",
+          "Helvetica"
+        ],
+        "layout": "sidebar",
+        "spacing": "compact",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7163582305881229,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#004d40",
+          "#00796b",
+          "#ffffff"
+        ],
+        "fonts": [
+          "Georgia",
+          "Helvetica"
+        ],
+        "layout": "sidebar",
+        "spacing": "compact",
+        "contrast": "high"
+      },
+      "rating": 0.6635392840039689,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#34495E",
+          "#ECF0F1"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "flex",
+        "spacing": "compact",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6752543188783218,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#34495E",
+          "#ECF0F1"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "flex",
+        "spacing": "standard",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7383738866997248,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#003366",
+          "#336699",
+          "#FFFFFF"
+        ],
+        "fonts": [
+          "Georgia",
+          "Helvetica"
+        ],
+        "layout": "sidebar",
+        "spacing": "standard",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6581738795724871,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#004d40",
+          "#00796b",
+          "#ffffff"
+        ],
+        "fonts": [
+          "Garamond",
+          "Calibri"
+        ],
+        "layout": "sidebar",
+        "spacing": "standard",
+        "contrast": "medium"
+      },
+      "rating": 0.7861357145575879,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#34495E",
+          "#ECF0F1"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "grid",
+        "spacing": "standard",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7074363353950366,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#004d40",
+          "#00796b",
+          "#ffffff"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "grid",
+        "spacing": "standard",
+        "contrast": "medium"
+      },
+      "rating": 0.770434907819755,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#003366",
+          "#336699",
+          "#FFFFFF"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "flex",
+        "spacing": "compact",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7860483268095925,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1a1a2e",
+          "#16213e",
+          "#0f3460"
+        ],
+        "fonts": [
+          "Garamond",
+          "Calibri"
+        ],
+        "layout": "grid",
+        "spacing": "standard",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7851575932255992,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1a1a2e",
+          "#16213e",
+          "#0f3460"
+        ],
+        "fonts": [
+          "Garamond",
+          "Calibri"
+        ],
+        "layout": "sidebar",
+        "spacing": "compact",
+        "contrast": "high"
+      },
+      "rating": 0.6725006528691437,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1a1a2e",
+          "#16213e",
+          "#0f3460"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "grid",
+        "spacing": "compact",
+        "contrast": "high"
+      },
+      "rating": 0.6914248607520699,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1a1a2e",
+          "#16213e",
+          "#0f3460"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "sidebar",
+        "spacing": "compact",
+        "contrast": "high"
+      },
+      "rating": 0.7851423201525207,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1a1a2e",
+          "#16213e",
+          "#0f3460"
+        ],
+        "fonts": [
+          "Georgia",
+          "Helvetica"
+        ],
+        "layout": "flex",
+        "spacing": "compact",
+        "contrast": "high"
+      },
+      "rating": 0.7486630138211712,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#003366",
+          "#336699",
+          "#FFFFFF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "grid",
+        "spacing": "compact",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6546016938443595,
+      "category": "corporate-good"
+    }
+  ],
+  "feedback_data": [
+    {
+      "input": {
+        "name": "HealLink",
+        "mission": "Conectar pacientes con profesionales de la salud de manera rápida y segura.",
+        "values": "confianza, privacidad, empatía, profesionalismo",
+        "sector": "salud",
+        "audience": "Pacientes y médicos"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "FreshMarket",
+        "mission": "Llevar productos locales frescos del campo a la ciudad.",
+        "values": "calidad, cercanía, sustentabilidad, comunidad",
+        "sector": "alimentos",
+        "audience": "Consumidores urbanos y productores rurales"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "FreshMarket",
+        "mission": "Llevar productos locales frescos del campo a la ciudad.",
+        "values": "calidad, cercanía, sustentabilidad, comunidad",
+        "sector": "alimentos",
+        "audience": "Consumidores urbanos y productores rurales"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "FreshMarket",
+        "mission": "Llevar productos locales frescos del campo a la ciudad.",
+        "values": "calidad, cercanía, sustentabilidad, comunidad",
+        "sector": "alimentos",
+        "audience": "Consumidores urbanos y productores rurales"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "FreshMarket",
+        "mission": "Llevar productos locales frescos del campo a la ciudad.",
+        "values": "calidad, cercanía, sustentabilidad, comunidad",
+        "sector": "alimentos",
+        "audience": "Consumidores urbanos y productores rurales"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "FreshMarket",
+        "mission": "Llevar productos locales frescos del campo a la ciudad.",
+        "values": "calidad, cercanía, sustentabilidad, comunidad",
+        "sector": "alimentos",
+        "audience": "Consumidores urbanos y productores rurales"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Segurity Mix",
+        "mission": "Nuestra misión es dar seguridad y confianza a clientes b2b",
+        "values": "seriedad, excelencia, confianza",
+        "sector": "otros",
+        "audience": "Empresas B2B"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Segurity Mix",
+        "mission": "Nuestra misión es dar seguridad y confianza a clientes b2b",
+        "values": "seriedad, excelencia, confianza",
+        "sector": "otros",
+        "audience": "Empresas B2B"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Segurity Mix",
+        "mission": "Nuestra misión es dar seguridad y confianza a clientes b2b",
+        "values": "seriedad, excelencia, confianza",
+        "sector": "otros",
+        "audience": "Empresas B2B"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Segurity Mix",
+        "mission": "Nuestra misión es dar seguridad y confianza a clientes b2b",
+        "values": "seriedad, excelencia, confianza",
+        "sector": "otros",
+        "audience": "Empresas B2B"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Segurity Mix",
+        "mission": "Nuestra misión es dar seguridad y confianza a clientes b2b",
+        "values": "seriedad, excelencia, confianza",
+        "sector": "otros",
+        "audience": "Empresas B2B"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Amigates",
+        "mission": "Queremos crear una comunidad de bienestar fácil y amigable",
+        "values": "bienestar, calidad, sencillez",
+        "sector": "bienestar",
+        "audience": "jovenes"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Amigates",
+        "mission": "Queremos crear una comunidad de bienestar fácil y amigable",
+        "values": "bienestar, calidad, sencillez",
+        "sector": "bienestar",
+        "audience": "jovenes"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Amigates",
+        "mission": "Queremos crear una comunidad de bienestar fácil y amigable",
+        "values": "bienestar, calidad, sencillez",
+        "sector": "bienestar",
+        "audience": "jovenes"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Amigates",
+        "mission": "Queremos crear una comunidad de bienestar fácil y amigable",
+        "values": "bienestar, calidad, sencillez",
+        "sector": "bienestar",
+        "audience": "jovenes"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Amigates",
+        "mission": "Queremos crear una comunidad de bienestar fácil y amigable",
+        "values": "bienestar, calidad, sencillez",
+        "sector": "bienestar",
+        "audience": "jovenes"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "SkillBoost",
+        "mission": "Potenciar carreras con aprendizaje práctico y profesional.",
+        "values": "crecimiento, calidad, accesibilidad, actualización",
+        "sector": "educación",
+        "audience": "Profesionales y emprendedores"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "SkillBoost",
+        "mission": "Potenciar carreras con aprendizaje práctico y profesional.",
+        "values": "crecimiento, calidad, accesibilidad, actualización",
+        "sector": "educación",
+        "audience": "Profesionales y emprendedores"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "SkillBoost",
+        "mission": "Potenciar carreras con aprendizaje práctico y profesional.",
+        "values": "crecimiento, calidad, accesibilidad, actualización",
+        "sector": "educación",
+        "audience": "Profesionales y emprendedores"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "SkillBoost",
+        "mission": "Potenciar carreras con aprendizaje práctico y profesional.",
+        "values": "crecimiento, calidad, accesibilidad, actualización",
+        "sector": "educación",
+        "audience": "Profesionales y emprendedores"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "SkillBoost",
+        "mission": "Potenciar carreras con aprendizaje práctico y profesional.",
+        "values": "crecimiento, calidad, accesibilidad, actualización",
+        "sector": "educación",
+        "audience": "Profesionales y emprendedores"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "VoxCast",
+        "mission": "Dar voz a las ideas que transforman el mundo a través del podcasting.",
+        "values": "creatividad, libertad, diversidad, conexión",
+        "sector": "producción audiovisual",
+        "audience": "Creadores de contenido y oyentes curiosos"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "VoxCast",
+        "mission": "Dar voz a las ideas que transforman el mundo a través del podcasting.",
+        "values": "creatividad, libertad, diversidad, conexión",
+        "sector": "producción audiovisual",
+        "audience": "Creadores de contenido y oyentes curiosos"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "VoxCast",
+        "mission": "Dar voz a las ideas que transforman el mundo a través del podcasting.",
+        "values": "creatividad, libertad, diversidad, conexión",
+        "sector": "producción audiovisual",
+        "audience": "Creadores de contenido y oyentes curiosos"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "VoxCast",
+        "mission": "Dar voz a las ideas que transforman el mundo a través del podcasting.",
+        "values": "creatividad, libertad, diversidad, conexión",
+        "sector": "producción audiovisual",
+        "audience": "Creadores de contenido y oyentes curiosos"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "VoxCast",
+        "mission": "Dar voz a las ideas que transforman el mundo a través del podcasting.",
+        "values": "creatividad, libertad, diversidad, conexión",
+        "sector": "producción audiovisual",
+        "audience": "Creadores de contenido y oyentes curiosos"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "EcoMarket",
+        "mission": "Crear el marketplace más grande de productos sostenibles y ecológicos para consumidores conscientes\n",
+        "values": "sostenibilidad, transparencia, medio ambiente, eco-friendly, orgánico",
+        "sector": "alimentos",
+        "audience": "Millennials y Gen Z preocupados por el medio ambiente"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "EcoMarket",
+        "mission": "Crear el marketplace más grande de productos sostenibles y ecológicos para consumidores conscientes\n",
+        "values": "sostenibilidad, transparencia, medio ambiente, eco-friendly, orgánico",
+        "sector": "alimentos",
+        "audience": "Millennials y Gen Z preocupados por el medio ambiente"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "EcoMarket",
+        "mission": "Crear el marketplace más grande de productos sostenibles y ecológicos para consumidores conscientes\n",
+        "values": "sostenibilidad, transparencia, medio ambiente, eco-friendly, orgánico",
+        "sector": "alimentos",
+        "audience": "Millennials y Gen Z preocupados por el medio ambiente"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "EcoMarket",
+        "mission": "Crear el marketplace más grande de productos sostenibles y ecológicos para consumidores conscientes\n",
+        "values": "sostenibilidad, transparencia, medio ambiente, eco-friendly, orgánico",
+        "sector": "alimentos",
+        "audience": "Millennials y Gen Z preocupados por el medio ambiente"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "EcoMarket",
+        "mission": "Crear el marketplace más grande de productos sostenibles y ecológicos para consumidores conscientes\n",
+        "values": "sostenibilidad, transparencia, medio ambiente, eco-friendly, orgánico",
+        "sector": "alimentos",
+        "audience": "Millennials y Gen Z preocupados por el medio ambiente"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Pixel Dreams Studio",
+        "mission": "Transformar ideas en experiencias visuales memorables que conecten marcas con audiencias\n",
+        "values": "creatividad, diseño, arte, innovación, expresión, originalidad",
+        "sector": "diseño",
+        "audience": "Startups y empresas que buscan branding disruptivo"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Pixel Dreams Studio",
+        "mission": "Transformar ideas en experiencias visuales memorables que conecten marcas con audiencias\n",
+        "values": "creatividad, diseño, arte, innovación, expresión, originalidad",
+        "sector": "diseño",
+        "audience": "Startups y empresas que buscan branding disruptivo"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Pixel Dreams Studio",
+        "mission": "Transformar ideas en experiencias visuales memorables que conecten marcas con audiencias\n",
+        "values": "creatividad, diseño, arte, innovación, expresión, originalidad",
+        "sector": "diseño",
+        "audience": "Startups y empresas que buscan branding disruptivo"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Pixel Dreams Studio",
+        "mission": "Transformar ideas en experiencias visuales memorables que conecten marcas con audiencias\n",
+        "values": "creatividad, diseño, arte, innovación, expresión, originalidad",
+        "sector": "diseño",
+        "audience": "Startups y empresas que buscan branding disruptivo"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Pixel Dreams Studio",
+        "mission": "Transformar ideas en experiencias visuales memorables que conecten marcas con audiencias\n",
+        "values": "creatividad, diseño, arte, innovación, expresión, originalidad",
+        "sector": "diseño",
+        "audience": "Startups y empresas que buscan branding disruptivo"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "QuantumFlow AI",
+        "mission": "Revolucionar la productividad empresarial mediante inteligencia artificial generativa y automatización inteligente de procesos\n",
+        "values": "innovación, tecnología, eficiencia, futuro, inteligencia artificial",
+        "sector": "tecnología",
+        "audience": "CTOs y directores de IT en empresas medianas y grandes"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "QuantumFlow AI",
+        "mission": "Revolucionar la productividad empresarial mediante inteligencia artificial generativa y automatización inteligente de procesos\n",
+        "values": "innovación, tecnología, eficiencia, futuro, inteligencia artificial",
+        "sector": "tecnología",
+        "audience": "CTOs y directores de IT en empresas medianas y grandes"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "QuantumFlow AI",
+        "mission": "Revolucionar la productividad empresarial mediante inteligencia artificial generativa y automatización inteligente de procesos\n",
+        "values": "innovación, tecnología, eficiencia, futuro, inteligencia artificial",
+        "sector": "tecnología",
+        "audience": "CTOs y directores de IT en empresas medianas y grandes"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "QuantumFlow AI",
+        "mission": "Revolucionar la productividad empresarial mediante inteligencia artificial generativa y automatización inteligente de procesos\n",
+        "values": "innovación, tecnología, eficiencia, futuro, inteligencia artificial",
+        "sector": "tecnología",
+        "audience": "CTOs y directores de IT en empresas medianas y grandes"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "QuantumFlow AI",
+        "mission": "Revolucionar la productividad empresarial mediante inteligencia artificial generativa y automatización inteligente de procesos\n",
+        "values": "innovación, tecnología, eficiencia, futuro, inteligencia artificial",
+        "sector": "tecnología",
+        "audience": "CTOs y directores de IT en empresas medianas y grandes"
+      },
+      "rating": 1,
+      "feedback": ""
+    }
+  ],
+  "pending_feedback": [
+    {
+      "input": {
+        "name": "QuantumFlow AI",
+        "mission": "Revolucionar la productividad empresarial mediante inteligencia artificial generativa",
+        "values": "innovación, tecnología, eficiencia, futuro, inteligencia artificial",
+        "sector": "tecnología",
+        "audience": "CTOs y directores de IT"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Pixel Dreams Studio",
+        "mission": "Transformar ideas en experiencias visuales memorables que conecten marcas con audiencias",
+        "values": "creatividad, diseño, arte, innovación, expresión, originalidad",
+        "sector": "diseño",
+        "audience": "Startups y empresas que buscan branding disruptivo"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "SecureBank Pro",
+        "mission": "Proporcionar soluciones bancarias digitales seguras y eficientes para empresas",
+        "values": "seguridad, confianza, profesionalismo, excelencia, innovación",
+        "sector": "finanzas",
+        "audience": "Empresas B2B y CFOs corporativos"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "EcoMarket",
+        "mission": "Crear el marketplace más grande de productos sostenibles y ecológicos para consumidores conscientes",
+        "values": "sostenibilidad, transparencia, medio ambiente, eco-friendly, orgánico",
+        "sector": "alimentos",
+        "audience": "Millennials y Gen Z preocupados por el medio ambiente"
+      },
+      "rating": 1,
+      "feedback": ""
+    }
+  ]
+}
