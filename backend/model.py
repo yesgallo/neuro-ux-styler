@@ -39,6 +39,11 @@ class NeuroUXModel:
         self.build_model()
         
     def build_model(self):
+        # Asegurarse de que TensorFlow esté cargado
+        if tf is None or keras is None:
+            print("❌ Error: TensorFlow/Keras no está instalado o no se pudo importar.")
+            raise ImportError("TensorFlow o Keras es requerido para construir el modelo.")
+            
         from tensorflow.keras.models import Sequential
         from tensorflow.keras.layers import Dense, Dropout
         from tensorflow.keras.metrics import AUC
@@ -84,7 +89,8 @@ class NeuroUXModel:
             ModelCheckpoint(
                 self.model_path,
                 monitor='val_accuracy',
-                save_best_only=True
+                save_best_only=True,
+                verbose=0 # Reducir el ruido en la consola
             )
         ]
         
@@ -121,6 +127,11 @@ class NeuroUXModel:
         Carga el modelo desde disco.
         Si no se especifica path, usa self.model_path
         """
+        if keras is None:
+            print("⚠️ Keras no está disponible. No se puede cargar el modelo.")
+            self.build_model()
+            return False
+            
         from tensorflow.keras.models import load_model
         
         # ✅ CORREGIDO: Usar self.model_path si no se especifica path
@@ -146,13 +157,15 @@ class NeuroUXModel:
         """Evalúa el modelo"""
         if self.model is None:
             print("⚠️ No hay modelo cargado, intentando cargar...")
-            self.load_model()
+            if not self.load_model():
+                print("❌ No se pudo cargar ni construir el modelo para evaluar.")
+                return {'loss': -1, 'accuracy': 0, 'auc': 0}
         
         results = self.model.evaluate(X_test, y_test, verbose=0)
         metrics = {
             'loss': results[0],
             'accuracy': results[1],
-            'auc': results[2]
+            'auc': results[2] if len(results) > 2 else 0.0 # Asegurar que auc exista
         }
         return metrics
     

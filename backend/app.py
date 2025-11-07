@@ -7,7 +7,15 @@ import os
 import traceback
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+
+# CORS permisivo para desarrollo
+CORS(app, resources={
+    r"/*": {
+        "origins": "*",
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allow_headers": ["Content-Type"]
+    }
+})
 
 # Inicializar componentes
 model = NeuroUXModel()
@@ -15,9 +23,15 @@ processor = DataProcessor()
 trainer = Trainer()
 
 # Cargar modelo al iniciar
-model.load_model()
+print("🔄 Cargando modelo...")
+try:
+    model.load_model()
+    print("✅ Modelo cargado correctamente")
+except Exception as e:
+    print(f"⚠️ Error al cargar modelo: {e}")
 
-@app.route('/api/health', methods=['GET'])
+@app.route('/health', methods=['GET', 'OPTIONS'])
+@app.route('/api/health', methods=['GET', 'OPTIONS'])
 def health_check():
     """Endpoint de salud"""
     return jsonify({
@@ -25,51 +39,87 @@ def health_check():
         'model_loaded': model.model is not None
     })
 
-@app.route('/api/generate', methods=['POST'])
+@app.route('/generate', methods=['POST', 'OPTIONS'])
+@app.route('/api/generate', methods=['POST', 'OPTIONS'])
 def generate_ui_kit():
     """Genera un UI Kit basado en los datos de entrada"""
+    if request.method == 'OPTIONS':
+        return '', 204
+        
     try:
         data = request.json
+        print(f"📥 Datos recibidos: {data}")
         
-        required_fields = ['name', 'mission', 'values', 'sector', 'audience']
-        for field in required_fields:
-            if field not in data:
-                return jsonify({'error': f'Campo requerido: {field}'}), 400
+        if not data:
+            return jsonify({'success': False, 'error': 'No se recibieron datos'}), 400
         
-        features, keywords, sector, audience = processor.encode_input(data)
-        prediction = model.predict(features)  # Valor entre 0.0 y 1.0
-        confidence = float(prediction[0][0])  # Ya es la confianza
-        ui_kit = processor.generate_ui_kit(prediction, keywords, sector, audience)
-        ui_kit['confidence'] = confidence  # Guarda la probabilidad directamente
+        # Valores por defecto
+        input_data = {
+            'name': data.get('name', ''),
+            'mission': data.get('mission', ''),
+            'values': data.get('values', ''),
+            'sector': data.get('sector', 'general'),
+            'audience': data.get('audience', 'general')
+        }
         
-        return jsonify({'success': True, 'ui_kit': ui_kit})
+        # ✅ CORREGIDO: encode_input retorna 3 valores
+        features, metadata, _ = processor.encode_input(input_data)
+        prediction = model.predict(features)
+        confidence = float(prediction[0][0])
+        
+        # ✅ CORREGIDO: generate_ui_kit recibe 3 parámetros
+        ui_kit = processor.generate_ui_kit(prediction, metadata, None)
+        
+        response = {
+            'success': True,
+            'ui_kit': {
+                'colors': ui_kit.get('colors', {}),
+                'typography': ui_kit.get('typography', {}),
+                'components': ui_kit.get('components', {}),
+                'tokens': ui_kit.get('tokens', {}),
+                'confidence': confidence,
+                'style': ui_kit.get('style', {})
+            }
+        }
+        
+        print(f"✅ UI Kit generado con confianza: {confidence:.2%}")
+        return jsonify(response)
         
     except Exception as e:
-        print("❌ Error en /generate:", str(e))
+        error_msg = str(e)
+        print(f"❌ Error en /generate: {error_msg}")
         traceback.print_exc()
-        return jsonify({'success': False, 'error': str(e)}), 500
+        return jsonify({
+            'success': False,
+            'error': error_msg
+        }), 500
 
-@app.route('/api/feedback', methods=['POST'])
+@app.route('/feedback', methods=['POST', 'OPTIONS'])
+@app.route('/api/feedback', methods=['POST', 'OPTIONS'])
 def submit_feedback():
     """Recibe feedback del usuario"""
+    if request.method == 'OPTIONS':
+        return '', 204
+        
     try:
         data = request.json
+        print(f"📥 Feedback recibido: {data}")
         
         input_data = data.get('input_data')
-        rating = data.get('rating')  # 0-1
+        rating = data.get('rating')
         feedback = data.get('feedback', '')
         
         if not input_data or rating is None:
             return jsonify({
+                'success': False,
                 'error': 'Se requiere input_data y rating'
             }), 400
         
-        # Guardar feedback (se añade a pending_feedback)
         pending_count = trainer.add_feedback(input_data, rating, feedback)
-        
-        # Obtener conteos actualizados
         training_data, feedback_data, pending_feedback = trainer.load_training_data()
         total_historical = len(feedback_data) + len(pending_feedback)
+        
+        print(f"✅ Feedback guardado. Pendientes: {pending_count}")
         
         return jsonify({
             'success': True,
@@ -79,28 +129,27 @@ def submit_feedback():
         })
         
     except Exception as e:
-        print("❌ Error en /feedback:", str(e))
+        print(f"❌ Error en /feedback: {str(e)}")
         traceback.print_exc()
         return jsonify({
             'success': False,
             'error': str(e)
         }), 500
 
-
-@app.route('/api/retrain', methods=['POST'])
+@app.route('/retrain', methods=['POST', 'OPTIONS'])
+@app.route('/api/retrain', methods=['POST', 'OPTIONS'])
 def retrain_model():
-    """Reentrena el modelo con feedbacks pendientes"""
+    """Reentrena el modelo"""
+    if request.method == 'OPTIONS':
+        return '', 204
+        
     try:
         print("\n🔄 Solicitud de reentrenamiento recibida...")
         
-        # Cargar datos actuales
         training_data, feedback_data, pending_feedback = trainer.load_training_data()
         pending_count = len(pending_feedback)
         
-        print(f"📊 Estado actual:")
-        print(f"   - Training data: {len(training_data)}")
-        print(f"   - Feedback usado: {len(feedback_data)}")
-        print(f"   - Feedback pendiente: {pending_count}")
+        print(f"📊 Feedback pendiente: {pending_count}")
         
         if pending_count < 5:
             message = f'Necesitas al menos 5 feedbacks nuevos. Tienes: {pending_count}'
@@ -111,25 +160,19 @@ def retrain_model():
                 'pending_count': pending_count
             }), 400
         
-        # Guardar total histórico ANTES del reentrenamiento
         total_before = len(feedback_data) + pending_count
         
         print(f"🚀 Iniciando reentrenamiento con {pending_count} feedbacks...")
-        
-        # Reentrenar (esto moverá pending → feedback_data y vaciará pending)
         history, metrics = trainer.retrain_with_feedback()
         
-        # Recargar modelo en memoria
         print("📥 Recargando modelo actualizado...")
         model.load_model()
         
-        # Cargar estado NUEVO
         _, _, new_pending = trainer.load_training_data()
         
-        print(f"✅ Reentrenamiento completado exitosamente")
+        print(f"✅ Reentrenamiento completado")
         print(f"   - Accuracy: {metrics['accuracy']:.4f}")
         print(f"   - Loss: {metrics['loss']:.4f}")
-        print(f"   - AUC: {metrics.get('auc', 0.0):.4f}")
         
         return jsonify({
             'success': True,
@@ -139,23 +182,9 @@ def retrain_model():
                 'loss': float(metrics['loss']),
                 'auc': float(metrics.get('auc', 0.0))
             },
-            'pending_feedback': len(new_pending),  # Siempre 0 tras reentrenar
-            'total_feedback': total_before         # Total antes del reentrenamiento
+            'pending_feedback': len(new_pending),
+            'total_feedback': total_before
         })
-        
-    except ValueError as ve:
-        print(f"⚠️ Error de validación: {str(ve)}")
-        return jsonify({
-            'success': False,
-            'error': str(ve)
-        }), 400
-        
-    except FileNotFoundError as fe:
-        print(f"❌ Archivo no encontrado: {str(fe)}")
-        return jsonify({
-            'success': False,
-            'error': 'No se encontró el archivo de datos de entrenamiento'
-        }), 404
         
     except Exception as e:
         error_trace = traceback.format_exc()
@@ -163,13 +192,16 @@ def retrain_model():
         print(error_trace)
         return jsonify({
             'success': False,
-            'error': str(e),
-            'details': error_trace
+            'error': str(e)
         }), 500
 
-@app.route('/api/stats', methods=['GET'])
+@app.route('/stats', methods=['GET', 'OPTIONS'])
+@app.route('/api/stats', methods=['GET', 'OPTIONS'])
 def get_stats():
-    """Obtiene estadísticas del modelo"""
+    """Obtiene estadísticas"""
+    if request.method == 'OPTIONS':
+        return '', 204
+        
     try:
         training_data, feedback_data, pending_feedback = trainer.load_training_data()
         
@@ -177,19 +209,24 @@ def get_stats():
             'success': True,
             'stats': {
                 'training_samples': len(training_data),
-                'feedback_samples': len(feedback_data),      # feedbacks ya usados
-                'pending_feedback': len(pending_feedback),   # feedbacks nuevos
+                'feedback_samples': len(feedback_data),
+                'pending_feedback': len(pending_feedback),
                 'total_samples': len(training_data) + len(feedback_data) + len(pending_feedback),
                 'model_loaded': model.model is not None,
-                'ready_for_retrain': len(pending_feedback) >= 5  # Solo si hay 5 nuevos
+                'ready_for_retrain': len(pending_feedback) >= 5
             }
         })
     except Exception as e:
-        print("❌ Error en /stats:", str(e))
+        print(f"❌ Error en /stats: {str(e)}")
         traceback.print_exc()
         return jsonify({'success': False, 'error': str(e)}), 500
 
 if __name__ == '__main__':
-    print("🚀 Iniciando Neuro UX Styler API...")
-    print("📍 Servidor corriendo en http://localhost:5001")
-    app.run(debug=True, port=5001)
+    print("=" * 60)
+    print("🚀 NEURO UX STYLER API")
+    print("=" * 60)
+    print("📍 Servidor: http://localhost:5001")
+    print("🏥 Health check: http://localhost:5001/health")
+    print("📊 Stats: http://localhost:5001/stats")
+    print("=" * 60)
+    app.run(debug=True, port=5001, host='0.0.0.0')

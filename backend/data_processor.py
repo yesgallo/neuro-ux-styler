@@ -5,15 +5,51 @@ import joblib
 
 class DataProcessor:
     def __init__(self):
-        self.sector_encoder = LabelEncoder()
-        self.audience_encoder = LabelEncoder()
+        # ===== PARA DATOS DE DISEÑO UX =====
+        self.good_palettes = [
+            ["#000000", "#FFFFFF", "#3498DB"],
+            ["#2C3E50", "#ECF0F1", "#E74C3C"],
+            ["#1ABC9C", "#FFFFFF", "#34495E"],
+            ["#F39C12", "#FFFFFF", "#2C3E50"],
+            ["#9B59B6", "#FFFFFF", "#2C3E50"],
+        ]
+        
+        self.bad_palettes = [
+            ["#FF00FF", "#FFFF00", "#00FFFF"],
+            ["#FF0000", "#00FF00", "#0000FF"],
+            ["#8B4513", "#556B2F", "#2F4F4F"],
+            ["#FFC0CB", "#FFB6C1", "#FFE4E1"],
+            ["#000000", "#111111", "#222222"],
+        ]
+        
+        self.good_fonts = [
+            "Roboto", "Open Sans", "Montserrat", "Lato", "Inter", 
+            "Source Sans Pro", "Poppins", "Nunito", "Work Sans", "IBM Plex Sans",
+            "Georgia", "Helvetica", "Arial"
+        ]
+        
+        self.bad_fonts = [
+            "Comic Sans MS", "Papyrus", "Curlz MT", "Jokerman", 
+            "Impact", "Courier New", "Brush Script"
+        ]
+        
+        self.good_layouts = ["grid", "flex", "masonry", "card-based", "sidebar"]
+        self.bad_layouts = ["table", "frame", "absolute", "inline"]
+        
+        self.good_spacing = ["medium", "wide", "comfortable", "standard"]
+        self.neutral_spacing = ["compact"]
+        self.bad_spacing = ["none", "cramped", "excessive"]
+        
+        self.good_contrast = ["high", "medium-high", "accessible"]
+        self.bad_contrast = ["low", "none", "inverted"]
+        
+        # ===== PARA DATOS DE BRANDING =====
         self.color_palettes = self._load_color_palettes()
-        self.fonts = self._load_fonts()
+        self.fonts_catalog = self._load_fonts()
         self.components = self._load_components()
-        self.textures = self._load_textures()
         
     def _load_color_palettes(self):
-        """Paletas de colores predefinidas (ampliadas)"""
+        """Paletas de colores por sector"""
         return {
             'tech_modern': ['#2DD4BF', '#0F172A', '#1E293B', '#F8FAFC', '#64748B'],
             'creative_vibrant': ['#F43F5E', '#8B5CF6', '#FCD34D', '#FFFFFF', '#1F2937'],
@@ -25,14 +61,10 @@ class DataProcessor:
             'education': ['#F59E0B', '#FBBF24', '#FEF3C7', '#78350F', '#FFFFFF'],
             'entertainment': ['#EC4899', '#BE185D', '#FCE7F3', '#831843', '#F472B6'],
             'minimal': ['#000000', '#FFFFFF', '#F5F5F5', '#737373', '#E5E5E5'],
-            'true_crime': ['#0F172A', '#1E293B', '#334155', '#2DD4BF', '#F8FAFC'],
-            'vintage': ['#2D1B0D', '#5C4033', '#C19A6B', '#F5F5DC', '#8B4513'],
-            'dark_academia': ['#2B2D42', '#8D99AE', '#EDF2F4', '#EF233C', '#D90429'],
-            'cyberpunk': ['#FF2E63', '#05D9E8', '#1A1A2E', '#16213E', '#FFFFFF']
         }
     
     def _load_fonts(self):
-        """Tipografías gratuitas de Google Fonts (ampliadas)"""
+        """Tipografías por estilo"""
         return {
             'tech': {'primary': 'Inter', 'secondary': 'Roboto Mono'},
             'creative': {'primary': 'Poppins', 'secondary': 'Montserrat'},
@@ -40,260 +72,353 @@ class DataProcessor:
             'elegant': {'primary': 'Playfair Display', 'secondary': 'Lato'},
             'modern': {'primary': 'Work Sans', 'secondary': 'Space Grotesk'},
             'minimal': {'primary': 'IBM Plex Sans', 'secondary': 'Source Sans Pro'},
-            'friendly': {'primary': 'Nunito', 'secondary': 'Quicksand'},
-            'bold': {'primary': 'Raleway', 'secondary': 'Oswald'},
-            'true_crime': {'primary': 'Cinzel', 'secondary': 'IBM Plex Mono'},
-            'vintage': {'primary': 'Cormorant Garamond', 'secondary': 'Libre Baskerville'},
-            'cyberpunk': {'primary': 'Orbitron', 'secondary': 'Share Tech Mono'}
         }
     
     def _load_components(self):
-        """Estilos de componentes (ampliados)"""
+        """Estilos de componentes"""
         return {
             'modern': {
                 'borderRadius': '12px',
                 'buttonStyle': 'rounded',
+                'buttonRadius': '12px',
+                'cardRadius': '16px',
+                'inputRadius': '12px',
                 'shadowSize': 'medium',
+                'shadow': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
                 'spacing': 'spacious'
             },
             'minimal': {
                 'borderRadius': '4px',
                 'buttonStyle': 'sharp',
+                'buttonRadius': '4px',
+                'cardRadius': '8px',
+                'inputRadius': '4px',
                 'shadowSize': 'none',
+                'shadow': 'none',
                 'spacing': 'compact'
             },
             'soft': {
                 'borderRadius': '24px',
                 'buttonStyle': 'pill',
+                'buttonRadius': '24px',
+                'cardRadius': '20px',
+                'inputRadius': '24px',
                 'shadowSize': 'soft',
+                'shadow': '0 2px 8px rgba(0, 0, 0, 0.08)',
                 'spacing': 'comfortable'
             },
-            'corporate': {
-                'borderRadius': '8px',
-                'buttonStyle': 'squared',
-                'shadowSize': 'subtle',
-                'spacing': 'standard'
-            },
-            'true_crime': {
-                'borderRadius': '0px',
-                'buttonStyle': 'evidence-tag',
-                'shadowSize': 'none',
-                'spacing': 'tight'
-            },
-            'vintage': {
-                'borderRadius': '6px',
-                'buttonStyle': 'paper-cut',
-                'shadowSize': 'paper',
-                'spacing': 'classic'
-            }
-        }
-    
-    def _load_textures(self):
-        """Texturas para fondos y elementos"""
-        return {
-            'true_crime': 'paper_crack.png',
-            'vintage': 'paper_texture.jpg',
-            'minimal': 'none',
-            'default': 'none'
         }
 
-    def _analyze_keywords(self, text):
-        """Analiza palabras clave con soporte para nuevos estilos"""
-        text = text.lower()
+    def _detect_input_type(self, data):
+        """Detecta si es input de branding o diseño UX"""
+        has_branding = any(k in data for k in ['name', 'mission', 'values', 'sector', 'audience'])
+        has_ux_design = any(k in data for k in ['palette', 'fonts', 'layout', 'spacing', 'contrast'])
         
-        style_definitions = {
-            'modern': ['modern', 'innovación', 'tecnología', 'digital', 'futuro', 'ia', 'smart', 'ágil'],
-            'professional': ['profesional', 'confianza', 'calidad', 'excelencia', 'serio', 'corporativo', 'seguro'],
-            'creative': ['creativo', 'arte', 'diseño', 'único', 'original', 'imaginación', 'expresivo', 'artístico'],
-            'friendly': ['amigable', 'cercano', 'accesible', 'simple', 'humano', 'cálido', 'fácil'],
-            'luxury': ['lujo', 'premium', 'exclusivo', 'élite', 'sofisticado', 'elegante', 'dorado', 'alta gama'],
-            'eco': ['sostenible', 'eco', 'verde', 'natural', 'orgánico', 'medio ambiente', 'reciclado', 'limpio'],
-            'dark': ['oscuro', 'dark', 'nocturno', 'sombra', 'misterioso', 'forense', 'crimen'],
-            'true_crime': ['true crime', 'crimen', 'evidencia', 'archivo policial', 'caso', 'detective', 'misterio', 'investigación', 'policía', 'dossier'],
-            'vintage': ['vintage', 'retro', 'antiguo', 'clásico', 'años', 'papel envejecido', 'tipografía serif', 'histórico'],
-            'cyberpunk': ['cyberpunk', 'neón', 'digital', 'glitch', 'futurista', 'hacker', 'matrix', 'sci-fi'],
-            'minimalist': ['minimalista', 'simple', 'limpio', 'espacio en blanco', 'esencial', 'menos es más']
-        }
-        
-        detected = {}
-        for style, keywords in style_definitions.items():
-            detected[style] = any(kw in text for kw in keywords)
-        
-        return detected
+        if has_ux_design:
+            return 'ux_design'
+        elif has_branding:
+            return 'branding'
+        else:
+            return 'unknown'
 
-    def encode_input(self, data):
-        """Codifica los datos de entrada para la red neuronal"""
-        name_len = len(data.get('name', ''))
-        mission_len = len(data.get('mission', ''))
-        values_list = [v.strip() for v in data.get('values', '').split(',') if v.strip()]
-        values_count = len(values_list)
-        
-        sector = data.get('sector', 'general')
-        audience = data.get('audience', 'general')
-        
+    def _convert_branding_to_ux(self, data):
+        """Convierte datos de branding a formato UX design"""
+        # Analizar keywords de branding
         full_text = (data.get('mission', '') + ' ' + data.get('values', '')).lower()
         keywords = self._analyze_keywords(full_text)
+        sector = data.get('sector', 'general')
         
+        # Generar paleta basada en keywords y sector
+        if keywords.get('luxury'):
+            palette = self.color_palettes['luxury'][:3]
+        elif keywords.get('eco'):
+            palette = self.color_palettes['eco_friendly'][:3]
+        elif keywords.get('creative'):
+            palette = self.color_palettes['creative_vibrant'][:3]
+        elif keywords.get('professional'):
+            palette = self.color_palettes['professional'][:3]
+        else:
+            sector_map = {
+                'tecnología': 'tech_modern',
+                'salud': 'health',
+                'finanzas': 'finance',
+                'educación': 'education',
+                'entretenimiento': 'entertainment',
+            }
+            style = sector_map.get(sector, 'tech_modern')
+            palette = self.color_palettes[style][:3]
+        
+        # Generar fuentes basada en keywords
+        if keywords.get('luxury') or keywords.get('professional'):
+            fonts = ["Georgia", "Helvetica"]
+        elif keywords.get('creative'):
+            fonts = ["Montserrat", "Poppins"]
+        elif keywords.get('modern'):
+            fonts = ["Inter", "Roboto"]
+        else:
+            fonts = ["Roboto", "Open Sans"]
+        
+        # Layout y spacing basados en keywords
+        layout = "grid" if keywords.get('modern') else "flex"
+        spacing = "wide" if keywords.get('creative') else "medium"
+        contrast = "high" if keywords.get('professional') else "medium-high"
+        
+        # Crear objeto UX design
+        ux_data = {
+            'palette': palette,
+            'fonts': fonts,
+            'layout': layout,
+            'spacing': spacing,
+            'contrast': contrast
+        }
+        
+        return ux_data, keywords
+
+    def _analyze_keywords(self, text):
+        """Analiza palabras clave en el texto"""
+        text = text.lower()
+        
+        keywords = {
+            'modern': any(kw in text for kw in ['modern', 'innovación', 'tecnología', 'digital', 'futuro', 'ia']),
+            'professional': any(kw in text for kw in ['profesional', 'confianza', 'calidad', 'excelencia', 'serio']),
+            'creative': any(kw in text for kw in ['creativo', 'arte', 'diseño', 'único', 'original']),
+            'luxury': any(kw in text for kw in ['lujo', 'premium', 'exclusivo', 'élite', 'sofisticado']),
+            'eco': any(kw in text for kw in ['sostenible', 'eco', 'verde', 'natural', 'orgánico', 'medio ambiente']),
+        }
+        
+        return keywords
+
+    # ===== MÉTODOS DE ANÁLISIS UX =====
+    
+    def _analyze_palette_quality(self, palette):
+        """Analiza calidad de paleta"""
+        if not palette or len(palette) == 0:
+            return 0.0
+        
+        palette_str = str(sorted(palette))
+        
+        for good_pal in self.good_palettes:
+            if str(sorted(good_pal)) == palette_str:
+                return 1.0
+        
+        for bad_pal in self.bad_palettes:
+            if str(sorted(bad_pal)) == palette_str:
+                return 0.0
+        
+        score = 0.5
+        has_light = any(self._is_light_color(c) for c in palette)
+        has_dark = any(not self._is_light_color(c) for c in palette)
+        if has_light and has_dark:
+            score += 0.2
+        
+        if 3 <= len(palette) <= 5:
+            score += 0.1
+        
+        saturated_count = sum(1 for c in palette if self._is_highly_saturated(c))
+        if saturated_count >= 3:
+            score -= 0.2
+        
+        return max(0.0, min(1.0, score))
+
+    def _is_light_color(self, hex_color):
+        """Determina si un color es claro"""
+        try:
+            hex_color = hex_color.replace("#", "")
+            r, g, b = int(hex_color[0:2], 16), int(hex_color[2:4], 16), int(hex_color[4:6], 16)
+            luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
+            return luminance > 0.5
+        except:
+            return False
+
+    def _is_highly_saturated(self, hex_color):
+        """Determina si un color está muy saturado"""
+        try:
+            hex_color = hex_color.replace("#", "")
+            r, g, b = int(hex_color[0:2], 16), int(hex_color[2:4], 16), int(hex_color[4:6], 16)
+            max_val = max(r, g, b)
+            min_val = min(r, g, b)
+            if max_val == 0:
+                return False
+            saturation = (max_val - min_val) / max_val
+            return saturation > 0.8
+        except:
+            return False
+
+    def _analyze_fonts_quality(self, fonts):
+        """Analiza calidad de fuentes"""
+        if not fonts or len(fonts) == 0:
+            return 0.0
+        
+        score = 0.5
+        good_count = sum(1 for font in fonts if any(gf.lower() in font.lower() for gf in self.good_fonts))
+        bad_count = sum(1 for font in fonts if any(bf.lower() in font.lower() for bf in self.bad_fonts))
+        
+        if good_count > 0 and bad_count == 0:
+            score = 1.0
+        elif bad_count > 0 and good_count == 0:
+            score = 0.0
+        elif good_count > bad_count:
+            score = 0.7
+        elif bad_count > good_count:
+            score = 0.3
+        
+        return score
+
+    def _encode_layout(self, layout):
+        """Codifica layout"""
+        if layout in self.good_layouts:
+            return 1.0
+        elif layout in self.bad_layouts:
+            return 0.0
+        else:
+            return 0.5
+
+    def _encode_spacing(self, spacing):
+        """Codifica spacing"""
+        if spacing in self.good_spacing:
+            return 1.0
+        elif hasattr(self, 'neutral_spacing') and spacing in self.neutral_spacing:
+            return 0.6
+        elif spacing in self.bad_spacing:
+            return 0.0
+        else:
+            return 0.5
+
+    def _encode_contrast(self, contrast):
+        """Codifica contraste"""
+        if contrast in self.good_contrast:
+            return 1.0
+        elif contrast in self.bad_contrast:
+            return 0.0
+        else:
+            return 0.5
+
+    def encode_input(self, data):
+        """
+        Codifica datos de entrada (branding O diseño UX)
+        Retorna: (features, metadata, extra1)
+        """
+        input_type = self._detect_input_type(data)
+        
+        # ✅ CONVERSIÓN: Si es branding, convertir a UX
+        if input_type == 'branding':
+            print(f"🔄 Convirtiendo datos de branding a diseño UX...")
+            ux_data, keywords = self._convert_branding_to_ux(data)
+            data = ux_data
+        else:
+            keywords = {}
+        
+        # Ahora procesar como UX design
+        palette = data.get('palette', [])
+        fonts = data.get('fonts', [])
+        layout = data.get('layout', 'grid')
+        spacing = data.get('spacing', 'medium')
+        contrast = data.get('contrast', 'high')
+        
+        # Analizar cada aspecto
+        palette_score = self._analyze_palette_quality(palette)
+        fonts_score = self._analyze_fonts_quality(fonts)
+        layout_score = self._encode_layout(layout)
+        spacing_score = self._encode_spacing(spacing)
+        contrast_score = self._encode_contrast(contrast)
+        
+        # Features adicionales
+        palette_size = min(len(palette) / 5.0, 1.0) if palette else 0.0
+        fonts_count = min(len(fonts) / 3.0, 1.0) if fonts else 0.0
+        
+        has_white = any('#FFF' in str(c).upper() or '#FFFFFF' in str(c).upper() for c in palette) if palette else False
+        has_black = any('#000' in str(c).upper() or '#000000' in str(c).upper() for c in palette) if palette else False
+        has_classic_combo = 1.0 if (has_white or has_black) else 0.5
+        
+        has_contrast_in_palette = 1.0 if (
+            palette and 
+            any(self._is_light_color(c) for c in palette) and 
+            any(not self._is_light_color(c) for c in palette)
+        ) else 0.0
+        
+        # Vector de features (14 dimensiones)
         features = [
-            min(name_len / 50.0, 1.0),
-            min(mission_len / 300.0, 1.0),
-            min(values_count / 8.0, 1.0),
-            int(keywords.get('modern', False)),
-            int(keywords.get('professional', False)),
-            int(keywords.get('creative', False)),
-            int(keywords.get('friendly', False)),
-            int(keywords.get('luxury', False)),
-            int(keywords.get('eco', False)),
-            int(keywords.get('dark', False)),
-            int(keywords.get('true_crime', False)),
-            int(keywords.get('vintage', False)),
-            int(keywords.get('cyberpunk', False)),
-            int(keywords.get('minimalist', False))
+            palette_score,
+            fonts_score,
+            layout_score,
+            spacing_score,
+            contrast_score,
+            palette_size,
+            fonts_count,
+            has_classic_combo,
+            has_contrast_in_palette,
+            palette_score * contrast_score,
+            fonts_score * layout_score,
+            spacing_score * layout_score,
+            (palette_score + fonts_score) / 2,
+            (layout_score + spacing_score + contrast_score) / 3
         ]
         
-        return np.array(features).reshape(1, -1), keywords, sector, audience
+        metadata = {
+            'palette_quality': palette_score,
+            'fonts_quality': fonts_score,
+            'layout_quality': layout_score,
+            'spacing_quality': spacing_score,
+            'contrast_quality': contrast_score,
+            'keywords': keywords,
+            'converted_ux_data': data
+        }
+        
+        print(f"🔑 Keywords extraídos: {[k for k, v in keywords.items() if v] if keywords else 'ninguno'}")
+        
+        return np.array(features).reshape(1, -1), metadata, None
 
-    def generate_ui_kit(self, prediction, keywords, sector, audience):
-        """Genera el UI Kit basado en la predicción y análisis de estilo"""
-        if keywords.get('true_crime') or keywords.get('dark'):
-            color_style = 'true_crime'
-            font_style = 'true_crime'
-            component_style = 'true_crime'
-            texture = self.textures['true_crime']
-        elif keywords.get('vintage'):
-            color_style = 'vintage'
-            font_style = 'vintage'
-            component_style = 'vintage'
-            texture = self.textures['vintage']
-        elif keywords.get('cyberpunk'):
-            color_style = 'cyberpunk'
-            font_style = 'cyberpunk'
-            component_style = 'modern'
-            texture = 'none'
+    def generate_ui_kit(self, prediction, metadata, sector=None, audience=None):
+        """Genera UI Kit basado en predicción"""
+        confidence = float(prediction[0][0])
+        
+        # Extraer keywords y datos UX convertidos
+        keywords = metadata.get('keywords', {})
+        ux_data = metadata.get('converted_ux_data', {})
+        
+        # Usar los datos convertidos para generar el UI Kit
+        palette = ux_data.get('palette', self.color_palettes['tech_modern'][:3])
+        
+        # Seleccionar fuentes
+        if keywords.get('luxury'):
+            fonts = self.fonts_catalog['elegant']
+        elif keywords.get('creative'):
+            fonts = self.fonts_catalog['creative']
+        elif keywords.get('professional'):
+            fonts = self.fonts_catalog['professional']
         else:
-            color_style = self._select_color_style(keywords, sector)
-            font_style = self._select_font_style(keywords)
-            component_style = self._select_component_style(keywords)
-            texture = 'none'
+            fonts = self.fonts_catalog['modern']
         
-        colors = self.color_palettes.get(color_style, self.color_palettes['minimal'])
-        fonts = self.fonts.get(font_style, self.fonts['modern'])
-        components = self.components.get(component_style, self.components['modern'])
-        tokens = self._generate_design_tokens(colors, fonts, components)
+        # Seleccionar componentes
+        if keywords.get('modern'):
+            components = self.components['modern']
+        elif keywords.get('professional'):
+            components = self.components['minimal']
+        else:
+            components = self.components['soft']
         
-        return {
+        # Generar UI Kit completo
+        ui_kit = {
             'colors': {
-                'primary': colors[0],
-                'secondary': colors[1],
-                'accent': colors[2],
-                'background': colors[3],
-                'text': colors[4]
+                'primary': palette[0] if len(palette) > 0 else '#2DD4BF',
+                'secondary': palette[1] if len(palette) > 1 else '#0F172A',
+                'accent': palette[2] if len(palette) > 2 else '#3B82F6',
+                'background': '#FFFFFF',
+                'text': '#1E293B'
             },
             'typography': fonts,
             'components': components,
-            'tokens': tokens,
-            'confidence': float(prediction[0][0]),
+            'tokens': self._generate_design_tokens(components),
+            'confidence': confidence,
             'style': {
-                'color_style': color_style,
-                'font_style': font_style,
-                'component_style': component_style,
-                'texture': texture
+                'keywords': [k for k, v in keywords.items() if v] if keywords else []
             }
         }
-
-    def _select_color_style(self, keywords, sector):
-        """Selecciona el estilo de color basado en keywords y sector"""
-        sector_map = {
-            'tecnología': 'tech_modern',
-            'salud': 'health',
-            'finanzas': 'finance',
-            'educación': 'education',
-            'entretenimiento': 'entertainment',
-            'moda': 'luxury',
-            'alimentos': 'eco_friendly',
-            'medio ambiente': 'eco_friendly',
-            'ciencia': 'tech_modern',
-            'movilidad': 'tech_modern',
-            'transporte': 'professional',
-            'automotriz': 'luxury',
-            'arte': 'creative_vibrant',
-            'música': 'entertainment',
-            'pyme': 'professional',
-            'cosmética': 'luxury',
-            'agro': 'eco_friendly',
-            'legal': 'professional',
-            'judicial': 'professional',
-            'construcción': 'professional',
-            'ciberseguridad': 'tech_modern',
-            'bienestar': 'health',
-            'energía': 'eco_friendly',
-            'turismo': 'creative_vibrant',
-            'logística': 'professional',
-            'retail': 'creative_vibrant',
-            'telecomunicaciones': 'tech_modern',
-            'farmacéutico': 'health',
-            'aeroespacial': 'tech_modern',
-            'robótica': 'tech_modern',
-            'ia': 'tech_modern',
-            'blockchain': 'tech_modern',
-            'gaming': 'entertainment',
-            'deportes': 'health',
-            'ong': 'eco_friendly',
-            'gobierno': 'professional',
-            'true crime': 'true_crime',
-            'misterio': 'true_crime',
-            'periodismo': 'professional',
-            'historia': 'vintage',
-            'forense': 'true_crime'
-        }
         
-        if keywords.get('luxury'):
-            return 'luxury'
-        elif keywords.get('eco'):
-            return 'eco_friendly'
-        elif keywords.get('creative'):
-            return 'creative_vibrant'
-        elif keywords.get('professional'):
-            return 'professional'
-        else:
-            return sector_map.get(sector, 'tech_modern')
-    
-    def _select_font_style(self, keywords):
-        """Selecciona el estilo de tipografía"""
-        if keywords.get('luxury') or keywords.get('vintage'):
-            return 'elegant'
-        elif keywords.get('creative'):
-            return 'creative'
-        elif keywords.get('professional'):
-            return 'professional'
-        elif keywords.get('friendly'):
-            return 'friendly'
-        elif keywords.get('true_crime'):
-            return 'true_crime'
-        elif keywords.get('cyberpunk'):
-            return 'cyberpunk'
-        elif keywords.get('vintage'):
-            return 'vintage'
-        else:
-            return 'modern'
-    
-    def _select_component_style(self, keywords):
-        """Selecciona el estilo de componentes"""
-        if keywords.get('modern'):
-            return 'modern'
-        elif keywords.get('professional'):
-            return 'corporate'
-        elif keywords.get('friendly'):
-            return 'soft'
-        elif keywords.get('true_crime'):
-            return 'true_crime'
-        elif keywords.get('vintage'):
-            return 'vintage'
-        else:
-            return 'minimal'
+        return ui_kit
 
-    def _generate_design_tokens(self, colors, fonts, components):
-        """Genera tokens de diseño completos"""
+    def _generate_design_tokens(self, components):
+        """Genera tokens de diseño"""
         return {
             'spacing': {
                 'xs': '4px',
@@ -305,15 +430,9 @@ class DataProcessor:
             'fontSize': {
                 'xs': '12px',
                 'sm': '14px',
-                'base': '16px',
+                'md': '16px',
                 'lg': '18px',
                 'xl': '24px',
                 'xxl': '32px'
-            },
-            'borderRadius': components['borderRadius'],
-            'shadow': {
-                'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
-                'md': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-                'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
             }
         }

@@ -17,10 +17,21 @@ class Trainer:
         Carga el dataset combinado y maneja ambos formatos (lista o objeto).
         """
         if not os.path.exists(self.dataset_path):
-            raise FileNotFoundError(f"Dataset no encontrado: {self.dataset_path}")
+            print(f"⚠️ Dataset no encontrado, creando archivo vacío: {self.dataset_path}")
+            # Si no existe, creamos la estructura base
+            os.makedirs(os.path.dirname(self.dataset_path), exist_ok=True)
+            data = {'training_data': [], 'feedback_data': [], 'pending_feedback': []}
+            with open(self.dataset_path, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2)
+            return [], [], []
+
         
         with open(self.dataset_path, 'r', encoding='utf-8') as f:
-            data = json.load(f)
+            try:
+                data = json.load(f)
+            except json.JSONDecodeError:
+                print(f"❌ Error al decodificar JSON en {self.dataset_path}. Archivo corrupto.")
+                return [], [], []
         
         # ✅ CORREGIDO: Detectar y manejar ambos formatos
         if isinstance(data, list):
@@ -59,7 +70,8 @@ class Trainer:
                 continue
                 
             try:
-                features, _, _, _ = self.processor.encode_input(item['input'])
+                # ✅ CORREGIDO: Aceptar 3 valores, descartar los dos últimos
+                features, _, _ = self.processor.encode_input(item['input'])
                 X.append(features[0])
                 
                 rating = item.get('rating', 0.5)
@@ -69,7 +81,8 @@ class Trainer:
                 continue
         
         if len(X) == 0:
-            raise ValueError("No se pudieron procesar datos válidos del dataset")
+            print("⚠️ No se pudieron procesar datos válidos del dataset. Se retorna vacío.")
+            return np.array([]), np.array([])
         
         return np.array(X), np.array(y)
     
@@ -77,23 +90,33 @@ class Trainer:
         """Entrena el modelo con el dataset completo"""
         print("📊 Cargando y preparando datos...")
         X, y = self.prepare_dataset()
+        
+        if len(X) == 0:
+            print("❌ No hay datos para entrenar. Saliendo.")
+            return None, {'loss': 0, 'accuracy': 0, 'auc': 0}
+        
         print(f"✅ Dataset cargado: {len(X)} muestras")
         
         # ✅ Validar que hay suficientes datos
         if len(X) < 10:
-            raise ValueError(f"Dataset muy pequeño: {len(X)} muestras. Se necesitan al menos 10.")
+            print(f"⚠️ Dataset muy pequeño: {len(X)} muestras. Se necesitan al menos 10 para una división válida.")
+            test_size = 0.1 # Reducir test_size
+            if len(X) < 2:
+                print("❌ Insuficientes datos (menos de 2). No se puede entrenar.")
+                return None, {'loss': 0, 'accuracy': 0, 'auc': 0}
+
         
         # ✅ CARGAR MODELO EXISTENTE (si es incremental)
         if incremental:
-            model_path = os.path.join(os.path.dirname(__file__), 'data', 'models', 'neuro_ux_model.h5')
-            if os.path.exists(model_path):
-                print("🔄 Cargando modelo existente para entrenamiento incremental...")
-                self.model.load_model()
-            else:
-                print("⚠️ No se encontró modelo previo, entrenando desde cero...")
-                print(f"   Buscado en: {model_path}")
+            print("🔄 Cargando modelo existente para entrenamiento incremental...")
+            self.model.load_model() # load_model maneja la no existencia
         
-        X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=test_size, random_state=42)
+        # Añadir 'stratify=y' si hay suficientes muestras de ambas clases
+        stratify_data = None
+        if np.sum(y) > 1 and len(y) - np.sum(y) > 1:
+            stratify_data = y
+            
+        X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=test_size, random_state=42, stratify=stratify_data)
         print(f"🔄 Entrenamiento: {len(X_train)} | Validación: {len(X_val)}")
         
         print("\n🚀 Iniciando entrenamiento...")
@@ -111,6 +134,7 @@ class Trainer:
     
     def add_feedback(self, input_data, rating, feedback_text):
         """Agrega un nuevo feedback a la cola de pendientes"""
+        data = {}
         # ✅ Cargar o crear estructura de datos
         if not os.path.exists(self.data_path):
             data = {
@@ -120,7 +144,10 @@ class Trainer:
             }
         else:
             with open(self.data_path, 'r', encoding='utf-8') as f:
-                loaded_data = json.load(f)
+                try:
+                    loaded_data = json.load(f)
+                except json.JSONDecodeError:
+                    loaded_data = {} # Si está corrupto, empezamos de nuevo
             
             # ✅ Convertir lista a objeto si es necesario
             if isinstance(loaded_data, list):
@@ -134,6 +161,10 @@ class Trainer:
         
         if 'pending_feedback' not in data:
             data['pending_feedback'] = []
+        if 'training_data' not in data:
+            data['training_data'] = []
+        if 'feedback_data' not in data:
+            data['feedback_data'] = []
         
         data['pending_feedback'].append({
             'input': input_data,
@@ -177,10 +208,8 @@ class Trainer:
             print(f"📊 Reentrenando con {len(pending)} feedbacks nuevos")
             
             # ✅ Cargar modelo existente antes de reentrenar
-            model_path = os.path.join(os.path.dirname(__file__), 'model', 'neuro_ux_model.h5')
-            if os.path.exists(model_path):
-                print("🔄 Cargando modelo existente...")
-                self.model.load_model()
+            print("🔄 Cargando modelo existente...")
+            self.model.load_model()
             
             # Combinar todos los datos
             all_data = data.get('training_data', []) + data.get('feedback_data', []) + pending
@@ -193,7 +222,8 @@ class Trainer:
                     continue
                 
                 try:
-                    features, _, _, _ = self.processor.encode_input(item['input'])
+                    # ✅ CORREGIDO: Aceptar 3 valores, descartar los dos últimos
+                    features, _, _ = self.processor.encode_input(item['input'])
                     X.append(features[0])
                     rating = item.get('rating', 0.5)
                     y.append(1 if rating >= 0.7 else 0)
@@ -210,8 +240,13 @@ class Trainer:
             print(f"✅ Total de datos para reentrenamiento: {len(X)} muestras")
             
             # Dividir
+            # Añadir 'stratify=y' si hay suficientes muestras de ambas clases
+            stratify_data = None
+            if np.sum(y) > 1 and len(y) - np.sum(y) > 1:
+                stratify_data = y
+
             X_train, X_val, y_train, y_val = train_test_split(
-                X, y, test_size=0.2, random_state=42
+                X, y, test_size=0.2, random_state=42, stratify=stratify_data
             )
             
             # Entrenar
@@ -253,4 +288,7 @@ if __name__ == "__main__":
     history, metrics = trainer.train_model(epochs=100)
     
     print("\n✅ Entrenamiento inicial completado!")
-    print(f"🎯 Precisión: {metrics['accuracy']*100:.1f}%")
+    if metrics:
+        print(f"🎯 Precisión: {metrics.get('accuracy', 0)*100:.1f}%")
+    else:
+        print("⚠️ No se pudo entrenar el modelo (probablemente falta de datos).")

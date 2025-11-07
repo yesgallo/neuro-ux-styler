@@ -1,4 +1,6 @@
-
+"""
+Script para probar el modelo entrenado con ejemplos
+"""
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -74,8 +76,8 @@ def test_predictions():
     
     results = []
     for i, test in enumerate(test_cases, 1):
-        # Procesar input
-        features, _, _, _ = processor.encode_input(test["input"])
+        # Procesar input - ✅ CORREGIDO: Ahora son 3 valores, no 4
+        features, metadata, _ = processor.encode_input(test["input"])
         
         # Hacer predicción
         prediction = model.predict(features)[0][0]

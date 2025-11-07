@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neuro UX Styler - AI-Powered UI Kit Generator</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -491,7 +493,6 @@
             <button class="tab" data-tab="stats">Estadísticas</button>
         </div>
 
-        <!-- Tab: Generar UI Kit -->
         <div id="generate" class="tab-content active">
             <div class="card">
                 <h2 style="margin-bottom: 1.5rem;">Datos del Proyecto</h2>
@@ -642,7 +643,7 @@
     </div>
 
     <script>
-        const API_URL = 'http://localhost:5001/api';
+        const API_URL = 'http://localhost:5001';
         let currentUIKit = null;
         let selectedRating = 0;
         let lastInputData = null;
@@ -1177,7 +1178,7 @@ body {
                 
                 if (result.success) {
                     currentUIKit = result.ui_kit;
-                    displayUIKit(result.ui_kit);
+                    displayUIKit(result.ui_kit); // ✅ CORREGIDO: Esta función ahora funciona
                     document.getElementById('result').classList.add('show');
                     document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
                 } else {
@@ -1193,76 +1194,107 @@ body {
             }
         });
 
-        function displayUIKit(uiKit) {
-            const confidence = (uiKit.confidence * 100).toFixed(0);
-            const badge = document.getElementById('confidenceBadge');
-            badge.textContent = `${confidence}% confianza`;
-            badge.className = 'confidence-badge ' + 
-                (confidence >= 80 ? 'confidence-high' : 
-                 confidence >= 60 ? 'confidence-medium' : 'confidence-low');
+        // =====================================================================
+        // ✅ CORREGIDO: Función displayUIKit completamente reescrita
+        // =====================================================================
+        function displayUIKit(data) {
+            console.log('📦 Datos recibidos para mostrar:', data);
             
+            if (!data || !data.colors || !data.typography || !data.components || !data.tokens) {
+                console.error('❌ Error: Faltan propiedades en los datos del UI Kit:', data);
+                showToast('Error: El formato de respuesta del servidor es incorrecto', 'error');
+                return;
+            }
+            
+            const confidence = data.confidence;
+            const confidenceScore = (confidence * 100).toFixed(1);
+            
+            // 1. Badge de Confianza
+            const badge = document.getElementById('confidenceBadge');
+            badge.textContent = `Confianza: ${confidenceScore}%`;
+            badge.className = 'confidence-badge'; // Reset class
+            
+            if (confidence >= 0.8) {
+                badge.classList.add('confidence-high');
+            } else if (confidence >= 0.5) {
+                badge.classList.add('confidence-medium');
+            } else {
+                badge.classList.add('confidence-low');
+            }
+            
+            // 2. Paleta de Colores
             const colorPalette = document.getElementById('colorPalette');
             colorPalette.innerHTML = '';
-            Object.entries(uiKit.colors).forEach(([name, color]) => {
+            Object.entries(data.colors).forEach(([name, color]) => {
                 colorPalette.innerHTML += `
                     <div class="color-item">
-                        <div class="color-box" style="background: ${color}" 
-                             onclick="copyToClipboard('${color}')" 
-                             title="Click para copiar"></div>
+                        <div class="color-box" style="background-color: ${color};" onclick="copyToClipboard('${color}')"></div>
                         <div class="color-label">${name}</div>
                         <div class="color-value">${color}</div>
                     </div>
                 `;
             });
-            
+
+            // 3. Tipografía
             const typography = document.getElementById('typography');
             typography.innerHTML = `
-                <div style="margin-bottom: 1rem;">
-                    <strong>Primaria:</strong> 
-                    <span style="font-family: '${uiKit.typography.primary}', sans-serif; font-size: 1.5rem;">
-                        ${uiKit.typography.primary}
-                    </span>
+                <div style="font-family: '${data.typography.primary}', sans-serif;">
+                    <h1 style="font-family: '${data.typography.primary}', sans-serif;">Fuente Primaria (Heading): ${data.typography.primary}</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
-                <div>
-                    <strong>Secundaria:</strong> 
-                    <span style="font-family: '${uiKit.typography.secondary}', sans-serif; font-size: 1.5rem;">
-                        ${uiKit.typography.secondary}
-                    </span>
+                <hr style="margin: 1.5rem 0;">
+                <div style="font-family: '${data.typography.secondary}', serif;">
+                    <h3 style="font-family: '${data.typography.secondary}', serif;">Fuente Secundaria (Body): ${data.typography.secondary}</h3>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
             `;
             
+            // 4. Componentes
             const components = document.getElementById('components');
             components.innerHTML = '';
-            Object.entries(uiKit.components).forEach(([key, value]) => {
+            Object.entries(data.components).forEach(([key, value]) => {
                 components.innerHTML += `
                     <div class="component-item">
-                        <div class="component-label">${key.replace(/([A-Z])/g, ' $1').trim()}</div>
+                        <div class="component-label">${key}</div>
                         <div class="component-value">${value}</div>
                     </div>
                 `;
             });
             
+            // 5. Tokens de Diseño
             const tokens = document.getElementById('tokens');
             tokens.innerHTML = '';
-            ['spacing', 'fontSize'].forEach(category => {
-                Object.entries(uiKit.tokens[category]).forEach(([key, value]) => {
-                    tokens.innerHTML += `
-                        <div class="component-item">
-                            <div class="component-label">${category} - ${key}</div>
-                            <div class="component-value">${value}</div>
-                        </div>
-                    `;
-                });
+            Object.entries(data.tokens.spacing).forEach(([key, value]) => {
+                tokens.innerHTML += `
+                    <div class="component-item">
+                        <div class="component-label">spacing-${key}</div>
+                        <div class="component-value">${value}</div>
+                    </div>
+                `;
             });
+            Object.entries(data.tokens.fontSize).forEach(([key, value]) => {
+                tokens.innerHTML += `
+                    <div class="component-item">
+                        <div class="component-label">fontSize-${key}</div>
+                        <div class="component-value">${value}</div>
+                    </div>
+                `;
+            });
+
+            // Resetear feedback
+            selectedRating = 0;
+            document.querySelectorAll('.star').forEach(s => s.classList.remove('active'));
+            document.getElementById('feedbackText').value = '';
         }
 
-        document.querySelectorAll('.star').forEach(star => {
-            star.addEventListener('click', () => {
-                selectedRating = parseInt(star.dataset.rating);
-                document.querySelectorAll('.star').forEach((s, index) => {
-                    s.classList.toggle('active', index < selectedRating);
+        // ✅ AÑADIDO: Listener para las estrellas de rating
+        document.getElementById('ratingStars').addEventListener('click', (e) => {
+            if (e.target.classList.contains('star')) {
+                selectedRating = parseInt(e.target.dataset.rating, 10);
+                document.querySelectorAll('.star').forEach(star => {
+                    star.classList.toggle('active', parseInt(star.dataset.rating, 10) <= selectedRating);
                 });
-            });
+            }
         });
 
         document.getElementById('submitFeedback').addEventListener('click', async () => {
@@ -1444,5 +1476,6 @@ body {
 
         loadStats();
     </script>
-</body>
+    
+    </body>
 </html>

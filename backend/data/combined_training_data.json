@@ -5399,8 +5399,1254 @@
       },
       "rating": 0.6183682101642134,
       "category": "mixed-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#004d40",
+          "#00796b",
+          "#ffffff"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "sidebar",
+        "spacing": "compact",
+        "contrast": "medium-high"
+      },
+      "rating": 0.8156294693093423,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#34495E",
+          "#ECF0F1"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "grid",
+        "spacing": "medium",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7318787571001514,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1565C0",
+          "#1976D2",
+          "#E3F2FD"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "grid",
+        "spacing": "compact",
+        "contrast": "medium"
+      },
+      "rating": 0.7055558098248123,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#34495E",
+          "#ECF0F1"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "sidebar",
+        "spacing": "medium",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6860718061958475,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1565C0",
+          "#1976D2",
+          "#E3F2FD"
+        ],
+        "fonts": [
+          "Georgia",
+          "Helvetica"
+        ],
+        "layout": "grid",
+        "spacing": "standard",
+        "contrast": "high"
+      },
+      "rating": 0.694584126762489,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#003366",
+          "#336699",
+          "#FFFFFF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "sidebar",
+        "spacing": "medium",
+        "contrast": "medium-high"
+      },
+      "rating": 0.8363522020893865,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1a1a2e",
+          "#16213e",
+          "#0f3460"
+        ],
+        "fonts": [
+          "Garamond",
+          "Calibri"
+        ],
+        "layout": "grid",
+        "spacing": "compact",
+        "contrast": "medium"
+      },
+      "rating": 0.7199848317965674,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#004d40",
+          "#00796b",
+          "#ffffff"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "sidebar",
+        "spacing": "standard",
+        "contrast": "high"
+      },
+      "rating": 0.8097035964887797,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#003366",
+          "#336699",
+          "#FFFFFF"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "grid",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.7216355297607658,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#004d40",
+          "#00796b",
+          "#ffffff"
+        ],
+        "fonts": [
+          "Georgia",
+          "Helvetica"
+        ],
+        "layout": "sidebar",
+        "spacing": "compact",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6598183930875134,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#004d40",
+          "#00796b",
+          "#ffffff"
+        ],
+        "fonts": [
+          "Georgia",
+          "Helvetica"
+        ],
+        "layout": "flex",
+        "spacing": "medium",
+        "contrast": "high"
+      },
+      "rating": 0.6848665955241822,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1a1a2e",
+          "#16213e",
+          "#0f3460"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "grid",
+        "spacing": "standard",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6713477822003158,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#004d40",
+          "#00796b",
+          "#ffffff"
+        ],
+        "fonts": [
+          "Garamond",
+          "Calibri"
+        ],
+        "layout": "flex",
+        "spacing": "compact",
+        "contrast": "medium-high"
+      },
+      "rating": 0.8140234803851922,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#003366",
+          "#336699",
+          "#FFFFFF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "sidebar",
+        "spacing": "medium",
+        "contrast": "medium"
+      },
+      "rating": 0.8287574586343054,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#34495E",
+          "#ECF0F1"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "grid",
+        "spacing": "compact",
+        "contrast": "medium"
+      },
+      "rating": 0.6657617290165136,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#34495E",
+          "#ECF0F1"
+        ],
+        "fonts": [
+          "Georgia",
+          "Helvetica"
+        ],
+        "layout": "sidebar",
+        "spacing": "compact",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7163582305881229,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#004d40",
+          "#00796b",
+          "#ffffff"
+        ],
+        "fonts": [
+          "Georgia",
+          "Helvetica"
+        ],
+        "layout": "sidebar",
+        "spacing": "compact",
+        "contrast": "high"
+      },
+      "rating": 0.6635392840039689,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#34495E",
+          "#ECF0F1"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "flex",
+        "spacing": "compact",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6752543188783218,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#34495E",
+          "#ECF0F1"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "flex",
+        "spacing": "standard",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7383738866997248,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#003366",
+          "#336699",
+          "#FFFFFF"
+        ],
+        "fonts": [
+          "Georgia",
+          "Helvetica"
+        ],
+        "layout": "sidebar",
+        "spacing": "standard",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6581738795724871,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#004d40",
+          "#00796b",
+          "#ffffff"
+        ],
+        "fonts": [
+          "Garamond",
+          "Calibri"
+        ],
+        "layout": "sidebar",
+        "spacing": "standard",
+        "contrast": "medium"
+      },
+      "rating": 0.7861357145575879,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#2C3E50",
+          "#34495E",
+          "#ECF0F1"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "grid",
+        "spacing": "standard",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7074363353950366,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#004d40",
+          "#00796b",
+          "#ffffff"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "grid",
+        "spacing": "standard",
+        "contrast": "medium"
+      },
+      "rating": 0.770434907819755,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#003366",
+          "#336699",
+          "#FFFFFF"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "flex",
+        "spacing": "compact",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7860483268095925,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1a1a2e",
+          "#16213e",
+          "#0f3460"
+        ],
+        "fonts": [
+          "Garamond",
+          "Calibri"
+        ],
+        "layout": "grid",
+        "spacing": "standard",
+        "contrast": "medium-high"
+      },
+      "rating": 0.7851575932255992,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1a1a2e",
+          "#16213e",
+          "#0f3460"
+        ],
+        "fonts": [
+          "Garamond",
+          "Calibri"
+        ],
+        "layout": "sidebar",
+        "spacing": "compact",
+        "contrast": "high"
+      },
+      "rating": 0.6725006528691437,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1a1a2e",
+          "#16213e",
+          "#0f3460"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "grid",
+        "spacing": "compact",
+        "contrast": "high"
+      },
+      "rating": 0.6914248607520699,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1a1a2e",
+          "#16213e",
+          "#0f3460"
+        ],
+        "fonts": [
+          "Palatino",
+          "Verdana"
+        ],
+        "layout": "sidebar",
+        "spacing": "compact",
+        "contrast": "high"
+      },
+      "rating": 0.7851423201525207,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#1a1a2e",
+          "#16213e",
+          "#0f3460"
+        ],
+        "fonts": [
+          "Georgia",
+          "Helvetica"
+        ],
+        "layout": "flex",
+        "spacing": "compact",
+        "contrast": "high"
+      },
+      "rating": 0.7486630138211712,
+      "category": "corporate-good"
+    },
+    {
+      "input": {
+        "palette": [
+          "#003366",
+          "#336699",
+          "#FFFFFF"
+        ],
+        "fonts": [
+          "Times New Roman",
+          "Arial"
+        ],
+        "layout": "grid",
+        "spacing": "compact",
+        "contrast": "medium-high"
+      },
+      "rating": 0.6546016938443595,
+      "category": "corporate-good"
     }
   ],
-  "feedback_data": [],
-  "pending_feedback": []
+  "feedback_data": [
+    {
+      "input": {
+        "name": "HealLink",
+        "mission": "Conectar pacientes con profesionales de la salud de manera rápida y segura.",
+        "values": "confianza, privacidad, empatía, profesionalismo",
+        "sector": "salud",
+        "audience": "Pacientes y médicos"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "TravelEase",
+        "mission": "Simplificar los viajes a través de la tecnología y la planificación inteligente.",
+        "values": "comodidad, seguridad, innovación, experiencia",
+        "sector": "turismo",
+        "audience": "Viajeros frecuentes y agencias"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "FreshMarket",
+        "mission": "Llevar productos locales frescos del campo a la ciudad.",
+        "values": "calidad, cercanía, sustentabilidad, comunidad",
+        "sector": "alimentos",
+        "audience": "Consumidores urbanos y productores rurales"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "FreshMarket",
+        "mission": "Llevar productos locales frescos del campo a la ciudad.",
+        "values": "calidad, cercanía, sustentabilidad, comunidad",
+        "sector": "alimentos",
+        "audience": "Consumidores urbanos y productores rurales"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "FreshMarket",
+        "mission": "Llevar productos locales frescos del campo a la ciudad.",
+        "values": "calidad, cercanía, sustentabilidad, comunidad",
+        "sector": "alimentos",
+        "audience": "Consumidores urbanos y productores rurales"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "FreshMarket",
+        "mission": "Llevar productos locales frescos del campo a la ciudad.",
+        "values": "calidad, cercanía, sustentabilidad, comunidad",
+        "sector": "alimentos",
+        "audience": "Consumidores urbanos y productores rurales"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "FreshMarket",
+        "mission": "Llevar productos locales frescos del campo a la ciudad.",
+        "values": "calidad, cercanía, sustentabilidad, comunidad",
+        "sector": "alimentos",
+        "audience": "Consumidores urbanos y productores rurales"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Segurity Mix",
+        "mission": "Nuestra misión es dar seguridad y confianza a clientes b2b",
+        "values": "seriedad, excelencia, confianza",
+        "sector": "otros",
+        "audience": "Empresas B2B"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Segurity Mix",
+        "mission": "Nuestra misión es dar seguridad y confianza a clientes b2b",
+        "values": "seriedad, excelencia, confianza",
+        "sector": "otros",
+        "audience": "Empresas B2B"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Segurity Mix",
+        "mission": "Nuestra misión es dar seguridad y confianza a clientes b2b",
+        "values": "seriedad, excelencia, confianza",
+        "sector": "otros",
+        "audience": "Empresas B2B"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Segurity Mix",
+        "mission": "Nuestra misión es dar seguridad y confianza a clientes b2b",
+        "values": "seriedad, excelencia, confianza",
+        "sector": "otros",
+        "audience": "Empresas B2B"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Segurity Mix",
+        "mission": "Nuestra misión es dar seguridad y confianza a clientes b2b",
+        "values": "seriedad, excelencia, confianza",
+        "sector": "otros",
+        "audience": "Empresas B2B"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Amigates",
+        "mission": "Queremos crear una comunidad de bienestar fácil y amigable",
+        "values": "bienestar, calidad, sencillez",
+        "sector": "bienestar",
+        "audience": "jovenes"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Amigates",
+        "mission": "Queremos crear una comunidad de bienestar fácil y amigable",
+        "values": "bienestar, calidad, sencillez",
+        "sector": "bienestar",
+        "audience": "jovenes"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Amigates",
+        "mission": "Queremos crear una comunidad de bienestar fácil y amigable",
+        "values": "bienestar, calidad, sencillez",
+        "sector": "bienestar",
+        "audience": "jovenes"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Amigates",
+        "mission": "Queremos crear una comunidad de bienestar fácil y amigable",
+        "values": "bienestar, calidad, sencillez",
+        "sector": "bienestar",
+        "audience": "jovenes"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Amigates",
+        "mission": "Queremos crear una comunidad de bienestar fácil y amigable",
+        "values": "bienestar, calidad, sencillez",
+        "sector": "bienestar",
+        "audience": "jovenes"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "SkillBoost",
+        "mission": "Potenciar carreras con aprendizaje práctico y profesional.",
+        "values": "crecimiento, calidad, accesibilidad, actualización",
+        "sector": "educación",
+        "audience": "Profesionales y emprendedores"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "SkillBoost",
+        "mission": "Potenciar carreras con aprendizaje práctico y profesional.",
+        "values": "crecimiento, calidad, accesibilidad, actualización",
+        "sector": "educación",
+        "audience": "Profesionales y emprendedores"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "SkillBoost",
+        "mission": "Potenciar carreras con aprendizaje práctico y profesional.",
+        "values": "crecimiento, calidad, accesibilidad, actualización",
+        "sector": "educación",
+        "audience": "Profesionales y emprendedores"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "SkillBoost",
+        "mission": "Potenciar carreras con aprendizaje práctico y profesional.",
+        "values": "crecimiento, calidad, accesibilidad, actualización",
+        "sector": "educación",
+        "audience": "Profesionales y emprendedores"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "SkillBoost",
+        "mission": "Potenciar carreras con aprendizaje práctico y profesional.",
+        "values": "crecimiento, calidad, accesibilidad, actualización",
+        "sector": "educación",
+        "audience": "Profesionales y emprendedores"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "VoxCast",
+        "mission": "Dar voz a las ideas que transforman el mundo a través del podcasting.",
+        "values": "creatividad, libertad, diversidad, conexión",
+        "sector": "producción audiovisual",
+        "audience": "Creadores de contenido y oyentes curiosos"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "VoxCast",
+        "mission": "Dar voz a las ideas que transforman el mundo a través del podcasting.",
+        "values": "creatividad, libertad, diversidad, conexión",
+        "sector": "producción audiovisual",
+        "audience": "Creadores de contenido y oyentes curiosos"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "VoxCast",
+        "mission": "Dar voz a las ideas que transforman el mundo a través del podcasting.",
+        "values": "creatividad, libertad, diversidad, conexión",
+        "sector": "producción audiovisual",
+        "audience": "Creadores de contenido y oyentes curiosos"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "VoxCast",
+        "mission": "Dar voz a las ideas que transforman el mundo a través del podcasting.",
+        "values": "creatividad, libertad, diversidad, conexión",
+        "sector": "producción audiovisual",
+        "audience": "Creadores de contenido y oyentes curiosos"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "VoxCast",
+        "mission": "Dar voz a las ideas que transforman el mundo a través del podcasting.",
+        "values": "creatividad, libertad, diversidad, conexión",
+        "sector": "producción audiovisual",
+        "audience": "Creadores de contenido y oyentes curiosos"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "EcoMarket",
+        "mission": "Crear el marketplace más grande de productos sostenibles y ecológicos para consumidores conscientes\n",
+        "values": "sostenibilidad, transparencia, medio ambiente, eco-friendly, orgánico",
+        "sector": "alimentos",
+        "audience": "Millennials y Gen Z preocupados por el medio ambiente"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "EcoMarket",
+        "mission": "Crear el marketplace más grande de productos sostenibles y ecológicos para consumidores conscientes\n",
+        "values": "sostenibilidad, transparencia, medio ambiente, eco-friendly, orgánico",
+        "sector": "alimentos",
+        "audience": "Millennials y Gen Z preocupados por el medio ambiente"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "EcoMarket",
+        "mission": "Crear el marketplace más grande de productos sostenibles y ecológicos para consumidores conscientes\n",
+        "values": "sostenibilidad, transparencia, medio ambiente, eco-friendly, orgánico",
+        "sector": "alimentos",
+        "audience": "Millennials y Gen Z preocupados por el medio ambiente"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "EcoMarket",
+        "mission": "Crear el marketplace más grande de productos sostenibles y ecológicos para consumidores conscientes\n",
+        "values": "sostenibilidad, transparencia, medio ambiente, eco-friendly, orgánico",
+        "sector": "alimentos",
+        "audience": "Millennials y Gen Z preocupados por el medio ambiente"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "EcoMarket",
+        "mission": "Crear el marketplace más grande de productos sostenibles y ecológicos para consumidores conscientes\n",
+        "values": "sostenibilidad, transparencia, medio ambiente, eco-friendly, orgánico",
+        "sector": "alimentos",
+        "audience": "Millennials y Gen Z preocupados por el medio ambiente"
+      },
+      "rating": 0.2,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Pixel Dreams Studio",
+        "mission": "Transformar ideas en experiencias visuales memorables que conecten marcas con audiencias\n",
+        "values": "creatividad, diseño, arte, innovación, expresión, originalidad",
+        "sector": "diseño",
+        "audience": "Startups y empresas que buscan branding disruptivo"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Pixel Dreams Studio",
+        "mission": "Transformar ideas en experiencias visuales memorables que conecten marcas con audiencias\n",
+        "values": "creatividad, diseño, arte, innovación, expresión, originalidad",
+        "sector": "diseño",
+        "audience": "Startups y empresas que buscan branding disruptivo"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Pixel Dreams Studio",
+        "mission": "Transformar ideas en experiencias visuales memorables que conecten marcas con audiencias\n",
+        "values": "creatividad, diseño, arte, innovación, expresión, originalidad",
+        "sector": "diseño",
+        "audience": "Startups y empresas que buscan branding disruptivo"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Pixel Dreams Studio",
+        "mission": "Transformar ideas en experiencias visuales memorables que conecten marcas con audiencias\n",
+        "values": "creatividad, diseño, arte, innovación, expresión, originalidad",
+        "sector": "diseño",
+        "audience": "Startups y empresas que buscan branding disruptivo"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Pixel Dreams Studio",
+        "mission": "Transformar ideas en experiencias visuales memorables que conecten marcas con audiencias\n",
+        "values": "creatividad, diseño, arte, innovación, expresión, originalidad",
+        "sector": "diseño",
+        "audience": "Startups y empresas que buscan branding disruptivo"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "QuantumFlow AI",
+        "mission": "Revolucionar la productividad empresarial mediante inteligencia artificial generativa y automatización inteligente de procesos\n",
+        "values": "innovación, tecnología, eficiencia, futuro, inteligencia artificial",
+        "sector": "tecnología",
+        "audience": "CTOs y directores de IT en empresas medianas y grandes"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "QuantumFlow AI",
+        "mission": "Revolucionar la productividad empresarial mediante inteligencia artificial generativa y automatización inteligente de procesos\n",
+        "values": "innovación, tecnología, eficiencia, futuro, inteligencia artificial",
+        "sector": "tecnología",
+        "audience": "CTOs y directores de IT en empresas medianas y grandes"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "QuantumFlow AI",
+        "mission": "Revolucionar la productividad empresarial mediante inteligencia artificial generativa y automatización inteligente de procesos\n",
+        "values": "innovación, tecnología, eficiencia, futuro, inteligencia artificial",
+        "sector": "tecnología",
+        "audience": "CTOs y directores de IT en empresas medianas y grandes"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "QuantumFlow AI",
+        "mission": "Revolucionar la productividad empresarial mediante inteligencia artificial generativa y automatización inteligente de procesos\n",
+        "values": "innovación, tecnología, eficiencia, futuro, inteligencia artificial",
+        "sector": "tecnología",
+        "audience": "CTOs y directores de IT en empresas medianas y grandes"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "QuantumFlow AI",
+        "mission": "Revolucionar la productividad empresarial mediante inteligencia artificial generativa y automatización inteligente de procesos\n",
+        "values": "innovación, tecnología, eficiencia, futuro, inteligencia artificial",
+        "sector": "tecnología",
+        "audience": "CTOs y directores de IT en empresas medianas y grandes"
+      },
+      "rating": 1,
+      "feedback": ""
+    }
+  ],
+  "pending_feedback": [
+    {
+      "input": {
+        "name": "QuantumFlow AI",
+        "mission": "Revolucionar la productividad empresarial mediante inteligencia artificial generativa",
+        "values": "innovación, tecnología, eficiencia, futuro, inteligencia artificial",
+        "sector": "tecnología",
+        "audience": "CTOs y directores de IT"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "Pixel Dreams Studio",
+        "mission": "Transformar ideas en experiencias visuales memorables que conecten marcas con audiencias",
+        "values": "creatividad, diseño, arte, innovación, expresión, originalidad",
+        "sector": "diseño",
+        "audience": "Startups y empresas que buscan branding disruptivo"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "SecureBank Pro",
+        "mission": "Proporcionar soluciones bancarias digitales seguras y eficientes para empresas",
+        "values": "seguridad, confianza, profesionalismo, excelencia, innovación",
+        "sector": "finanzas",
+        "audience": "Empresas B2B y CFOs corporativos"
+      },
+      "rating": 1,
+      "feedback": ""
+    },
+    {
+      "input": {
+        "name": "EcoMarket",
+        "mission": "Crear el marketplace más grande de productos sostenibles y ecológicos para consumidores conscientes",
+        "values": "sostenibilidad, transparencia, medio ambiente, eco-friendly, orgánico",
+        "sector": "alimentos",
+        "audience": "Millennials y Gen Z preocupados por el medio ambiente"
+      },
+      "rating": 1,
+      "feedback": ""
+    }
+  ]
 }
